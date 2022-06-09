@@ -32,19 +32,22 @@ const Header = () => {
                     >
                         <div className=""></div>
                         <div className="navbar-nav gap-sm-2 gap-md-4 navbar-nav-part">
-                            <Link className="nav-link text-dark" to="/">
+                            <Link className="nav-link text-dark" to="/home">
                                 Home
                             </Link>
-                            <Link className="nav-link text-dark" to="/">
+                            <Link className="nav-link text-dark" to="/doctor">
                                 Doctor
                             </Link>
-                            <Link className="nav-link text-dark" to="/">
+                            <Link className="nav-link text-dark" to="/about">
                                 About Us
                             </Link>
-                            <Link className="nav-link text-dark" to="/">
+                            <Link
+                                className="nav-link text-dark"
+                                to="/medicalQa"
+                            >
                                 Medical Q&#38;A
                             </Link>
-                            <Link className="nav-link text-dark" to="/">
+                            <Link className="nav-link text-dark" to="/covid19">
                                 Covid 19
                             </Link>
                         </div>
