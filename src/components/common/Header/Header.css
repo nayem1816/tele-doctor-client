@@ -1,0 +1,12 @@
+.logo-image {
+    width: 80px;
+}
+.navbar-nav-part,
+.navbar-login-part {
+    text-align: center;
+}
+.navbar-nav-part a:hover,
+.navbar-login-part a:hover {
+    color: #0e9ca2 !important;
+    text-decoration: none;
+}

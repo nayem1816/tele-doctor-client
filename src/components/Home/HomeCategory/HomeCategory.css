@@ -1,0 +1,11 @@
+.home-category {
+    background-color: #5921cf;
+}
+.scroll-category {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scroll-category a {
+    display: inline-block;
+}
