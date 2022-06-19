@@ -6,12 +6,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper';
 import doctors from '../../../services/data/doctors.js';
+import Title from '../../common/Title/Title';
 
 const AvailableDoctor = () => {
     return (
         <div className="available-doctor mt-2 py-5">
             <div className="container">
-                <h2 className="base-color2 fw-bold">Available Doctors</h2>
+                <Title titleName="Available Doctors" />
                 <div className="text-end py-1">
                     <Link className="nav-link d-inline" to="/">
                         see all
