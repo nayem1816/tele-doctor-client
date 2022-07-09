@@ -5,6 +5,7 @@ import CustomInput from './../../common/Form/CustomInput';
 import { FaUser, FaLock, FaEyeSlash, FaEye } from 'react-icons/fa';
 import { MdEmail, MdHealthAndSafety } from 'react-icons/md';
 import { AiOutlineNumber } from 'react-icons/ai';
+import GoogleButton from './../GoogleButton/GoogleButton';
 
 const options = [
     { value: 'patient', label: 'Patient' },
@@ -18,7 +19,9 @@ const SignupForm = () => {
         handleSubmit,
         // formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        console.log(data);
+    };
     return (
         <div className="container">
             <div className="mx-md-5 my-5 bg-white p-5 rounded">
@@ -28,6 +31,22 @@ const SignupForm = () => {
                         options={options}
                     />
                 </div>
+                {selectType?.value === 'doctor' ? null : (
+                    <div className="google-signup mt-5">
+                        <GoogleButton />
+                        <div className="or-separator row container d-flex align-items-center mb-2 mt-4">
+                            <div className="col-5">
+                                <hr className="w-50 float-end" />
+                            </div>
+                            <div className="col-2 text-center">
+                                <span className="text-center">Or</span>
+                            </div>
+                            <div className="col-5">
+                                <hr className="w-50" />
+                            </div>
+                        </div>
+                    </div>
+                )}
                 <div className="form-area mt-5">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="full-name">
