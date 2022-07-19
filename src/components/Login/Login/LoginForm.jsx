@@ -49,7 +49,7 @@ const LoginForm = () => {
                                     type="email"
                                     label="email"
                                     register={register}
-                                    placeholder="Enter your email"
+                                    placeHolder="Enter your email"
                                     required
                                 />
                             </div>
@@ -61,7 +61,7 @@ const LoginForm = () => {
                                     type="password"
                                     label="password"
                                     register={register}
-                                    placeholder="Password"
+                                    placeHolder="Password"
                                     required
                                 />
                             </div>

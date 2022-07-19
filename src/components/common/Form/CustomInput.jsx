@@ -1,57 +1,62 @@
 import React, { useState } from 'react';
+import './CustomInput.css';
 
 const CustomInput = (props) => {
     const {
         label,
         register,
         required,
-        placeholder,
+        placeHolder,
         type,
         Icon,
         ShowPass,
         HidePass,
     } = props;
     const [passwordShown, setPasswordShown] = useState(false);
-    const togglePassword = () => {
+    const togglePass = () => {
         setPasswordShown(!passwordShown);
     };
     return (
-        <div className="input-group mb-3">
+        <div className="input-group flex-nowrap mb-3">
             <span
                 className="input-group-text border-top-0 border-end-0 border-start-0 rounded-0 bg-white"
-                id="basic-addon1"
+                id="addon-wrapping"
             >
                 <Icon />
             </span>
-            <input
-                className="custom-input form-control border-top-0 border-end-0 border-start-0 rounded-0"
-                type={
-                    type === 'password'
-                        ? passwordShown
-                            ? 'text'
-                            : 'password'
-                        : type
-                }
-                placeholder={placeholder}
-                {...register(label, { required })}
-            />
+            <div className="form-floating w-100">
+                <input
+                    className="custom-input form-control border-top-0 border-end-0 border-start-0 rounded-0"
+                    id={label}
+                    placeholder={placeHolder}
+                    type={
+                        type === 'password'
+                            ? passwordShown
+                                ? 'text'
+                                : 'password'
+                            : type
+                    }
+                    {...register(label, { required })}
+                />
+                <label htmlFor={label}>{placeHolder}</label>
+            </div>
             {type === 'password' && (
                 <span className="input-group-text border-top-0 border-end-0 border-start-0 rounded-0 bg-white">
                     <div className="">
                         {passwordShown ? (
-                            <button
-                                onClick={togglePassword}
+                            <div
+                                onClick={togglePass}
                                 className="rounded-pill btn btn-light d-flex justify-content-center align-items-center"
                             >
                                 <HidePass />
-                            </button>
+                            </div>
                         ) : (
-                            <button
-                                onClick={togglePassword}
+                            <div
+                                onClick={togglePass}
                                 className="rounded-pill btn btn-light d-flex justify-content-center align-items-center"
                             >
                                 <ShowPass />
-                            </button>
+                            </div>
                         )}
                     </div>
                 </span>

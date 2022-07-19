@@ -19,9 +19,11 @@ const SignupForm = () => {
         handleSubmit,
         // formState: { errors },
     } = useForm();
+
     const onSubmit = (data) => {
         console.log(data);
     };
+
     return (
         <div className="container">
             <div className="mx-md-5 my-5 bg-white p-5 rounded">
@@ -55,7 +57,7 @@ const SignupForm = () => {
                                 type="text"
                                 label="name"
                                 register={register}
-                                placeholder="Enter your name"
+                                placeHolder="Enter your name"
                                 required
                             />
                         </div>
@@ -65,7 +67,7 @@ const SignupForm = () => {
                                 type="email"
                                 label="email"
                                 register={register}
-                                placeholder="Enter your email"
+                                placeHolder={'Enter your email'}
                                 required
                             />
                         </div>
@@ -78,7 +80,7 @@ const SignupForm = () => {
                                     type="password"
                                     label="password"
                                     register={register}
-                                    placeholder="Password"
+                                    placeHolder="Password"
                                     required
                                 />
                             </div>
@@ -90,7 +92,7 @@ const SignupForm = () => {
                                     type="password"
                                     label="confirmPassword"
                                     register={register}
-                                    placeholder="Confirm password"
+                                    placeHolder="Confirm password"
                                     required
                                 />
                             </div>
@@ -102,7 +104,7 @@ const SignupForm = () => {
                                     type="number"
                                     label="doctorRegistration"
                                     register={register}
-                                    placeholder="BDMC number"
+                                    placeHolder="BDMC number"
                                     required
                                 />
                             </div>
@@ -114,7 +116,7 @@ const SignupForm = () => {
                                     type="text"
                                     label="specialist"
                                     register={register}
-                                    placeholder="Specialist"
+                                    placeHolder="Specialist"
                                     required
                                 />
                             </div>
