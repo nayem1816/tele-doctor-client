@@ -27,8 +27,26 @@ const SignupForm = () => {
 
     const onSubmit = async (data) => {
         if (data.password === data.confirmPassword) {
+            await fetch('http://localhost:5000/api/v1/CreateProfile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    Name: data.name,
+                    EmailAddress: data.email,
+                }),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
             await createUserWithEmailAndPassword(data.email, data.password);
             await updateProfile({ displayName: data.name });
+            // store user data in mongodb with fetch api
         } else {
             toast.error('Passwords do not match!', {
                 position: 'top-center',
