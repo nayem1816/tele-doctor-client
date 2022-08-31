@@ -1,5 +1,9 @@
 /* font-family: 'Open Sans', sans-serif; */
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -36,4 +40,10 @@ a:hover {
 }
 .bg-base {
     background-color: #03989e26;
+}
+
+.btn:focus,
+.btn:hover,
+.btn:active {
+    border-color: transparent;
 }

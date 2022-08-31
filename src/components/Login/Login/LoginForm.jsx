@@ -84,6 +84,11 @@ const LoginForm = () => {
                                     required
                                 />
                             </div>
+                            <p className="m-0">
+                                <Link className="base-color" to="#">
+                                    Forget password
+                                </Link>
+                            </p>
                             <div className="submit-button text-center mt-4">
                                 <input
                                     className="btn text-white px-4"
