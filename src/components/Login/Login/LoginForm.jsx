@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Logo from '../../../images/logo/teleDoctorLogo.png';
 import { useForm } from 'react-hook-form';
 import CustomInput from './../../common/Form/CustomInput';
 import { MdEmail } from 'react-icons/md';
 import { FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import GoogleButton from '../GoogleButton/GoogleButton';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from './../../../firebase.init';
 
 const LoginForm = () => {
     const {
@@ -13,8 +15,25 @@ const LoginForm = () => {
         handleSubmit,
         // formState: { errors },
     } = useForm();
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
+
+    const [signInWithEmailAndPassword, user, loading, error] =
+        useSignInWithEmailAndPassword(auth);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+    if (error) {
+        <p>Error!</p>;
+    }
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
     const onSubmit = (data) => {
-        console.log(data);
+        signInWithEmailAndPassword(data.email, data.password);
     };
     return (
         <div className="container">

@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Loading from './pages/Loading/Loading';
+import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 const Home = React.lazy(() => import('./pages/Home/Home'));
 const About = React.lazy(() => import('./pages/About/About'));
 const NotFound = React.lazy(() => import('./pages/NotFound/NotFound'));
@@ -25,7 +26,14 @@ function App() {
                     <Route path="/covid19" element={<Covid19 />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
-                    <Route path="/admin/dashboard" element={<Dashboard />} />
+                    <Route
+                        path="/admin/dashboard"
+                        element={
+                            <RequireAuth>
+                                <Dashboard />
+                            </RequireAuth>
+                        }
+                    />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Suspense>

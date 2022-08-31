@@ -1,39 +1,39 @@
 const categories = [
     {
         id: 1,
-        categoryName: 'urgent care',
+        categoryName: 'General Physician',
     },
     {
         id: 2,
-        categoryName: 'urgent care',
+        categoryName: 'Medicine',
     },
     {
         id: 3,
-        categoryName: 'urgent care',
+        categoryName: 'Dentistry',
     },
     {
         id: 4,
-        categoryName: 'urgent care',
+        categoryName: 'COVID-19',
     },
     {
         id: 5,
-        categoryName: 'urgent care',
+        categoryName: 'Cardiology',
     },
     {
         id: 6,
-        categoryName: 'urgent care',
+        categoryName: 'Herbal',
     },
     {
         id: 7,
-        categoryName: 'urgent care',
+        categoryName: 'Nutritionest',
     },
     {
         id: 8,
-        categoryName: 'urgent care',
+        categoryName: 'Gynecology',
     },
     {
         id: 9,
-        categoryName: 'urgent care',
+        categoryName: 'Psychology',
     },
     {
         id: 10,

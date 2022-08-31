@@ -2,8 +2,15 @@ import React from 'react';
 import teleDoctorLogo from '../../../images/logo/teleDoctorLogo.png';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+    };
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg bg-white">
@@ -51,14 +58,29 @@ const Header = () => {
                                 Covid 19
                             </Link>
                         </div>
-                        <div className="navbar-nav gap-2 navbar-login-part">
-                            <Link className="nav-link text-dark" to="/login">
-                                Login
-                            </Link>
-                            <Link className="nav-link text-dark" to="/signup">
-                                Signup
-                            </Link>
-                        </div>
+                        {user ? (
+                            <button
+                                onClick={logout}
+                                className="btn btn-primary"
+                            >
+                                Logout
+                            </button>
+                        ) : (
+                            <div className="navbar-nav gap-2 navbar-login-part">
+                                <Link
+                                    className="nav-link text-dark"
+                                    to="/login"
+                                >
+                                    Login
+                                </Link>
+                                <Link
+                                    className="nav-link text-dark"
+                                    to="/signup"
+                                >
+                                    Signup
+                                </Link>
+                            </div>
+                        )}
                     </div>
                 </div>
             </nav>
