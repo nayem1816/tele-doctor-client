@@ -46,7 +46,6 @@ const SignupForm = () => {
                 });
             await createUserWithEmailAndPassword(data.email, data.password);
             await updateProfile({ displayName: data.name });
-            // store user data in mongodb with fetch api
         } else {
             toast.error('Passwords do not match!', {
                 position: 'top-center',

@@ -86,7 +86,10 @@ const Header = () => {
                                     <ul className="dropdown-menu dropdown-menu-lg-end">
                                         <li className="text-center">
                                             <p className="dropdown-item m-0 text-center">
-                                                <b>{user.displayName}</b>
+                                                <b>
+                                                    {user.displayName ||
+                                                        user.email}
+                                                </b>
                                             </p>
                                             <small className="text-muted">
                                                 Student ID: P-0001
