@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import auth from './../../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const GoogleButton = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -11,14 +12,17 @@ const GoogleButton = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || '/';
 
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user, from, navigate]);
+
     if (loading) {
         return <div>Loading...</div>;
     }
     if (error) {
         <p>Error!</p>;
-    }
-    if (user) {
-        navigate(from, { replace: true });
     }
 
     return (

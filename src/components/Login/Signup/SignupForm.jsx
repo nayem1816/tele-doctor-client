@@ -12,6 +12,7 @@ import auth from './../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 
 const SignupForm = () => {
     const {
@@ -24,6 +25,12 @@ const SignupForm = () => {
     const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth);
     const [updateProfile] = useUpdateProfile(auth);
+
+    useEffect(() => {
+        if (user) {
+            navigate('/', { replace: true });
+        }
+    }, [user, navigate]);
 
     const onSubmit = async (data) => {
         if (data.password === data.confirmPassword) {
@@ -72,9 +79,6 @@ const SignupForm = () => {
             draggable: true,
             progress: undefined,
         });
-    }
-    if (user) {
-        navigate('/', { replace: true });
     }
 
     return (

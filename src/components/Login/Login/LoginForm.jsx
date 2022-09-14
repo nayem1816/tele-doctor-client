@@ -8,6 +8,7 @@ import { FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import GoogleButton from '../GoogleButton/GoogleButton';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from './../../../firebase.init';
+import { useEffect } from 'react';
 
 const LoginForm = () => {
     const {
@@ -22,14 +23,17 @@ const LoginForm = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
         useSignInWithEmailAndPassword(auth);
 
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    });
+
     if (loading) {
         return <div>Loading...</div>;
     }
     if (error) {
-        <p>Error!</p>;
-    }
-    if (user) {
-        navigate(from, { replace: true });
+        console.log(error);
     }
 
     const onSubmit = (data) => {

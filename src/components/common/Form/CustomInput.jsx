@@ -16,6 +16,12 @@ const CustomInput = (props) => {
     const togglePass = () => {
         setPasswordShown(!passwordShown);
     };
+
+    // gmail, email, yahoo, outlook, hotmail, aol, yandex, protonmail, icloud regular expression
+
+    const gmail =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
     return (
         <div className="input-group flex-nowrap mb-3">
             <span
@@ -36,7 +42,13 @@ const CustomInput = (props) => {
                                 : 'password'
                             : type
                     }
-                    {...register(label, { required })}
+                    {...register(label, {
+                        required,
+                        pattern: {
+                            value: type === 'email' && gmail,
+                            message: 'error message',
+                        },
+                    })}
                 />
                 <label htmlFor={label}>{placeHolder}</label>
             </div>
