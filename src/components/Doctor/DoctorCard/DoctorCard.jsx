@@ -59,17 +59,19 @@ const DoctorCard = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="d-flex justify-content-center">
-                        <Pagination
-                            count={Math.ceil(
-                                doctorsData.length / doctorsPerPage
-                            )}
-                            page={currentPage}
-                            sx={{ li: { margin: '1px 5px' } }}
-                            onChange={handlePageChange}
-                            color="primary"
-                        />
-                    </div>
+                    {currentDoctors.length > 1 && (
+                        <div className="d-flex justify-content-center">
+                            <Pagination
+                                count={Math.ceil(
+                                    doctorsData.length / doctorsPerPage
+                                )}
+                                page={currentPage}
+                                sx={{ li: { margin: '1px 5px' } }}
+                                onChange={handlePageChange}
+                                color="primary"
+                            />
+                        </div>
+                    )}
                 </div>
             )}
         </div>

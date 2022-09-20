@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import categories from '../../../services/data/categories';
 
 const DoctorCategory = () => {
@@ -13,12 +12,12 @@ const DoctorCategory = () => {
                 >
                     <ul className="list-unstyled">
                         <li className="my-2">
-                            <Link
-                                to="/doctor/all"
+                            <a
+                                href="/doctor/all"
                                 className="text-decoration-none"
                             >
                                 <p className="m-0">All</p>
-                            </Link>
+                            </a>
                         </li>
                         {categories.map((category) => (
                             <li key={category.id} className="my-2">

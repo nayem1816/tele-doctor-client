@@ -1,11 +1,11 @@
 import React from 'react';
 import Search from './../../common/Search/Search';
 import Title from './../../common/Title/Title';
+import doctorPageBanner from '../../../images/img/doctorPageBanner.png';
 
 const DoctorBanner = () => {
     const bannerStyle = {
-        backgroundImage:
-            "url('https://i.ibb.co/2smdKHB/Blue-and-White-Modern-Medical-Doctor-Banner-2-1-1.png')",
+        backgroundImage: `url(${doctorPageBanner})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
