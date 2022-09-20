@@ -1,0 +1,28 @@
+[
+    {
+        "id": "1",
+        "name": "Dr. John",
+        "specialization": [
+            "Anger Management",
+            "Depression",
+            "Domestic Violence"
+        ],
+        "gender": "Male",
+        "email": "john@gmail.com",
+        "mobile": "01800000000",
+        "DOB": "1 May 1990",
+        "profileDesc": "Dr Prathamesh Kulkarni belives that once you start being more aware of your thoughts and actions, you will start appreciating life in a new way. This is why he specializes in depression, mood disorders, sexual disorders and anxiety disorders, because he feels that every person is capable of bringing about a change from within. His process is supportive, but aimed at direct interaction to help the patient bring about a visible change in himself or herself.",
+        "profilePic": "images/doctor1.jpg",
+        "address": "Gazipur, Dhaka, Bangladesh",
+        "education": "MBBS, FCPS",
+        "experience": "5 years",
+        "fees": "500",
+        "rating": "4.5",
+        "totalRating": "100",
+        "totalReview": "50",
+        "totalPatient": "1000",
+        "license": "123456789",
+        "licensePic": "images/license.jpg",
+        "communication": ["Video", "Audio", "Chat"]
+    }
+]
