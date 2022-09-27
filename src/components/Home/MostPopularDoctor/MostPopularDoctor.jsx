@@ -6,12 +6,13 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper';
 import doctors from '../../../services/data/doctors.js';
 import './MostPopularDoctor.css';
+import Title from './../../common/Title/Title';
 
 const MostPopularDoctor = () => {
     return (
         <div className="popular-doctor py-5">
             <div className="container">
-                <h2 className="base-color2 fw-bold">Most Popular Doctors</h2>
+                <Title titleName="Most Popular Doctors" />
                 <div className="text-end py-1">
                     <Link className="nav-link d-inline" to="/">
                         see all
@@ -56,7 +57,7 @@ const MostPopularDoctor = () => {
                                             </div>
                                         </div>
                                         <button className="w-100 appointment-button-color py-2 rounded">
-                                            View Profile
+                                            Book Appointment
                                         </button>
                                     </div>
                                 </SwiperSlide>

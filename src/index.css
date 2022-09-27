@@ -1,5 +1,9 @@
 /* font-family: 'Open Sans', sans-serif; */
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -9,6 +13,12 @@ body {
     outline: 0;
     box-shadow: none;
 }
+.form-control:focus {
+    outline: 0;
+    box-shadow: none;
+    border-color: none;
+}
+.form-select:focus,
 .btn:focus {
     text-decoration: none;
     outline: 0;
@@ -27,4 +37,13 @@ a:hover {
 }
 .base-color2 {
     color: #5921cf;
+}
+.bg-base {
+    background-color: #03989e26;
+}
+
+.btn:focus,
+.btn:hover,
+.btn:active {
+    border-color: transparent;
 }

@@ -1,55 +1,128 @@
 const categories = [
     {
         id: 1,
-        categoryName: 'urgent care',
+        name: 'Hematologist',
+        path: '/hematologist',
     },
     {
         id: 2,
-        categoryName: 'urgent care',
+        name: 'Cardiologist',
+        path: '/cardiologist',
     },
     {
         id: 3,
-        categoryName: 'urgent care',
+        name: 'Dentist',
+        path: '/dentist',
     },
     {
         id: 4,
-        categoryName: 'urgent care',
+        name: 'Dermatologist',
+        path: '/dermatologist',
     },
     {
         id: 5,
-        categoryName: 'urgent care',
+        name: 'Gastroenterologist',
+        path: '/gastroenterologist',
     },
     {
         id: 6,
-        categoryName: 'urgent care',
+        name: 'Neurologist',
+        path: '/neurologist',
     },
     {
         id: 7,
-        categoryName: 'urgent care',
+        name: 'Orthopedic',
+        path: '/orthopedic',
     },
     {
         id: 8,
-        categoryName: 'urgent care',
+        name: 'Pediatrician',
+        path: '/pediatrician',
     },
     {
         id: 9,
-        categoryName: 'urgent care',
+        name: 'Physician',
+        path: '/physician',
     },
     {
         id: 10,
-        categoryName: 'urgent care',
+        name: 'Psychiatrist',
+        path: '/psychiatrist',
     },
     {
         id: 11,
-        categoryName: 'urgent care',
+        name: 'Urologist',
+        path: '/urologist',
     },
     {
         id: 12,
-        categoryName: 'urgent care',
+        name: 'Allergist',
+        path: '/allergist',
     },
     {
         id: 13,
-        categoryName: 'urgent care',
+        name: 'Audiologist',
+        path: '/audiologist',
+    },
+    {
+        id: 14,
+        name: 'Chiropractor',
+        path: '/chiropractor',
+    },
+    {
+        id: 15,
+        name: 'Endocrinologist',
+        path: '/endocrinologist',
+    },
+    {
+        id: 16,
+        name: 'Gynecologist',
+        path: '/gynecologist',
+    },
+    {
+        id: 17,
+        name: 'Hematologist',
+        path: '/hematologist',
+    },
+    {
+        id: 18,
+        name: 'Infectious Disease',
+        path: '/infectious-disease',
+    },
+    {
+        id: 19,
+        name: 'Nephrologist',
+        path: '/nephrologist',
+    },
+    {
+        id: 20,
+        name: 'Oncologist',
+        path: '/oncologist',
+    },
+    {
+        id: 21,
+        name: 'Ophthalmologist',
+        path: '/ophthalmologist',
+    },
+    {
+        id: 22,
+        name: 'Optometrist',
+        path: '/optometrist',
+    },
+    {
+        id: 23,
+        name: 'Otolaryngologist',
+        path: '/otolaryngologist',
+    },
+    {
+        id: 24,
+        name: 'Pulmonologist',
+        path: '/pulmonologist',
+    },
+    {
+        id: 25,
+        name: 'Rheumatologist',
+        path: '/rheumatologist',
     },
 ];
 
