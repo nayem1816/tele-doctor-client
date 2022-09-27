@@ -62,7 +62,7 @@ const AvailableDoctor = () => {
                                             </div>
                                         </div>
                                         <button className="w-100 appointment-button-color py-2 rounded">
-                                            Make Appointment
+                                            Book Appointment
                                         </button>
                                     </div>
                                 </SwiperSlide>

@@ -1,5 +1,10 @@
 const categories = [
     {
+        id: 1,
+        name: 'Hematologist',
+        path: '/hematologist',
+    },
+    {
         id: 2,
         name: 'Cardiologist',
         path: '/cardiologist',
@@ -118,61 +123,6 @@ const categories = [
         id: 25,
         name: 'Rheumatologist',
         path: '/rheumatologist',
-    },
-    {
-        id: 26,
-        name: 'Surgeon',
-        path: '/surgeon',
-    },
-    {
-        id: 27,
-        name: 'Urologist',
-        path: '/urologist',
-    },
-    {
-        id: 28,
-        name: 'Vascular Surgeon',
-        path: '/vascular-surgeon',
-    },
-    {
-        id: 29,
-        name: 'Acupuncturist',
-        path: '/acupuncturist',
-    },
-    {
-        id: 30,
-        name: 'Allergist',
-        path: '/allergist',
-    },
-    {
-        id: 31,
-        name: 'Anesthesiologist',
-        path: '/anesthesiologist',
-    },
-    {
-        id: 32,
-        name: 'Audiologist',
-        path: '/audiologist',
-    },
-    {
-        id: 33,
-        name: 'Chiropractor',
-        path: '/chiropractor',
-    },
-    {
-        id: 34,
-        name: 'Endocrinologist',
-        path: '/endocrinologist',
-    },
-    {
-        id: 35,
-        name: 'Gynecologist',
-        path: '/gynecologist',
-    },
-    {
-        id: 36,
-        name: 'Hematologist',
-        path: '/hematologist',
     },
 ];
 

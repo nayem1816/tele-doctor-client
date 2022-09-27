@@ -42,7 +42,7 @@ const HeaderLogin = () => {
                 <div className="d-flex justify-content-center">
                     <Avatar
                         onClick={handleClick}
-                        alt="USER"
+                        alt={user.displayName}
                         src={
                             user.photoURL ||
                             'https://i.ibb.co/25kDrnr/user-1.png'
@@ -67,7 +67,7 @@ const HeaderLogin = () => {
                             <div className="profile-header d-flex justify-content-center px-5 py-3 flex-column text-center">
                                 <div className="user-image d-flex justify-content-center py-2">
                                     <Avatar
-                                        alt="USER"
+                                        alt={user.displayName}
                                         src={
                                             user.photoURL ||
                                             'https://i.ibb.co/25kDrnr/user-1.png'
@@ -89,6 +89,14 @@ const HeaderLogin = () => {
                             </div>
                             <Divider />
                             <div className="py-2">
+                                <MenuItem onClick={handleClose}>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/doctorRegistration"
+                                    >
+                                        Doctor registration
+                                    </a>
+                                </MenuItem>
                                 <MenuItem onClick={handleClose}>
                                     Profile
                                 </MenuItem>

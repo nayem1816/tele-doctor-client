@@ -15,6 +15,9 @@ const Covid19 = React.lazy(() => import('./pages/Covid19/Covid19'));
 const Login = React.lazy(() => import('./pages/Login/Login'));
 const Signup = React.lazy(() => import('./pages/Login/Signup'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard/Dashboard'));
+const DoctorRegistration = React.lazy(() =>
+    import('./pages/DoctorRegistration/DoctorRegistration')
+);
 const DoctorCard = React.lazy(() =>
     import('./components/Doctor/DoctorCard/DoctorCard')
 );
@@ -39,6 +42,11 @@ function App() {
                         <Route path="covid19" element={<Covid19 />} />
                         <Route path="login" element={<Login />} />
                         <Route path="signup" element={<Signup />} />
+                        <Route
+                            path="/doctorRegistration"
+                            element={<DoctorRegistration />}
+                        />
+                        <Route path="*" element={<NotFound />} />
                     </Route>
 
                     <Route

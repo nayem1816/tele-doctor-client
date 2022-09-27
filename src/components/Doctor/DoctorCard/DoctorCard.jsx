@@ -2,25 +2,27 @@ import React, { useEffect, useState } from 'react';
 import DoctorPageCard from './../DoctorPageCard/DoctorPageCard';
 import { Pagination } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import doctors from './../../../services/data/doctors';
+import dcData from './../../../services/data/doctorsData.json';
 
 const DoctorCard = () => {
     const [doctorsData, setDoctorsData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const { categoryName } = useParams();
+    const [dcDataJson, setDcDataJson] = useState([]);
 
     useEffect(() => {
+        setDcDataJson(dcData);
         if (categoryName === 'all') {
-            setDoctorsData(doctors);
+            setDoctorsData(dcDataJson);
         } else if (categoryName === undefined) {
-            setDoctorsData(doctors);
+            setDoctorsData(dcDataJson);
         } else {
-            const filteredDoctors = doctors.filter(
-                (doctor) => doctor.category === categoryName
+            const filteredDoctors = dcDataJson.filter(
+                (doctor) => doctor.specialization === categoryName
             );
             setDoctorsData(filteredDoctors);
         }
-    }, [categoryName]);
+    }, [categoryName, dcDataJson]);
 
     const doctorsPerPage = 12;
     const indexOfLastDoctor = currentPage * doctorsPerPage;
@@ -33,8 +35,6 @@ const DoctorCard = () => {
     const handlePageChange = (event, value) => {
         setCurrentPage(value);
     };
-
-    console.log(currentDoctors.length);
 
     return (
         <div className="container">
