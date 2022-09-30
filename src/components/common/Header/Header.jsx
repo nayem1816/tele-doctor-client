@@ -2,6 +2,7 @@ import React from 'react';
 import teleDoctorLogo from '../../../images/logo/teleDoctorLogo.png';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import HeaderLogin from './HeaderLogin';
 
 const Header = () => {
     return (
@@ -45,20 +46,13 @@ const Header = () => {
                                 className="nav-link text-dark"
                                 to="/medicalQa"
                             >
-                                Medical Q&#38;A
+                                Medical Q&#38;Link
                             </Link>
                             <Link className="nav-link text-dark" to="/covid19">
                                 Covid 19
                             </Link>
                         </div>
-                        <div className="navbar-nav gap-2 navbar-login-part">
-                            <Link className="nav-link text-dark" to="/login">
-                                Login
-                            </Link>
-                            <Link className="nav-link text-dark" to="/signup">
-                                Signup
-                            </Link>
-                        </div>
+                        <HeaderLogin />
                     </div>
                 </div>
             </nav>

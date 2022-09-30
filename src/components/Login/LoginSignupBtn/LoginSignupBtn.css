@@ -1,0 +1,14 @@
+.btn-style {
+    background-color: #f5f5f5;
+    border: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+.active-btn {
+    background-color: #5921cf !important;
+    color: white !important;
+}

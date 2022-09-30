@@ -1,43 +1,43 @@
 const locations = [
     {
         id: 1,
-        locationName: 'Hanoi',
+        locationName: 'Dhaka',
     },
     {
         id: 2,
-        locationName: 'Ho Chi Minh',
+        locationName: 'Gazipur',
     },
     {
         id: 3,
-        locationName: 'Da Nang',
+        locationName: 'Rajshahi',
     },
     {
         id: 4,
-        locationName: 'Hue',
+        locationName: 'Sylhet',
     },
     {
         id: 5,
-        locationName: 'Sai Gon',
+        locationName: 'Chittagong',
     },
     {
         id: 6,
-        locationName: 'Nha Trang',
+        locationName: 'Barishal',
     },
     {
         id: 7,
-        locationName: 'Phu Quoc',
+        locationName: 'Khulna',
     },
     {
         id: 8,
-        locationName: 'Vung Tau',
+        locationName: 'Mymensing',
     },
     {
         id: 9,
-        locationName: 'Vinh',
+        locationName: 'Rangpur',
     },
     {
         id: 10,
-        locationName: 'Quang Ngai',
+        locationName: 'Coxs Bazar',
     },
 ];
 

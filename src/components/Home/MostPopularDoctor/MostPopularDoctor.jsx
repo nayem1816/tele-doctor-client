@@ -57,7 +57,7 @@ const MostPopularDoctor = () => {
                                             </div>
                                         </div>
                                         <button className="w-100 appointment-button-color py-2 rounded">
-                                            View Profile
+                                            Book Appointment
                                         </button>
                                     </div>
                                 </SwiperSlide>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from '../../common/Title/Title';
 import reviewsData from '../../../services/data/reviews';
+import { Rating } from 'react-simple-star-rating';
 import './UserReview.css';
 
 const UserReview = () => {
@@ -28,11 +29,16 @@ const UserReview = () => {
                                 </div>
                                 <div className="col-sm-10 col-md-8 col-lg-10 col-9">
                                     <div className="review-img">
-                                        <h4 className="fw-bold">
+                                        <h4 className="fw-bold mb-0">
                                             {review.name}
                                         </h4>
-                                        <p>Rating: {review.rating}</p>
-                                        <p>{review.comment}</p>
+                                        <Rating
+                                            allowHover={false}
+                                            initialValue={0}
+                                            size={20}
+                                            ratingValue={review.rating * 20}
+                                        />
+                                        <p className="mt-2">{review.comment}</p>
                                     </div>
                                 </div>
                             </div>

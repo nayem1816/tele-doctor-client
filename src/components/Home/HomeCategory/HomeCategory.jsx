@@ -12,30 +12,30 @@ const HomeCategory = () => {
                     <Link
                         key={category.id}
                         className="text-white d-none d-sm-none d-md-none d-lg-block d-xl-block py-3"
-                        to="/"
+                        to={`/doctor/${category.name}`}
                     >
-                        {category.categoryName}
+                        {category.name}
                     </Link>
                 ))}
                 {categories.slice(0, 6).map((category) => (
                     <Link
                         key={category.id}
                         className="text-white d-none d-sm-none d-md-block d-lg-none d-xl-none p-3"
-                        to="/"
+                        to={`/doctor${category.name}`}
                     >
-                        {category.categoryName}
+                        {category.name}
                     </Link>
                 ))}
                 {categories.slice(0, 10).map((category) => (
                     <Link
                         key={category.id}
                         className="text-white d-sm-block d-md-none d-lg-none d-xl-none me-5 py-3"
-                        to="/"
+                        to={`/doctor${category.name}`}
                     >
-                        {category.categoryName}
+                        {category.name}
                     </Link>
                 ))}
-                <Link className="text-white py-3" to="/">
+                <Link className="text-white py-3" to="/doctor">
                     see all categories &#8594;
                 </Link>
             </div>
