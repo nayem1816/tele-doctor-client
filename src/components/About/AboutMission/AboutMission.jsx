@@ -16,7 +16,7 @@ const AboutMission = () => {
         </div>
         </div>
         </div>
-    );
+    ); 
 };
 
 export default AboutMission;

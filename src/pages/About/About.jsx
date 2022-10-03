@@ -10,9 +10,7 @@ import Header from '../../components/common/Header/Header';
 const About = () => {
     return (
         <div className="body-container d-flex flex-column">
-            <div className="header">
-                <Header />
-            </div>
+            
             <div className="main">
                 <SubHead/>
                 <AboutUs/>
@@ -20,9 +18,7 @@ const About = () => {
                 <AboutMission/>
                 <FoundingTeam/>
             </div>
-            <div className="footer mt-auto p-2">
-                <Footer />
-            </div>
+            
         </div>
     );
 };
