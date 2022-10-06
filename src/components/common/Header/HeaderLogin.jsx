@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom';
 
 const HeaderLogin = () => {
     const [user, loading, error] = useAuthState(auth);
+
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('userToken');
     };
 
     const [anchorEl, setAnchorEl] = React.useState(null);

@@ -14,7 +14,46 @@ const GoogleButton = () => {
 
     useEffect(() => {
         if (user) {
-            navigate(from, { replace: true });
+            console.log(user.user.email);
+            fetch('http://localhost:5000/api/v1/CreateProfile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    Name: user.user.displayName,
+                    EmailAddress: user.user.email,
+                }),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log('User Created Successfully');
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+
+            fetch('http://localhost:5000/api/v1/UserLogin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    EmailAddress: user.user.email,
+                }),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    localStorage.setItem(
+                        'userToken',
+                        JSON.stringify(data.token)
+                    );
+                    navigate(from, { replace: true });
+                    window.location.reload();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         }
     }, [user, from, navigate]);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import CustomInput from './../../common/Form/CustomInput';
 import { FaUser, FaLock, FaEyeSlash, FaEye } from 'react-icons/fa';
@@ -12,7 +12,6 @@ import auth from './../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react';
 
 const SignupForm = () => {
     const {
@@ -26,29 +25,48 @@ const SignupForm = () => {
         useCreateUserWithEmailAndPassword(auth);
     const [updateProfile] = useUpdateProfile(auth);
 
-    useEffect(() => {
-        if (user) {
-            navigate('/', { replace: true });
-        }
-    }, [user, navigate]);
-
-    const onSubmit = async (data) => {
-        if (data.password === data.confirmPassword) {
-            await createUserWithEmailAndPassword(data.email, data.password);
-            await updateProfile({ displayName: data.name });
-            await fetch('http://localhost:5000/api/v1/CreateProfile', {
+    const onSubmit = (submitData) => {
+        if (submitData.password === submitData.confirmPassword) {
+            fetch('http://localhost:5000/api/v1/CreateProfile', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    Name: data.name,
-                    EmailAddress: data.email,
+                    Name: submitData.name,
+                    EmailAddress: submitData.email,
+                }),
+            })
+                .then((res) => res.json())
+                .then(async (data) => {
+                    if (data.data.EmailAddress === submitData.email) {
+                        await createUserWithEmailAndPassword(
+                            submitData.email,
+                            submitData.password
+                        );
+                        await updateProfile({ displayName: submitData.name });
+                        console.log(data);
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+
+            fetch('http://localhost:5000/api/v1/UserLogin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    EmailAddress: submitData.email,
                 }),
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
+                    localStorage.setItem(
+                        'userToken',
+                        JSON.stringify(data.data.token)
+                    );
                 })
                 .catch((err) => {
                     console.log(err);
@@ -65,6 +83,12 @@ const SignupForm = () => {
             });
         }
     };
+
+    useEffect(() => {
+        if (user) {
+            navigate('/', { replace: true });
+        }
+    }, [user, navigate]);
 
     if (loading) {
         return <div>Loading...</div>;
