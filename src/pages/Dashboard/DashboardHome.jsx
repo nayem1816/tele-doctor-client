@@ -1,10 +1,10 @@
 import React from 'react';
-import './Dashboard.css';
+import './DashboardHome.css';
 
 const Dashboard = () => {
     return (
-        <div className="sidebar-container">
-            <h2>Dashboard</h2>
+        <div className="sidebar-container my-5">
+            <h2>Dashboard Home</h2>
         </div>
     );
 };

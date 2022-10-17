@@ -41,7 +41,7 @@ const HeaderLogin = () => {
     return (
         <>
             {user ? (
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center user-menu-style">
                     <Avatar
                         onClick={handleClick}
                         alt={user.displayName}
@@ -91,6 +91,14 @@ const HeaderLogin = () => {
                             </div>
                             <Divider />
                             <div className="py-2">
+                                <MenuItem onClick={handleClose}>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/dashboard/home"
+                                    >
+                                        Dashboard
+                                    </a>
+                                </MenuItem>
                                 <MenuItem onClick={handleClose}>
                                     <a
                                         className="dropdown-item"

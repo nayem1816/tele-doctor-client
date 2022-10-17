@@ -1,0 +1,81 @@
+.dashboard-main-page {
+    display: flex;
+    height: 100vh;
+    background-color: #f9fafb;
+    overflow: hidden;
+}
+
+.dashboard-left-part {
+    width: 320px;
+    border-right: 1px solid #e5e5e5;
+    border-right-style: dashed;
+    background-color: #f9fafb;
+    overflow-y: auto;
+}
+.dashboard-left-part::-webkit-scrollbar {
+    width: 3px;
+    display: none;
+}
+.dashboard-left-part:hover::-webkit-scrollbar {
+    display: block;
+}
+.dashboard-left-part::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.dashboard-left-part::-webkit-scrollbar-thumb {
+    background: rgb(198, 198, 198);
+    border-radius: 20px;
+}
+.dashboard-left-part::-webkit-scrollbar-thumb:hover {
+    background: rgb(197, 197, 197);
+}
+
+.dashboard-right-part {
+    width: 100%;
+    overflow-y: auto;
+}
+
+.dashboard-header {
+    height: 100px;
+    z-index: 50;
+}
+.dashboard-sidebar {
+    height: 100vh;
+    background-color: #f9fafb;
+    z-index: 100;
+}
+
+/* mobile screen device responsive */
+
+@media (min-width: 0px) and (max-width: 1300px) {
+    .dashboard-main-page {
+        position: relative;
+    }
+    .dashboard-left-part {
+        display: none;
+    }
+    .dashboard-right-part {
+        width: 100%;
+    }
+    .dashboard-left-part-open {
+        width: 320px;
+        border-right: 1px solid #e5e5e5;
+        border-right-style: dashed;
+        overflow-y: auto;
+        transition: width 0.5s;
+        display: block !important;
+        background-color: #f9fafb;
+    }
+
+    .dashboard-left-part-close {
+        width: 0px;
+        transition: width 0.5s;
+        display: none !important;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 500px) {
+    .dashboard-left-part-open {
+        width: 85%;
+    }
+}

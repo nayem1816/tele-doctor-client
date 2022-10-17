@@ -26,6 +26,7 @@ const LoginForm = () => {
     useEffect(() => {
         if (user) {
             navigate(from, { replace: true });
+            window.location.reload();
         }
     });
 

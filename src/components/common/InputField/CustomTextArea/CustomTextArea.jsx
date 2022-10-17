@@ -1,7 +1,7 @@
-import React from "react";
-import { TextField } from "@material-ui/core";
+import React from 'react';
+import { TextField } from '@mui/material';
 
-const CustomTextArea = ({ placeHolder, ...otherProps }) => {
+const CustomTextArea = ({ placeHolder, refs, ...otherProps }) => {
     return (
         <TextField
             className="w-100"
@@ -10,6 +10,7 @@ const CustomTextArea = ({ placeHolder, ...otherProps }) => {
             multiline
             rows={4}
             variant="filled"
+            {...refs}
             {...otherProps}
         />
     );

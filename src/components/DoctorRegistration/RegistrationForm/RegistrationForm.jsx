@@ -8,15 +8,55 @@ import CustomDatePicker from '../../common/InputField/CustomDatePicker/CustomDat
 import CustomSelect from '../../common/InputField/CustomSelect/CustomSelect';
 import categories from './../../../services/data/categories';
 import CustomButton from '../../common/InputField/CustomButton/CustomButton';
+import { toast } from 'react-toastify';
+import CustomCheckbox from './../../common/InputField/CustomCheckbox/CustomCheckbox';
+import { FormLabel } from '@mui/material';
+import CustomTextArea from './../../common/InputField/CustomTextArea/CustomTextArea';
+import CustomDateAndTime from './../../common/CustomDateAndTime/CustomDateAndTime';
 
 const RegistrationForm = () => {
     const { register, handleSubmit } = useForm();
     const [doctorImage, setDoctorImage] = useState(null);
+    const dateAndTime = CustomDateAndTime();
+    // get data from local storage
+    const userToken = JSON.parse(localStorage.getItem('userToken'));
+    console.log(userToken);
 
     const onSubmit = (data) => {
-        const doctorsData = data;
-        const doctorFullData = { ...doctorsData, profilePic: doctorImage };
+        const doctorFullData = {
+            name: data.name,
+            email: data.email,
+            mobile: data.mobile,
+            profilePic: doctorImage,
+            DOB: data.DOB,
+            gender: data.gender,
+            address: [{ district: data.district }, { address: data.address }],
+            specialization: data.specialization,
+            profileDesc: data.description,
+            education: data.education,
+            experience: data.experience,
+            registrationNumber: data.registrationNumber,
+            fees: data.fees,
+            communication: [data.audio, data.video, data.message],
+            createdAt: dateAndTime,
+        };
         console.log(doctorFullData);
+
+        var myHeaders = new Headers();
+        myHeaders.append('token-key', userToken);
+        myHeaders.append('Content-Type', 'application/json');
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: JSON.stringify(doctorFullData),
+            redirect: 'follow',
+        };
+
+        fetch('http://localhost:5000/api/v1/CreateDoctor', requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => console.log(error));
     };
 
     return (
@@ -42,7 +82,9 @@ const RegistrationForm = () => {
                                     required: true,
                                     pattern: {
                                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                        message: 'invalid email address',
+                                        message: toast.error(
+                                            'invalid email address'
+                                        ),
                                     },
                                 })}
                             />
@@ -142,12 +184,36 @@ const RegistrationForm = () => {
                                 })}
                             />
                         </div>
-                        <div className="col-md-12 p-3 button">
-                            <CustomButton
-                                btnType={'btn'}
-                                btnTxt={'Reset'}
-                                color="secondary"
+                        <div className="col-md-6 p-3">
+                            <FormLabel className="" component="legend">
+                                Select communication type
+                            </FormLabel>
+                            <CustomCheckbox
+                                regName={'audio'}
+                                selectOption={'Audio'}
+                                rules={{ required: true }}
+                                register={register}
                             />
+                            <CustomCheckbox
+                                regName={'video'}
+                                selectOption={'Video'}
+                                rules={{ required: true }}
+                                register={register}
+                            />
+                            <CustomCheckbox
+                                regName={'message'}
+                                selectOption={'Message'}
+                                rules={{ required: true }}
+                                register={register}
+                            />
+                        </div>
+                        <div className="col-md-12 p-3">
+                            <CustomTextArea
+                                placeHolder={'Enter your Description'}
+                                refs={register('description')}
+                            />
+                        </div>
+                        <div className="col-md-12 p-3 button">
                             <CustomButton
                                 btnType={'submit'}
                                 btnTxt={'Submit'}

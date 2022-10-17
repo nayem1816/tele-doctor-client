@@ -23,6 +23,7 @@ const GoogleButton = () => {
                 body: JSON.stringify({
                     Name: user.user.displayName,
                     EmailAddress: user.user.email,
+                    ProfilePic: user.user.photoURL,
                 }),
             })
                 .then((res) => res.json())

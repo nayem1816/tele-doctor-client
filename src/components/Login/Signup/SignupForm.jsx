@@ -14,19 +14,17 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SignupForm = () => {
-    const {
-        register,
-        handleSubmit,
-        // formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
 
     const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth);
     const [updateProfile] = useUpdateProfile(auth);
 
+    // submit form
     const onSubmit = (submitData) => {
         if (submitData.password === submitData.confirmPassword) {
+            // create user
             fetch('http://localhost:5000/api/v1/CreateProfile', {
                 method: 'POST',
                 headers: {
@@ -45,13 +43,13 @@ const SignupForm = () => {
                             submitData.password
                         );
                         await updateProfile({ displayName: submitData.name });
-                        console.log(data);
                     }
                 })
                 .catch((err) => {
                     console.log(err);
                 });
 
+            // login user
             fetch('http://localhost:5000/api/v1/UserLogin', {
                 method: 'POST',
                 headers: {
@@ -87,6 +85,7 @@ const SignupForm = () => {
     useEffect(() => {
         if (user) {
             navigate('/', { replace: true });
+            window.location.reload();
         }
     }, [user, navigate]);
 

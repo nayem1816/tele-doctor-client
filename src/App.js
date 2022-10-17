@@ -14,12 +14,44 @@ const MedicalQA = React.lazy(() => import('./pages/MedicalQA/MedicalQA'));
 const Covid19 = React.lazy(() => import('./pages/Covid19/Covid19'));
 const Login = React.lazy(() => import('./pages/Login/Login'));
 const Signup = React.lazy(() => import('./pages/Login/Signup'));
-const Dashboard = React.lazy(() => import('./pages/Dashboard/Dashboard'));
+const DashboardHome = React.lazy(() =>
+    import('./pages/Dashboard/DashboardHome')
+);
 const DoctorRegistration = React.lazy(() =>
     import('./pages/DoctorRegistration/DoctorRegistration')
 );
 const DoctorCard = React.lazy(() =>
     import('./components/Doctor/DoctorCard/DoctorCard')
+);
+const DoctorVerification = React.lazy(() =>
+    import('./components/Dashboard/DoctorVerification/DoctorVerification')
+);
+const DoctorsList = React.lazy(() =>
+    import('./components/Dashboard/DoctorsList/DoctorsList')
+);
+const PatientsList = React.lazy(() =>
+    import('./components/Dashboard/PatientsList/PatientsList')
+);
+const AppointmentList = React.lazy(() =>
+    import('./components/Dashboard/AppointmentList/AppointmentList')
+);
+const PrescriptionList = React.lazy(() =>
+    import('./components/Dashboard/PrescriptionList/PrescriptionList')
+);
+const AddDiseaseCategory = React.lazy(() =>
+    import('./components/Dashboard/AddDiseaseCategory/AddDiseaseCategory')
+);
+const Covid19Dashboard = React.lazy(() =>
+    import('./components/Dashboard/Covid19/Covid19')
+);
+const SocialMedia = React.lazy(() =>
+    import('./components/Dashboard/SocialMedia/SocialMedia')
+);
+const AdminPanel = React.lazy(() =>
+    import('./components/Dashboard/AdminPanel/AdminPanel')
+);
+const Setting = React.lazy(() =>
+    import('./components/Dashboard/Setting/Setting')
 );
 
 function App() {
@@ -61,7 +93,103 @@ function App() {
                             path=""
                             element={
                                 <RequireAuth>
-                                    <Dashboard />
+                                    <DashboardHome />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="home"
+                            element={
+                                <RequireAuth>
+                                    <DashboardHome />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="verification"
+                            element={
+                                <RequireAuth>
+                                    <DoctorVerification />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="doctors"
+                            element={
+                                <RequireAuth>
+                                    <DoctorsList />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="patients"
+                            element={
+                                <RequireAuth>
+                                    <PatientsList />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="appointments"
+                            element={
+                                <RequireAuth>
+                                    <AppointmentList />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="prescriptions"
+                            element={
+                                <RequireAuth>
+                                    <PrescriptionList />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="disease"
+                            element={
+                                <RequireAuth>
+                                    <AddDiseaseCategory />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="medicalQA"
+                            element={
+                                <RequireAuth>
+                                    <MedicalQA />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="covid19"
+                            element={
+                                <RequireAuth>
+                                    <Covid19Dashboard />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="socialMedia"
+                            element={
+                                <RequireAuth>
+                                    <SocialMedia />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="adminPanel"
+                            element={
+                                <RequireAuth>
+                                    <AdminPanel />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="settings"
+                            element={
+                                <RequireAuth>
+                                    <Setting />
                                 </RequireAuth>
                             }
                         />
