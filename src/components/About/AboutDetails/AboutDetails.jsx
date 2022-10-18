@@ -3,7 +3,7 @@ import aboutDoctor from '../../../images/img/aboutDoctor.jpg';
 
 const AboutDetails = () => {
     return (
-        <div className="container my-5">
+        <div className="container my-5 py-5">
             <div className="row d-flex align-items-center">
                 <div className="col-lg-6">
                     <h3>Who we are?</h3>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhyTeleDoctor = () => {
     return (
-        <div>
+        <div className="my-5">
             <h2 className="text-center">Why TeleDoctor</h2>
             <div className="container my-4">
                 <div className="row text-center shadow-lg mx-2 mx-md-5 rounded">

@@ -3,7 +3,7 @@ import mission from '../../../images/img/mission.png';
 
 const OurMission = () => {
     return (
-        <div className="container my-5">
+        <div className="container my-5 py-5">
             <div className="row d-flex align-items-center shadow-lg rounded p-2">
                 <div className="col-md-6">
                     <img className="img-fluid" src={mission} alt="mission" />
