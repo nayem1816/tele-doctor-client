@@ -62,7 +62,7 @@ const DoctorPageCard = ({ doctor }) => {
             </div>
             <Link
                 style={{ backgroundColor: '#5921cf' }}
-                to=""
+                to={`/doctorProfile/${doctor?.id}`}
                 className="btn btn-primary w-100 border-0"
             >
                 Book Appointment

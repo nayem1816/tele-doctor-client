@@ -5,7 +5,6 @@ import Loading from './pages/Loading/Loading';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 import HandleOtherPage from './MainRoute/HandleOtherPage';
 import HandleDashboard from './MainRoute/HandleDashboard';
-// import DoctorPageCard from './components/Doctor/DoctorPageCard/DoctorPageCard';
 const Home = React.lazy(() => import('./pages/Home/Home'));
 const About = React.lazy(() => import('./pages/About/About'));
 const NotFound = React.lazy(() => import('./pages/NotFound/NotFound'));
@@ -14,6 +13,9 @@ const MedicalQA = React.lazy(() => import('./pages/MedicalQA/MedicalQA'));
 const Covid19 = React.lazy(() => import('./pages/Covid19/Covid19'));
 const Login = React.lazy(() => import('./pages/Login/Login'));
 const Signup = React.lazy(() => import('./pages/Login/Signup'));
+const DoctorProfile = React.lazy(() =>
+    import('./pages/DoctorProfile/DoctorProfile')
+);
 const DashboardHome = React.lazy(() =>
     import('./pages/Dashboard/DashboardHome')
 );
@@ -70,6 +72,10 @@ function App() {
                                 element={<DoctorCard />}
                             />
                         </Route>
+                        <Route
+                            path="doctorProfile/:id"
+                            element={<DoctorProfile />}
+                        />
                         <Route path="medicalQa" element={<MedicalQA />} />
                         <Route path="covid19" element={<Covid19 />} />
                         <Route path="login" element={<Login />} />
