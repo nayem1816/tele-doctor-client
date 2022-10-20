@@ -55,6 +55,9 @@ const AdminPanel = React.lazy(() =>
 const Setting = React.lazy(() =>
     import('./components/Dashboard/Setting/Setting')
 );
+const QuestionAndAns = React.lazy(() =>
+    import('./components/MedicalQA/QuestionAndAns/QuestionAndAns')
+);
 
 function App() {
     return (
@@ -76,7 +79,13 @@ function App() {
                             path="doctorProfile/:id"
                             element={<DoctorProfile />}
                         />
-                        <Route path="medicalQa" element={<MedicalQA />} />
+                        <Route path="medicalQa" element={<MedicalQA />}>
+                            <Route path="" element={<QuestionAndAns />} />
+                            <Route
+                                path=":categoryName"
+                                element={<QuestionAndAns />}
+                            />
+                        </Route>
                         <Route path="covid19" element={<Covid19 />} />
                         <Route path="login" element={<Login />} />
                         <Route path="signup" element={<Signup />} />
