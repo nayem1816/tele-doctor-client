@@ -1,11 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import DoctorInfo from '../../components/DoctorProfile/DoctorInfo/DoctorInfo';
+import ProfileDetails from './../../components/DoctorProfile/ProfileDetails/ProfileDetails';
 
 const DoctorProfile = () => {
     const { id } = useParams();
+    console.log(id);
     return (
         <div>
-            <h2>Doctor Profile {id}</h2>
+            <ProfileDetails />
+            <DoctorInfo />
         </div>
     );
 };
