@@ -20,7 +20,7 @@ const OurMission = () => {
                         patients can find their location-based doctors if they
                         want. We also have social media options like Facebook to
                         keep our application unique from other applications.
-                        Where we can post, comment, and create posts.
+                        Where we can post, comment, and create posts. Thank you
                     </p>
                 </div>
             </div>
