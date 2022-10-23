@@ -92,7 +92,7 @@ function App() {
                         <Route path="login" element={<Login />} />
                         <Route path="signup" element={<Signup />} />
                         <Route
-                            path="/doctorRegistration"
+                            path="doctorRegistration"
                             element={<DoctorRegistration />}
                         />
                         <Route path="*" element={<NotFound />} />

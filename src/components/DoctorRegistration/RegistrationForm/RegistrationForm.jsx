@@ -61,9 +61,6 @@ const RegistrationForm = () => {
         );
     };
 
-    // get data from local storage
-    // const userToken = JSON.parse(localStorage.getItem('userToken'));
-
     const onSubmit = (data) => {
         const doctorFullData = {
             name: data.name,
@@ -87,7 +84,6 @@ const RegistrationForm = () => {
         };
 
         var myHeaders = new Headers();
-        // myHeaders.append('token-key', userToken);
         myHeaders.append('Content-Type', 'application/json');
 
         var requestOptions = {
@@ -120,6 +116,7 @@ const RegistrationForm = () => {
                 }
             })
             .catch((error) => {
+                console.log('error', error);
                 toast.error('Doctor Registration Failed', {
                     position: 'top-right',
                     autoClose: 1000,
@@ -127,7 +124,6 @@ const RegistrationForm = () => {
                     closeOnClick: true,
                     pauseOnHover: true,
                 });
-                console.log('error', error);
             });
     };
 
@@ -152,12 +148,6 @@ const RegistrationForm = () => {
                                 inputType={'email'}
                                 refs={register('email', {
                                     required: true,
-                                    pattern: {
-                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                        message: toast.error(
-                                            'invalid email address'
-                                        ),
-                                    },
                                 })}
                             />
                         </div>
