@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import userImage from '../../../images/icons/male-doctor.png';
 import { MdAddCall, MdMessage, MdOutlineVideoCall } from 'react-icons/md';
 import './ProfileDetails.css';
 
 const ProfileDetails = () => {
+    const [onlineStatus, setOnlineStatus] = useState(false);
+
+    useEffect(() => {
+        if (navigator.onLine) {
+            setOnlineStatus(true);
+        } else {
+            setOnlineStatus(false);
+        }
+
+        window.addEventListener('offline', (e) => {
+            setOnlineStatus(false);
+        });
+
+        window.addEventListener('online', (e) => {
+            setOnlineStatus(true);
+        });
+    }, [onlineStatus]);
+
     return (
         <div className="container my-5">
             <div className="shadow my-5 rounded-3 p-3">
@@ -19,9 +37,15 @@ const ProfileDetails = () => {
                     <div className="col-lg-6 p-3 text-center text-lg-start doctor-info">
                         <div className="d-flex gap-2 align-items-center justify-content-center justify-content-lg-start">
                             <h4 className="mb-3">Dr. Faysal Rana</h4>
-                            <span className="mb-3 px-2 rounded-2 text-white online">
-                                Online
-                            </span>
+                            {onlineStatus === true ? (
+                                <span className="mb-3 px-2 rounded-2 text-white online">
+                                    Online
+                                </span>
+                            ) : (
+                                <span className="mb-3 px-2 rounded-2 text-white offline">
+                                    Offline
+                                </span>
+                            )}
                         </div>
                         <p className="mb-2">MBBS, FCPS, MD</p>
                         <p className="mb-2 category-name">Cardiologist</p>

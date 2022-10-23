@@ -22,6 +22,10 @@
     font-size: 12px;
     background-color: #34c300;
 }
+.doctor-info .offline {
+    font-size: 12px;
+    background-color: rgb(181, 181, 38);
+}
 .doctor-info .category-name {
     color: #ff6a9c !important;
 }
