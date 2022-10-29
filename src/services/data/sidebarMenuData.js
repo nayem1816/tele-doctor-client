@@ -31,6 +31,12 @@ const sidebarMenuData = [
         link: '/dashboard/doctors',
     },
     {
+        id: 25,
+        name: 'Nurses',
+        icon: <MdOutlineFormatListNumbered />,
+        link: '/dashboard/nurses',
+    },
+    {
         id: 4,
         name: 'Patients',
         icon: <AiOutlineUnorderedList />,
@@ -77,6 +83,12 @@ const sidebarMenuData = [
         name: 'Admin Panel',
         icon: <RiAdminFill />,
         link: '/dashboard/adminPanel',
+    },
+    {
+        id: 13,
+        name: 'Latest Disease Page',
+        icon: <FaClinicMedical />,
+        link: '/dashboard/latest-disease-control',
     },
     {
         id: 12,

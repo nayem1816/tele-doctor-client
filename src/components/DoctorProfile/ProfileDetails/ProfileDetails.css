@@ -40,11 +40,11 @@
     font-weight: bold;
 }
 .profile-btn {
-    background-color: #34c300;
+    background-color: #34c300 !important;
     color: white;
 }
 .profile-btn:hover {
-    background-color: #1ca406;
+    background-color: #1ca406 !important;
     color: white;
 }
 .doctor-profile-bottom h3 {

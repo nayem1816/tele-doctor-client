@@ -40,6 +40,7 @@ const DoctorPageCard = ({ doctor }) => {
                                 allowHover={false}
                                 initialValue={0}
                                 size={16}
+                                readonly={true}
                                 ratingValue={parseFloat(doctor?.rating) * 20}
                             />
                         </span>

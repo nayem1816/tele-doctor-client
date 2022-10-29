@@ -66,6 +66,25 @@ const DashboardSidebar = ({ openSidebar, setOpenSidebar }) => {
                         </NavLink>
                     </li>
                 ))}
+                {/* <li className="list-group-item bg-transparent border-0 my-1 p-0">
+                    <a
+                        data-bs-toggle="collapse"
+                        href="#collapseExample"
+                        className="d-block align-items-center dashboard-sidebar-item"
+                    >
+                        <span className="item-icon">
+                            <BiLogOut />
+                        </span>
+                        <span className="ms-2 w-100">Page Control</span>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Some placeholder content for the collapse component.
+                            This panel is hidden by default but revealed when
+                            the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </li> */}
                 <li className="list-group-item bg-transparent border-0 my-1 p-0">
                     <NavLink
                         to="/"

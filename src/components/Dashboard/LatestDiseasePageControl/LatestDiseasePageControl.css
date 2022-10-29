@@ -1,0 +1,23 @@
+.show-latest-disease-style {
+    background-color: #e3e3e4;
+    transition: all 0.5s;
+}
+.show-latest-disease-style:hover {
+    background-color: #d5d5d5;
+    transition: all 0.5s;
+}
+.show-latest-disease-style .delete-btn {
+    border: none;
+    background-color: #e3e3e4;
+    transition: all 0.5s;
+    color: #e74c3c;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

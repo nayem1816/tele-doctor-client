@@ -79,6 +79,7 @@ const DoctorInfo = () => {
                                             initialValue={0}
                                             size={20}
                                             ratingValue={100}
+                                            readonly={true}
                                         />
                                     </div>
                                 </div>
@@ -120,6 +121,7 @@ const DoctorInfo = () => {
                                             initialValue={0}
                                             size={20}
                                             ratingValue={100}
+                                            readonly={true}
                                         />
                                     </div>
                                 </div>

@@ -16,8 +16,8 @@ const categories = [
     },
     {
         id: 4,
-        name: 'Dermatologist',
-        path: '/dermatologist',
+        name: 'Covid19',
+        path: '/covid19',
     },
     {
         id: 5,

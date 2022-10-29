@@ -12,7 +12,9 @@ const About = React.lazy(() => import('./pages/About/About'));
 const NotFound = React.lazy(() => import('./pages/NotFound/NotFound'));
 const Doctor = React.lazy(() => import('./pages/Doctor/Doctor'));
 const MedicalQA = React.lazy(() => import('./pages/MedicalQA/MedicalQA'));
-const Covid19 = React.lazy(() => import('./pages/Covid19/Covid19'));
+const RecentDisease = React.lazy(() =>
+    import('./pages/RecentDisease/RecentDisease')
+);
 const Login = React.lazy(() => import('./pages/Login/Login'));
 const Signup = React.lazy(() => import('./pages/Login/Signup'));
 const DoctorProfile = React.lazy(() =>
@@ -60,6 +62,17 @@ const Setting = React.lazy(() =>
 const QuestionAndAns = React.lazy(() =>
     import('./components/MedicalQA/QuestionAndAns/QuestionAndAns')
 );
+const AllAvailableDoctors = React.lazy(() =>
+    import('./pages/AllAvailableDoctors/AllAvailableDoctors')
+);
+const MostPopularDoctors = React.lazy(() =>
+    import('./pages/MostPopularDoctors/MostPopularDoctors')
+);
+const LatestDiseasePageControl = React.lazy(() =>
+    import(
+        './components/Dashboard/LatestDiseasePageControl/LatestDiseasePageControl'
+    )
+);
 
 function App() {
     return (
@@ -88,7 +101,18 @@ function App() {
                                 element={<QuestionAndAns />}
                             />
                         </Route>
-                        <Route path="covid19" element={<Covid19 />} />
+                        <Route
+                            path="all-available-doctors"
+                            element={<AllAvailableDoctors />}
+                        />
+                        <Route
+                            path="most-popular-doctors"
+                            element={<MostPopularDoctors />}
+                        />
+                        <Route
+                            path="recent-disease"
+                            element={<RecentDisease />}
+                        />
                         <Route path="login" element={<Login />} />
                         <Route path="signup" element={<Signup />} />
                         <Route
@@ -199,6 +223,14 @@ function App() {
                             element={
                                 <RequireAuth>
                                     <AdminPanel />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="latest-disease-control"
+                            element={
+                                <RequireAuth>
+                                    <LatestDiseasePageControl />
                                 </RequireAuth>
                             }
                         />

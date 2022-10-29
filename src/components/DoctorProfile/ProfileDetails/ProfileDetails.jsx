@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import userImage from '../../../images/icons/male-doctor.png';
 import { MdAddCall, MdMessage, MdOutlineVideoCall } from 'react-icons/md';
 import './ProfileDetails.css';
+import { Button } from '@mui/material';
 
 const ProfileDetails = () => {
     const [onlineStatus, setOnlineStatus] = useState(false);
@@ -75,9 +76,12 @@ const ProfileDetails = () => {
                             </h2>
                             <p className="mt-2 mx-1 text-muted">(incl. VAT)</p>
                         </div>
-                        <button className="btn mb-3 profile-btn">
+                        {/* <button className="btn mb-3 profile-btn">
                             Book Appointment
-                        </button>
+                        </button> */}
+                        <Button className="profile-btn" variant="contained">
+                            Book Appointment
+                        </Button>
                     </div>
                 </div>
                 <hr style={{ borderTop: '2px dashed gray' }} />
