@@ -23,6 +23,8 @@ const ProfileDetails = () => {
         });
     }, [onlineStatus]);
 
+    console.log(onlineStatus);
+
     return (
         <div className="container my-5">
             <div className="shadow my-5 rounded-3 p-3">

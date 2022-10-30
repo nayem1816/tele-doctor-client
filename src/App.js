@@ -73,12 +73,16 @@ const LatestDiseasePageControl = React.lazy(() =>
         './components/Dashboard/LatestDiseasePageControl/LatestDiseasePageControl'
     )
 );
+const Nurses = React.lazy(() =>
+    import('./components/Dashboard/Nurses/Nurses/Nurses')
+);
 
 function App() {
     return (
         <div className="App">
             <Suspense fallback={<Loading />}>
                 <Routes>
+                    {/* ALL ROUTES */}
                     <Route path="/" element={<HandleOtherPage />}>
                         <Route path="" element={<Home />} />
                         <Route path="home" element={<Home />} />
@@ -122,6 +126,7 @@ function App() {
                         <Route path="*" element={<NotFound />} />
                     </Route>
 
+                    {/* DASHBOARD ROUTES */}
                     <Route
                         path="/dashboard"
                         element={
@@ -159,6 +164,14 @@ function App() {
                             element={
                                 <RequireAuth>
                                     <DoctorsList />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="nurses"
+                            element={
+                                <RequireAuth>
+                                    <Nurses />
                                 </RequireAuth>
                             }
                         />
@@ -244,6 +257,8 @@ function App() {
                         />
                         <Route path="*" element={<NotFound />} />
                     </Route>
+
+                    {/* NOT FOUND */}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Suspense>

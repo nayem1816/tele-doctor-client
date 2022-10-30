@@ -1,10 +1,13 @@
 import React from 'react';
-import recentBanner from '../../../images/img/recent-banner.png';
 
-const Banner = () => {
+const Banner = ({ recentBanner }) => {
     return (
         <div>
-            <img src={recentBanner} alt="" />
+            <img
+                style={{ width: '100%', height: '500px' }}
+                src={recentBanner}
+                alt=""
+            />
         </div>
     );
 };
