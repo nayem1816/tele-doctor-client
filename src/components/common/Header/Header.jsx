@@ -46,7 +46,8 @@ const Header = () => {
                                 className="nav-link text-dark"
                                 to="/medicalQa"
                             >
-                                Medical Q&#38;Link
+                                {/* Medical Q&#38;Link */}
+                                 Medical Q/A
                             </Link>
                             <Link className="nav-link text-dark" to="/covid19">
                                 Covid 19
