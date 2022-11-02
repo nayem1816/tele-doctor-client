@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from './pages/Loading/Loading';
@@ -80,6 +79,7 @@ const Nurses = React.lazy(() =>
 function App() {
     return (
         <div className="App">
+            <ToastContainer />
             <Suspense fallback={<Loading />}>
                 <Routes>
                     {/* ALL ROUTES */}
@@ -240,6 +240,14 @@ function App() {
                             }
                         />
                         <Route
+                            path="blogs"
+                            element={
+                                <RequireAuth>
+                                    <AdminPanel />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
                             path="latest-disease-control"
                             element={
                                 <RequireAuth>
@@ -262,7 +270,6 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Suspense>
-            <ToastContainer />
         </div>
     );
 }
