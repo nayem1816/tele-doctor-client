@@ -4,11 +4,11 @@ import UploadField from './../../common/InputField/UploadField/UploadField';
 import CustomSelect from './../../common/InputField/CustomSelect/CustomSelect';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import categories from './../../../services/data/categories';
 import CustomButton from './../../common/InputField/CustomButton/CustomButton';
 
 const Create = () => {
     const [bannerImage, setBannerImage] = React.useState(null);
+    const [categoryDataList, setCategoryDataList] = React.useState([]);
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         const latestData = {
@@ -31,6 +31,23 @@ const Create = () => {
                 console.log(err);
             });
     };
+
+    React.useEffect(() => {
+        fetch('http://localhost:5000/api/v1/ReadCategories')
+            .then((res) => res.json())
+            .then((data) => setCategoryDataList(data.data));
+    }, [categoryDataList]);
+
+    const sortData = categoryDataList.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1;
+        }
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    });
+
     return (
         <div className="my-4">
             <h4>Edit Latest disease Page</h4>
@@ -50,7 +67,7 @@ const Create = () => {
                             <CustomSelect
                                 placeHolder="Specialization"
                                 regName={'specialization'}
-                                selectOptions={categories.map(
+                                selectOptions={sortData.map(
                                     (category) => category.name
                                 )}
                                 register={register}

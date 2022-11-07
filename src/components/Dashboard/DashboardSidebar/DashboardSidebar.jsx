@@ -20,7 +20,7 @@ const DashboardSidebar = ({ openSidebar, setOpenSidebar }) => {
     }
 
     return (
-        <div className="my-3">
+        <div className="my-3 main-dashboard-sidebar">
             <div className="sidebar-header d-flex justify-content-between px-2">
                 <Link to="/">
                     <img

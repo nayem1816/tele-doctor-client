@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import userImage from '../../../images/icons/male-doctor.png';
 import { MdAddCall, MdMessage, MdOutlineVideoCall } from 'react-icons/md';
 import './ProfileDetails.css';
 import { Button } from '@mui/material';
 
-const ProfileDetails = () => {
+const ProfileDetails = ({ doctor }) => {
     const [onlineStatus, setOnlineStatus] = useState(false);
 
     useEffect(() => {
@@ -23,8 +22,6 @@ const ProfileDetails = () => {
         });
     }, [onlineStatus]);
 
-    console.log(onlineStatus);
-
     return (
         <div className="container my-5">
             <div className="shadow my-5 rounded-3 p-3">
@@ -33,14 +30,14 @@ const ProfileDetails = () => {
                         <img
                             className="rounded"
                             style={{ width: '200px', height: '200px' }}
-                            src={userImage}
+                            src={doctor?.profilePic}
                             alt=""
                         />
                     </div>
                     <div className="col-lg-6 p-3 text-center text-lg-start doctor-info">
                         <div className="d-flex gap-2 align-items-center justify-content-center justify-content-lg-start">
-                            <h4 className="mb-3">Dr. Faysal Rana</h4>
-                            {onlineStatus === true ? (
+                            <h4 className="mb-3">{doctor?.name}</h4>
+                            {doctor?.activeStatus === 'active' ? (
                                 <span className="mb-3 px-2 rounded-2 text-white online">
                                     Online
                                 </span>
@@ -50,13 +47,13 @@ const ProfileDetails = () => {
                                 </span>
                             )}
                         </div>
-                        <p className="mb-2">MBBS, FCPS, MD</p>
-                        <p className="mb-2 category-name">Cardiologist</p>
+                        <p className="mb-2">{doctor?.education}</p>
+                        <p className="mb-2 category-name">
+                            {doctor?.specialization}
+                        </p>
                         <p className="mb-3">
                             <span className="text-muted">Working at</span>{' '}
-                            <span className="fw-bold">
-                                Upazila Health Complex,Faridganj,Chandpur
-                            </span>
+                            <span className="fw-bold">{doctor?.workingAt}</span>
                         </p>
                         <div className="doctor-profile-contract-icon d-flex align-items-center justify-content-center justify-content-lg-start">
                             <span>
@@ -74,7 +71,7 @@ const ProfileDetails = () => {
                         <h5 className="mb-3">Consultation Fee</h5>
                         <div className="d-flex mb-3 justify-content-center justify-content-lg-start">
                             <h2 className="text-center base-color">
-                                ৳ <span>157.50</span>
+                                ৳ <span>{doctor?.fees}</span>
                             </h2>
                             <p className="mt-2 mx-1 text-muted">(incl. VAT)</p>
                         </div>
@@ -91,25 +88,35 @@ const ProfileDetails = () => {
                     <div className="p-3 text-center text-lg-start">
                         <h3 className="mb-3">Total Experience</h3>
                         <h5 className="mb-3">
-                            <span>10</span> Years
+                            <span>{doctor?.experience}</span>
                         </h5>
                     </div>
                     <div className="p-3 text-center text-lg-start">
                         <h3 className="mb-3">BMDC Number</h3>
                         <h5 className="mb-3">
-                            <span>123456</span>
+                            <span>{doctor?.registrationNumber}</span>
                         </h5>
                     </div>
                     <div className="p-3 text-center text-lg-start">
                         <h3 className="mb-3">Total Patients</h3>
                         <h5 className="mb-3">
-                            <span>1000</span> Patients
+                            <span>
+                                {doctor?.totalPatient === null
+                                    ? 0
+                                    : doctor?.totalPatient}
+                            </span>{' '}
+                            Patients
                         </h5>
                     </div>
                     <div className="p-3 text-center text-lg-start">
                         <h3 className="mb-3">Total Reviews</h3>
                         <h5 className="mb-3">
-                            <span>100</span> Reviews
+                            <span>
+                                {doctor?.totalPatient === null
+                                    ? 0
+                                    : doctor?.totalReview}
+                            </span>{' '}
+                            Reviews
                         </h5>
                     </div>
                 </div>

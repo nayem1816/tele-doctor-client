@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Nurses from '../../components/RecentDisease/Nurses/Nurses';
 import Banner from './../../components/RecentDisease/Banner/Banner';
 import SpecialistDoctor from './../../components/RecentDisease/SpecialistDoctor/SpecialistDoctor';
+import Blog from '../../components/RecentDisease/Blogs/Blog';
 
 const RecentDisease = () => {
     const [recentDisease, setRecentDisease] = useState([]);
@@ -17,12 +18,13 @@ const RecentDisease = () => {
     // console.log(recentDisease);
     return (
         <>
-            <Banner recentBanner={recentDisease?.bannerImg} />
+            <Banner recentDisease={recentDisease} />
             <SpecialistDoctor
                 diseaseName={recentDisease?.diseaseName}
                 specialization={recentDisease?.specialization}
             />
             <Nurses />
+            <Blog title={recentDisease?.diseaseName} />
         </>
     );
 };
