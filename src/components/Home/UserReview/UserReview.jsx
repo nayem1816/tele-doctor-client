@@ -36,6 +36,7 @@ const UserReview = () => {
                                             allowHover={false}
                                             initialValue={0}
                                             size={20}
+                                            readonly={true}
                                             ratingValue={review.rating * 20}
                                         />
                                         <p className="mt-2">{review.comment}</p>

@@ -1,0 +1,60 @@
+.doctor-profile-contract-icon span {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.doctor-profile-contract-icon span:hover {
+    background-color: #e6e6e6;
+}
+
+.doctor-info h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+}
+.doctor-info .online {
+    font-size: 12px;
+    background-color: #34c300;
+}
+.doctor-info .offline {
+    font-size: 12px;
+    background-color: rgb(181, 181, 38);
+}
+.doctor-info .category-name {
+    color: #ff6a9c !important;
+}
+.doctor-info p {
+    font-size: 15px;
+}
+
+.profile-consultant h5 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+.profile-btn {
+    background-color: #34c300 !important;
+    color: white;
+}
+.profile-btn:hover {
+    background-color: #1ca406 !important;
+    color: white;
+}
+.doctor-profile-bottom h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    color: RGB(107, 114, 128);
+}
+.doctor-profile-bottom h5 {
+    font-size: 1.25rem;
+    line-height: 28px;
+    font-weight: 600;
+}

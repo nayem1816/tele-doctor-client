@@ -1,96 +1,103 @@
 import React from 'react';
+import nayem from '../../../images/img/founding-team/nayem.jpg';
+import rony from '../../../images/img/founding-team/rony.jpg';
 import './FoundingTeam.css';
-import doctor2 from '../../../images/img/foundTeamDe2.jpg';
-import { FaFacebookF } from 'react-icons/fa';
-import { FaLinkedinIn } from 'react-icons/fa';
-import { AiOutlineTwitter } from 'react-icons/ai';
+import { BsFacebook, BsGithub } from 'react-icons/bs';
+import { AiFillLinkedin } from 'react-icons/ai';
 
 const FoundingTeam = () => {
     return (
-        <div className='container bottom-height'>
-            <h2 class="card-title fw-bold text-center m-3">Founding Team</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 ">
-
-          <div class="col p-5">
-          <div class="card border-0"> 
-          <img src={doctor2} class="card-img-top" alt="..."/>
-          <div class="card-footer bg-color">
-            <h4 className='text-center fw-bold'>Dr. Subah</h4>
-            <div className='d-flex justify-content-evenly p-2'>
-            <FaFacebookF size="1.5em"/>
-            <FaLinkedinIn size="1.5em"/>
-            <AiOutlineTwitter size="1.5em" weight="49px"/>
+        <div className="my-5 py-5">
+            <h2 className="text-center">Founding Team</h2>
+            <div className="container">
+                <div className="row founding-team">
+                    <div className="col-md-4 text-center p-3">
+                        <img src={nayem} alt="" />
+                        <div className="details p-3">
+                            <h4>Nayem Hossain</h4>
+                            <div className="icon d-flex gap-3 justify-content-center">
+                                <a href="https://www.facebook.com/nayem1816/">
+                                    <BsFacebook />
+                                </a>
+                                <a href="https://www.linkedin.com/in/md-nayem-hossain-nym//">
+                                    <AiFillLinkedin />
+                                </a>
+                                <a href="/">
+                                    <BsGithub />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4 text-center p-3">
+                        <img src={rony} alt="" />
+                        <div className="details p-3">
+                            <h4>Ayesha Akter Sayma</h4>
+                            <div className="icon d-flex gap-3 justify-content-center">
+                                <a href="https://www.facebook.com/ayesha.sayma.1/">
+                                    <BsFacebook />
+                                </a>
+                                <a href="https://www.linkedin.com/in/ayesha-shayma-085275227//">
+                                <AiFillLinkedin />
+                                </a>
+                                <a href="/">
+                                    <BsGithub />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4 text-center p-3">
+                        <img src={rony} alt="" />
+                        <div className="details p-3">
+                            <h4>Jeba Tahsin</h4>
+                            <div className="icon d-flex gap-3 justify-content-center">
+                                <a href="https://www.facebook.com/tahsin.jeba.94/">
+                                    <BsFacebook />
+                                </a>
+                                <a href="https://www.linkedin.com/in/jeba-tahsin-062275227//">
+                                <AiFillLinkedin />
+                                </a>
+                                <a href="/">
+                                    <BsGithub />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-6 text-center p-3">
+                        <img src={nayem} alt="" />
+                        <div className="details p-3">
+                            <h4>Somaya Sayma</h4>
+                            <div className="icon d-flex gap-3 justify-content-center">
+                                <a href="https://www.facebook.com/somaya.sayma.1/">
+                                    <BsFacebook />
+                                </a>
+                                <a href="https://www.linkedin.com/in/somaya-sayma-5a5273227//">
+                                <AiFillLinkedin />
+                                </a>
+                                <a href="/">
+                                    <BsGithub />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-6 text-center p-3">
+                        <img src={rony} alt="" />
+                        <div className="details p-3">
+                            <h4>Md. Alamin Rony</h4>
+                            <div className="icon d-flex gap-3 justify-content-center">
+                                <a href="https://www.facebook.com/md.alamin.rony.898/">
+                                    <BsFacebook />
+                                </a>
+                                <a href="/">
+                                <AiFillLinkedin />
+                                </a>
+                                <a href="/">
+                                    <BsGithub />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          </div>
-          </div>
-          <div class="col p-5">
-          <div class="card border-0">
-          <img src={doctor2} class="card-img-top" alt="..."/>
-          <div class="card-footer bg-color">
-            <h4 className='text-center fw-bold'>Dr. Subah</h4>
-            <div className='d-flex justify-content-evenly p-2'>
-            <FaFacebookF size="1.5em"/>
-            <FaLinkedinIn size="1.5em"/>
-            <AiOutlineTwitter size="1.5em" weight="49px"/>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="col p-5">
-          <div class="card border-0">
-          <img src={doctor2} class="card-img-top" alt="..."/>
-          <div class="card-footer bg-color">
-            <h4 className='text-center fw-bold'>Dr. Subah</h4>
-            <div className='d-flex justify-content-evenly p-2'>
-            <FaFacebookF size="1.5em"/>
-            <FaLinkedinIn size="1.5em"/>
-            <AiOutlineTwitter size="1.5em" weight="49px"/>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="col p-5">
-          <div class="card border-0">
-          <img src={doctor2} class="card-img-top" alt="..."/>
-          <div class="card-footer bg-color">
-            <h4 className='text-center fw-bold'>Dr. Subah</h4>
-            <div className='d-flex justify-content-evenly p-2'>
-            <FaFacebookF size="1.5em"/>
-            <FaLinkedinIn size="1.5em"/>
-            <AiOutlineTwitter size="1.5em" weight="49px"/>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="col p-5">
-          <div class="card border-0">
-          <img src={doctor2} class="card-img-top" alt="..."/>
-          <div class="card-footer bg-color">
-            <h4 className='text-center fw-bold'>Dr. Subah</h4>
-            <div className='d-flex justify-content-evenly p-2'>
-            <FaFacebookF size="1.5em"/>
-            <FaLinkedinIn size="1.5em"/>
-            <AiOutlineTwitter size="1.5em" weight="49px"/>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="col p-5">
-          <div class="card border-0">
-          <img src={doctor2} class="card-img-top" alt="..."/>
-          <div class="card-footer bg-color">
-            <h4 className='text-center fw-bold'>Dr. Subah</h4>
-            <div className='d-flex justify-content-evenly p-2'>
-            <FaFacebookF size="1.5em"/>
-            <FaLinkedinIn size="1.5em"/>
-            <AiOutlineTwitter size="1.5em" weight="49px"/>
-            </div>
-          </div>
-          </div>
-          </div>
-
-           </div>
         </div>
     );
 };

@@ -3,8 +3,19 @@ import teleDoctorLogo from '../../../images/logo/teleDoctorLogo.png';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import HeaderLogin from './HeaderLogin';
+import { useEffect } from 'react';
 
 const Header = () => {
+    const [recentDisease, setRecentDisease] = React.useState(null);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/api/v1/ReadRecentDiseases')
+            .then((res) => res.json())
+            .then((data) => {
+                setRecentDisease(data.data[0].diseaseName);
+            });
+    }, []);
+
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg bg-white">
@@ -48,9 +59,16 @@ const Header = () => {
                             >
                                 Medical Q&#38;Link
                             </Link>
-                            <Link className="nav-link text-dark" to="/covid19">
-                                Covid 19
-                            </Link>
+                            {recentDisease === null ? (
+                                ''
+                            ) : (
+                                <Link
+                                    className="nav-link text-dark"
+                                    to="/recent-disease"
+                                >
+                                    {recentDisease}
+                                </Link>
+                            )}
                         </div>
                         <HeaderLogin />
                     </div>
