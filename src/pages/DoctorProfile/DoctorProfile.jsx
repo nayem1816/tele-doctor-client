@@ -13,8 +13,6 @@ const DoctorProfile = () => {
             .then((data) => setDoctor(data.data));
     }, [id]);
 
-    console.log(doctor);
-
     return (
         <div>
             <ProfileDetails doctor={doctor} />

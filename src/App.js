@@ -81,8 +81,11 @@ const DashboardBlog = React.lazy(() =>
 const Category = React.lazy(() =>
     import('./components/Dashboard/Category/Category/Category')
 );
-const NurseBooking = React.lazy(() =>
-    import('./components/RecentDisease/Nurses/NurseBooking')
+const NurseProfile = React.lazy(() =>
+    import('./pages/NurseProfile/NurseProfile')
+);
+const DoctorBooking = React.lazy(() =>
+    import('./pages/DoctorBooking/DoctorBooking')
 );
 
 function App() {
@@ -107,6 +110,14 @@ function App() {
                             path="doctorProfile/:id"
                             element={<DoctorProfile />}
                         />
+                        <Route
+                            path="doctor-booking/:id"
+                            element={
+                                <RequireAuth>
+                                    <DoctorBooking />
+                                </RequireAuth>
+                            }
+                        />
                         <Route path="medicalQa" element={<MedicalQA />}>
                             <Route path="" element={<QuestionAndAns />} />
                             <Route
@@ -127,14 +138,18 @@ function App() {
                             element={<RecentDisease />}
                         />
                         <Route
-                            path="nurse-booking/:id"
-                            element={<NurseBooking />}
+                            path="nurse-profile/:id"
+                            element={<NurseProfile />}
                         />
                         <Route path="login" element={<Login />} />
                         <Route path="signup" element={<Signup />} />
                         <Route
                             path="doctorRegistration"
-                            element={<DoctorRegistration />}
+                            element={
+                                <RequireAuth>
+                                    <DoctorRegistration />
+                                </RequireAuth>
+                            }
                         />
                         <Route path="*" element={<NotFound />} />
                     </Route>

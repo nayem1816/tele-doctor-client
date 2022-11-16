@@ -21,7 +21,7 @@ const Nurses = () => {
     }, []);
 
     const handleBookBtn = (id) => {
-        navigate(`/nurse-booking/${id}`);
+        navigate(`/nurse-profile/${id}`);
     };
 
     return (

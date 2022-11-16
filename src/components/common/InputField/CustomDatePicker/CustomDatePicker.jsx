@@ -1,5 +1,4 @@
-import { TextField } from '@mui/material';
-import React from 'react';
+import TextField from '@mui/material/TextField';
 
 const CustomDatePicker = ({ placeHolder, refs }) => {
     return (
