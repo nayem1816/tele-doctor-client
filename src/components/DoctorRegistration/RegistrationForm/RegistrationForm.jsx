@@ -6,7 +6,6 @@ import CustomRadioBtn from '../../common/InputField/CustomRadioBtn/CustomRadioBt
 import UploadField from '../../common/InputField/UploadField/UploadField';
 import CustomDatePicker from '../../common/InputField/CustomDatePicker/CustomDatePicker';
 import CustomSelect from '../../common/InputField/CustomSelect/CustomSelect';
-import categories from './../../../services/data/categories';
 import CustomButton from '../../common/InputField/CustomButton/CustomButton';
 import { toast } from 'react-toastify';
 import CustomCheckbox from './../../common/InputField/CustomCheckbox/CustomCheckbox';
@@ -45,6 +44,7 @@ const names = [
 ];
 
 const RegistrationForm = () => {
+    const [categoryDataList, setCategoryDataList] = React.useState([]);
     const { register, handleSubmit } = useForm();
     const [doctorImage, setDoctorImage] = useState(null);
     const dateAndTime = CustomDateAndTime();
@@ -127,6 +127,22 @@ const RegistrationForm = () => {
             });
     };
 
+    React.useEffect(() => {
+        fetch('http://localhost:5000/api/v1/ReadCategories')
+            .then((res) => res.json())
+            .then((data) => setCategoryDataList(data.data));
+    }, [categoryDataList]);
+
+    const sortData = categoryDataList.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1;
+        }
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    });
+
     return (
         <div className="container my-4">
             <div className="">
@@ -202,7 +218,7 @@ const RegistrationForm = () => {
                             <CustomSelect
                                 placeHolder="Department"
                                 regName={'specialization'}
-                                selectOptions={categories.map(
+                                selectOptions={sortData.map(
                                     (category) => category.name
                                 )}
                                 register={register}

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import DoctorPageCard from './../DoctorPageCard/DoctorPageCard';
 import { Pagination } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import dcData from './../../../services/data/doctorsData.json';
 
 const DoctorCard = () => {
     const [doctorsData, setDoctorsData] = useState([]);
@@ -11,7 +10,11 @@ const DoctorCard = () => {
     const [dcDataJson, setDcDataJson] = useState([]);
 
     useEffect(() => {
-        setDcDataJson(dcData);
+        fetch('http://localhost:5000/api/v1/ReadDoctors')
+            .then((res) => res.json())
+            .then((data) => setDcDataJson(data.data))
+            .catch((err) => console.log(err));
+
         if (categoryName === 'all') {
             setDoctorsData(dcDataJson);
         } else if (categoryName === undefined) {
@@ -52,7 +55,7 @@ const DoctorCard = () => {
                     <div className="row mb-2">
                         {currentDoctors.map((doctor) => (
                             <div
-                                key={doctor.id}
+                                key={doctor._id}
                                 className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4"
                             >
                                 <DoctorPageCard doctor={doctor} />

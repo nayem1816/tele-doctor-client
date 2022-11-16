@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from './pages/Loading/Loading';
@@ -79,10 +78,23 @@ const LatestDiseasePageControl = React.lazy(() =>
 const Nurses = React.lazy(() =>
     import('./components/Dashboard/Nurses/Nurses/Nurses')
 );
+const DashboardBlog = React.lazy(() =>
+    import('./components/Dashboard/DashboardBlogs/DashboardBlog/DashboardBlog')
+);
+const Category = React.lazy(() =>
+    import('./components/Dashboard/Category/Category/Category')
+);
+const NurseProfile = React.lazy(() =>
+    import('./pages/NurseProfile/NurseProfile')
+);
+const DoctorBooking = React.lazy(() =>
+    import('./pages/DoctorBooking/DoctorBooking')
+);
 
 function App() {
     return (
         <div className="App">
+            <ToastContainer />
             <Suspense fallback={<Loading />}>
                 <Routes>
                     {/* ALL ROUTES */}
@@ -104,6 +116,14 @@ function App() {
                         <Route
                             path="doctorProfile/:id"
                             element={<DoctorProfile />}
+                        />
+                        <Route
+                            path="doctor-booking/:id"
+                            element={
+                                <RequireAuth>
+                                    <DoctorBooking />
+                                </RequireAuth>
+                            }
                         />
                         <Route path="medicalQa" element={<MedicalQA />}>
                             <Route path="" element={<QuestionAndAns />} />
@@ -127,16 +147,24 @@ function App() {
                             path="recent-disease"
                             element={<RecentDisease />}
                         />
+                        <Route
+                            path="nurse-profile/:id"
+                            element={<NurseProfile />}
+                        />
                         <Route path="login" element={<Login />} />
                         <Route path="signup" element={<Signup />} />
                         <Route
                             path="doctorRegistration"
-                            element={<DoctorRegistration />}
+                            element={
+                                <RequireAuth>
+                                    <DoctorRegistration />
+                                </RequireAuth>
+                            }
                         />
                         <Route path="*" element={<NotFound />} />
                     </Route>
 
-                    {/* DASHBOARD ROUTES */}
+                    {/* -------------------DASHBOARD ROUTES------------------- */}
                     <Route
                         path="/dashboard"
                         element={
@@ -250,6 +278,22 @@ function App() {
                             }
                         />
                         <Route
+                            path="categories"
+                            element={
+                                <RequireAuth>
+                                    <Category />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="blogs"
+                            element={
+                                <RequireAuth>
+                                    <DashboardBlog />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
                             path="latest-disease-control"
                             element={
                                 <RequireAuth>
@@ -272,7 +316,6 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Suspense>
-            <ToastContainer />
         </div>
     );
 }

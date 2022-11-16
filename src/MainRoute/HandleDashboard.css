@@ -53,9 +53,11 @@
     }
     .dashboard-left-part {
         display: none;
+        z-index: 100;
     }
     .dashboard-right-part {
         width: 100%;
+        z-index: 50;
     }
     .dashboard-left-part-open {
         width: 320px;

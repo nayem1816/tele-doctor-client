@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,11 +12,17 @@ import './Nurses.css';
 const Nurses = () => {
     const [nurses, setNurses] = useState([]);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         fetch('http://localhost:5000/api/v1/ReadNurses')
             .then((res) => res.json())
             .then((data) => setNurses(data.data));
     }, []);
+
+    const handleBookBtn = (id) => {
+        navigate(`/nurse-profile/${id}`);
+    };
 
     return (
         <div className="available-doctor mt-2 py-5">
@@ -61,7 +68,12 @@ const Nurses = () => {
                                                 <p>{nurse?.experience}</p>
                                             </div>
                                         </div>
-                                        <button className="w-100 appointment-button-color py-2 rounded">
+                                        <button
+                                            onClick={() =>
+                                                handleBookBtn(nurse._id)
+                                            }
+                                            className="w-100 appointment-button-color py-2 rounded"
+                                        >
                                             Book Appointment
                                         </button>
                                     </div>
