@@ -26,6 +26,7 @@ const LoginForm = () => {
     useEffect(() => {
         if (user) {
             navigate(from, { replace: true });
+            window.location.reload();
         }
     });
 
@@ -37,7 +38,28 @@ const LoginForm = () => {
     }
 
     const onSubmit = (data) => {
-        signInWithEmailAndPassword(data.email, data.password);
+        fetch('http://localhost:5000/api/v1/UserLogin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                EmailAddress: data.email,
+            }),
+        })
+            .then((res) => res.json())
+            .then((backData) => {
+                if (backData.data.EmailAddress === data.email) {
+                    signInWithEmailAndPassword(data.email, data.password);
+                    localStorage.setItem(
+                        'userToken',
+                        JSON.stringify(backData.data.token)
+                    );
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
     return (
         <div className="container">

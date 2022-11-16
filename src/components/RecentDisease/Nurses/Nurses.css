@@ -1,0 +1,31 @@
+.available-doctor {
+    background-color: rgba(3, 152, 158, 0.15);
+}
+.doctor-image {
+    background-color: #c3a9f8;
+}
+.doctor-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.appointment-button-color {
+    background-color: #5921cf;
+    color: white;
+    border: none;
+}
+
+.swiper-slider-part .swiper-button-prev:after {
+    font-size: 30px;
+    font-weight: bolder;
+}
+.swiper-slider-part .swiper-button-prev {
+    color: #03989e;
+}
+.swiper-slider-part .swiper-button-next:after {
+    font-size: 30px;
+    font-weight: bolder;
+}
+.swiper-slider-part .swiper-button-next {
+    color: #03989e;
+}

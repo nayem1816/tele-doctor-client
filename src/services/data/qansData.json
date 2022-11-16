@@ -1,740 +1,632 @@
 [
     {
         "id": "1",
-        "DiseasesCategory":"Medicine",
+        "DiseasesCategory": "Medicine",
         "qsn": "What are the likely benefits of taking this medicine?",
         "ans": "Medicines work in different ways. Some medicines may reduce some or all of the symptoms of an illness; others may prevent illness or complications.Ask your doctor what benefits you can expect from the medicine, and then think about what those benefits mean to you."
-        
     },
     {
         "id": "2",
-        "DiseasesCategory":"Medicine",
+        "DiseasesCategory": "Medicine",
         "qsn": "What side effects should I be aware of?",
         "ans": "Side effects are unwanted effects of a medicine. All medicines can cause side effects, but not everybody will experience them. It’s important to be aware of the side effects of medicines so that you know what to do if you experience them.Ask your doctor about:common side effects — these side effects are usually less serious but more common And serious side effects — these side effects occur less frequently but may have a greater impact.It’s a good idea to ask your doctor about possible interactions with other medicines. You can also get information about side effects from the consumer medicine information (CMI) leaflet that comes with all prescription and pharmacist-only medicines."
-        
     },
     {
         "id": "3",
-        "DiseasesCategory":"Medicine",
+        "DiseasesCategory": "Medicine",
         "qsn": "What would happen if I didn't take this medicine?",
         "ans": "You might decide you don't want to take a medicine your doctor has prescribed. You might also think you don't want to risk the side effects, you can't afford it, or you'll 'get better anyway'.This is your right. But some conditions will get worse and perhaps cause permanent damage to your health if you don't take a prescribed medicine."
-        
     },
     {
         "id": "4",
-        "DiseasesCategory":"Medicine",
+        "DiseasesCategory": "Medicine",
         "qsn": "How will I know if the medicine is working and how long will that take?",
         "ans": "Some medicines, including pain-relief medicines, work almost immediately but with others, such as antidepressants, it may be weeks before you notice a difference.Before you start taking a medicine, ask your doctor or pharmacist how long it will take for the medicine to start working and how will you know if it is working."
-        
     },
     {
         "id": "5",
-        "DiseasesCategory":"Medicine",
+        "DiseasesCategory": "Medicine",
         "qsn": "What other treatment options are available?",
         "ans": "There may be other medicines to consider for your condition. Some medicines may be more effective but have a greater risk of side effects.It is important to weigh up the benefits and risks for each medicine option. The cost of the medicines may also vary widely, so you may want to ask if there are more affordable alternatives.In some cases, medicine may not be the only or best approach to improving your condition. Sometimes lifestyle changes, such as quitting smoking, losing weight (if you are overweight) and physical activity, may be effective treatments.For some conditions, there might be other options such as physiotherapy, counselling or surgery."
-        
     },
     {
         "id": "6",
-        "DiseasesCategory":"Medicine",
+        "DiseasesCategory": "Medicine",
         "qsn": "How do I take the medicine and for how long??",
         "ans": "Medicines come in many forms, including tablets, capsules, powders, liquids, patches, inhalations and suppositories.Some are taken once a day or once a week; others, several times a day.Whatever the type of medicine, it is important to ask your doctor how and when to take it. You can also talk to a pharmacist or check the CMI.Some medicines are taken for only a short period, but others are taken for life. For example, antibiotics are usually taken for a limited time, but they need to be taken for the entire period prescribed — even if you start to feel better — to avoid antibiotic resistance.Always check with a healthcare professional if you plan to stop taking a medicine. Suddenly stopping some medicines, such as antidepressants, might cause unwanted symptoms."
-        
     },
     {
         "id": "7",
-        "DiseasesCategory":"Medicine",
+        "DiseasesCategory": "Medicine",
         "qsn": "How much will it cost?",
         "ans": "The Pharmaceutical Benefits Scheme (PBS) subsidises the cost of medicines for most medical conditions.Ask your doctor or pharmacist if the medicine is on the PBS. If it is not on the PBS, you will need to pay the full price.If the cost of the medicine is a problem, ask your doctor if there are more affordable options."
-        
     },
     {
         "id": "8",
-        "DiseasesCategory":"Fever",
+        "DiseasesCategory": "Fever",
         "qsn": "What is a ‘dangerous’ fever?",
         "ans": "The fever by itself isn’t dangerous, even up to 107F no direct damage has been documented from fever.The higher the fever, though, the more the chance of bacteremia, thus, the more concerning it is.This is in contrast to hyperthermia, which is overheating due to environmental (e.g. heat stroke) or toxicological factors. "
-        
     },
     {
         "id": "9",
-        "DiseasesCategory":"Fever",
+        "DiseasesCategory": "Fever",
         "qsn": "What temperature defines a fever?",
         "ans": "Any temp 100.4F or higher is considered a true ‘fever’.This definition applies to core body temps (most commonly rectaltemps). While the elderly may have lower normal temperatures and therefore a less strict definition of what constitutes a fever, it is generally not true when young otherwise healthy people tell you that they typically run low and 98.6F means they have a fever."
-        
     },
     {
         "id": "10",
-        "DiseasesCategory":"Fever",
+        "DiseasesCategory": "Fever",
         "qsn": "Why is fever helpful for the body?",
         "ans": "Most bacteria have evolved to operate best at 98.6F,higher temps tend to interfere with their production of protein, and cause the body to bind up free iron, which is essential for bacterial replication. Thus, if the fever doesn’t bother the patient, don’t bother treating the fever"
-        
     },
     {
         "id": "11",
-        "DiseasesCategory":"Fever",
+        "DiseasesCategory": "Fever",
         "qsn": ". What is the most common bacterial cause for a fever in girls under age 3?",
         "ans": "Urinary tract infection. Any young girl with a fever and no clear source of infection should have her urine checked. This especially applies to white females. Up to 16% of females under age 3 with no clear source of illness that are febrile will have a UTI. It’s less common in boys because they have longer urethras."
-        
     },
     {
         "id": "12",
-        "DiseasesCategory":"Fever",
+        "DiseasesCategory": "Fever",
         "qsn": "The patient has a shaking chill while you are loading him up. Why do we chill when a fever is present?",
         "ans": "The hypothalamus, our internal thermostat is currently cranked up higher than normal(e.g. body wants to be at 102). So if that patient is only at 101 degrees, the brain thinks he is cold, and will shiver in an attempt to increase the temperature to the set degree.This is exactly like when we shiver in the cold Minnesota winter, trying to get our temp to 98.6. Severe and long-lasting shivers are called rigors, which are very uncomfortable."
-        
     },
     {
         "id": "13",
-        "DiseasesCategory":"Fever",
+        "DiseasesCategory": "Fever",
         "qsn": "Why don’t we use aspirin much anymore for fever control?",
         "ans": "There is an association between Reye’s syndrome (a rapidly progressive encephalopathy that can cause confusion, seizures, brain damage and death) and aspirin use, especially in cases of influenza and chicken pox. This association led to a recommendation that aspirin not be used to control fever in children. It is still indicated in certain diseases with fever, like juvenile rheumatoid arthritis, Kawasaki’s disease, etc."
-        
     },
     {
         "id": "14",
-        "DiseasesCategory":"Fever",
+        "DiseasesCategory": "Fever",
         "qsn": "What are some different causes of fever?",
         "ans": "Bacterial infections (everywhere in the body you can imagine), line infections (central line, etc. think cancer patients) or graft infections, fungal, viral, rickettsial, chlamydial  infections, parasites, spirochetes (eg: Lyme), cancers of many kinds, connective tissue diseases (lupus, rheumatoid disease), sarcoid, Crohn’s disease (and other colitis), drug fever, deep venous thrombus/pulmonary embolus, pericarditis, reabsorbing hematomas, aortic dissection, metabolic and inheirited diseases, sub-arachnoid hemorrhage and other CNS events, thyroid disease, drug use, and finally pancreatitis (and others too rare to mention)."
-        
     },
     {
         "id": "15",
-        "DiseasesCategory":"Dengue",
+        "DiseasesCategory": "Dengue",
         "qsn": "Is dengue a deadly disease? Can one die from dengue fever?",
         "ans": "Although dengue fever is a serious and often painful condition, it is not a deadly disease and does not lead to death. With proper care, most people infected with dengue usually make a full recovery unless complications occur. These complications may include Dengue Hemorrhagic Fever (DHF) and Dengue Shock Syndrome (DSS). In some of these cases death can occur but is rare. With proper care and treatment, even patients with DHF or DSS can make a full recovery. Hospitalization is highly recommended in cases of DHF or DSS and greatly increases the chances of survival."
-        
     },
     {
         "id": "16",
-        "DiseasesCategory":"Dengue",
+        "DiseasesCategory": "Dengue",
         "qsn": "Can I be infected with dengue a second or more times?",
         "ans": "Yes. Dengue is caused by four different viral strains and infection with one virus does not protect a person against infection from the other three strains. Hence one can be infected by dengue four times. Subsequent infections increase the risk for the most serious forms of dengue, such as dengue hemorrhagic fever and dengue shock syndrome."
-        
     },
     {
         "id": "17",
-        "DiseasesCategory":"Dengue",
+        "DiseasesCategory": "Dengue",
         "qsn": "Is dengue contagious from person to person?",
         "ans": "No, dengue is not contagious and cannot be spread merely by person to person contact. The dengue virus is carried and transmitted by mosquitoes. If a mosquito bites someone with dengue, and then bites another person, the second person can get infected. This is usually how dengue spreads and can sometimes become an epidemic."
-        
     },
     {
         "id": "18",
-        "DiseasesCategory":"Dengue",
+        "DiseasesCategory": "Dengue",
         "qsn": "Where do most outbreaks of dengue occur?",
         "ans": "Outbreaks of dengue occur primarily in areas where Aedes aegypti mosquitoes breed and thrive, i.e., mostly in tropical and sub-tropical areas of the world. These include India, Bangladesh, Pakistan, Southeast Asia, parts of South and Central Africa, Caribbean, Mexico, and parts of South and Central America. Dengue viruses may be introduced into other areas by travelers who become infected while visiting the tropics where dengue commonly exists."
-        
     },
     {
         "id": "19",
-        "DiseasesCategory":"Dengue",
+        "DiseasesCategory": "Dengue",
         "qsn": "What does the dengue fever antibody test mean?",
         "ans": "In the antibody test, 2 classes of antibodies IgG and IgM (produced in response to the infection) are detected. A positive IgM plus negative IgG will indicate a recent primary dengue infection while a positive IgG with a positive or negative IgM will indicate an infection that has occured in the past."
-        
     },
     {
         "id": "20",
-        "DiseasesCategory":"Ophthalmia",
+        "DiseasesCategory": "Ophthalmia",
         "qsn": "Which is the most common cause of ophthalmia?",
         "ans": "Chlamydia is the most common infectious agent that causes ophthalmia neonatorum in the United States, where 2%-40% of neonatal conjunctivitis cases are caused by Chlamydia."
-        
     },
     {
         "id": "21",
-        "DiseasesCategory":"Ophthalmia",
+        "DiseasesCategory": "Ophthalmia",
         "qsn": "How can ophthalmia be prevented?",
         "ans": "More effective means of preventing ophthalmia neonatorum include screening all pregnant women for gonorrhea and chlamydia infection, and treatment and follow-up of those found to be infected. Mothers who were not screened should be tested at delivery."
-        
     },
     {
         "id": "22",
-        "DiseasesCategory":"Ophthalmia",
+        "DiseasesCategory": "Ophthalmia",
         "qsn": "What bacteria causes ophthalmia?",
         "ans": "(1)Chlamydia trachomatis, (2)Neisseria gonorrhoeae,(3)Haemophilus species,(4)Streptococcus pneumoniae,(5)Staphylococcus aureus,(6)Staphylococcus epidermidis,(7)Streptococcus viridans,(8)Escherichia coli."
-        
     },
     {
         "id": "23",
-        "DiseasesCategory":"Ophthalmia",
+        "DiseasesCategory": "Ophthalmia",
         "qsn": "What are the signs and symptoms of ophthalmia neonatorum?",
         "ans": "Signs and Symptoms:(1)Eyelid & palpebral conjunctiva erythema & edema.(2)Purulent eye discharge."
-        
     },
     {
         "id": "24",
-        "DiseasesCategory":"Ophthalmia",
+        "DiseasesCategory": "Ophthalmia",
         "qsn": "What does ophthalmia look like?",
         "ans": "Eye floaters and loss of accommodation are the earliest signs of sympathetic ophthalmia. Eye floaters appear as small spots that drift through a person's field of vision. Floaters stand out when you look at something bright or blank (such as a blue sky)"
-        
     },
     {
         "id": "25",
-        "DiseasesCategory":"Ophthalmia",
+        "DiseasesCategory": "Ophthalmia",
         "qsn": "What helps to protect the eyes from infection?",
         "ans": "Contact lenses touch your eye surface, so keeping them free of bacteria, viruses, and fungi is key to preventing eye infections. Always wash your hands before inserting or removing your contact lenses, and clean and store them according to instructions."
-        
     },
     {
         "id": "26",
-        "DiseasesCategory":"Ophthalmia",
+        "DiseasesCategory": "Ophthalmia",
         "qsn": "What bacteria causes neonatal conjunctivitis?",
         "ans": "Bacterial causes of neonatal conjunctivitis include:(1)Chlamydia trachomatis (most common), (2)Neisseria gonnorhea N. ,(3)Pseudomonas aeruginosa.,(4)streptococcus spp. (5) Other bacteria include Klebsiella, Proteus, Enterobacter,Serratia, and Eikenella corrodens."
-        
     },
     {
         "id": "27",
-        "DiseasesCategory":"Diarrhea",
+        "DiseasesCategory": "Diarrhea",
         "qsn": "How does diarrhea affect the body?",
         "ans": "Diarrhea causes you to lose even more fluids. You also lose salts and minerals such as sodium, chloride, and potassium. These salts and minerals affect the amount of water that stays in your body. Dehydration can be serious, especially for children, older adults, and people with weakened immune systems."
-        
     },
     {
         "id": "28",
-        "DiseasesCategory":"Diarrhea",
+        "DiseasesCategory": "Diarrhea",
         "qsn": "What are the 4 types of diarrhea?",
         "ans": "It can be divided into three basic categories: watery, fatty (malabsorption), and inflammatory. Watery diarrhea may be subdivided into osmotic, secretory, and functional types. Watery diarrhea includes irritable bowel syndrome, which is the most common cause of functional diarrhea."
-        
     },
     {
         "id": "29",
-        "DiseasesCategory":"Diarrhea",
+        "DiseasesCategory": "Diarrhea",
         "qsn": "What foods stop diarrhea?",
         "ans": "BRAT stands for “bananas, rice, apples, toast.” These foods are bland, so they won't aggravate the digestive system. They're also binding, so they help firm up stool.Other foods that are included in the BRAT diet include:cooked cereal, like Cream of Wheat or farina,soda crackers,applesauce and apple juice."
-        
     },
     {
         "id": "30",
-        "DiseasesCategory":"Diarrhea",
+        "DiseasesCategory": "Diarrhea",
         "qsn": "What stops diarrhea fast?",
         "ans": "A diet known as BRAT may also quickly relieve diarrhea. BRAT stands for bananas, rice, applesauce, and toast. This diet is effective due to the bland nature of these foods, and the fact that they're starchy, low-fiber foods. These foods have a binding effect in the digestive tract to make stools bulkier."
-        
     },
     {
         "id": "31",
-        "DiseasesCategory":"Diarrhea",
+        "DiseasesCategory": "Diarrhea",
         "qsn": "What happens if you have diarrhea for too long?",
         "ans": "Chronic diarrhea lasts for 4 weeks or longer. It typically signals something other than a viral infection as the root cause. It could be something simple, such as a food intolerance, or it could mean a more serious condition, such as colon cancer."
-        
     },
     {
         "id": "32",
-        "DiseasesCategory":"Diarrhea",
+        "DiseasesCategory": "Diarrhea",
         "qsn": "Does diarrhea cause weight loss?",
         "ans": "Diarrhea is usually caused by bacterial infections or stress and lasts several days. It can become dangerous when it lasts for weeks or more because it encourages water loss in the body. People with diarrhea can lose a lot of weight if they've been sick for a while, but they're losing mostly water weight."
-        
     },
     {
         "id": "33",
-        "DiseasesCategory":"Diarrhea",
+        "DiseasesCategory": "Diarrhea",
         "qsn": "What foods make diarrhea worse?",
         "ans": "Fried, greasy, and fatty foods. Foods that are high in saturated and trans fats can cause diarrhea or make symptoms worse. The extra fat is broken down in the colon (large intestine), which causes the release of extra fluids that cause a bout of diarrhea."
-        
     },
     {
         "id": "34",
-        "DiseasesCategory":"Skin",
+        "DiseasesCategory": "Skin",
         "qsn": "What are the ten 10 most common skin disorders?",
         "ans": "Acne (Acne vulgaris), Atopic dermatitis (Eczema) ,Shingles,Hives (Urticaria) ,Sunburn,Contact Dermatitis,Diaper Rash,Rosacea, Athlete's Foot (Tinea Pedis),Basal Cell Carcinoma."
-        
     },
     {
         "id": "35",
-        "DiseasesCategory":"Skin",
+        "DiseasesCategory": "Skin",
         "qsn": "What are the main diseases of the skin?",
         "ans": "Some of the most common skin diseases include: Acne, blocked skin follicles that lead to oil, bacteria and dead skin buildup in your pores. Alopecia areata, losing your hair in small patches. Atopic dermatitis (eczema), dry, itchy skin that leads to swelling, cracking or scaliness."
-        
     },
     {
         "id": "36",
-        "DiseasesCategory":"Skin",
+        "DiseasesCategory": "Skin",
         "qsn": "What is the medicine for skin disease?",
         "ans": "Some common oral or injection treatments for skin conditions include: Antibiotics: Oral antibiotics are used to treat many skin conditions. Common antibiotics include dicloxacillin, erythromycin, and tetracycline. Antifungal agents: Oral antifungal drugs include fluconazole and itraconazole."
-        
     },
     {
         "id": "37",
-        "DiseasesCategory":"Skin",
+        "DiseasesCategory": "Skin",
         "qsn": "What causes skin problem?",
         "ans": "Common known causes of skin disorders include: bacteria trapped in skin pores and hair follicles. fungus, parasites, or microorganisms living on the skin. viruses."
-        
     },
     {
         "id": "38",
-        "DiseasesCategory":"Skin",
+        "DiseasesCategory": "Skin",
         "qsn": "What causes skin bacteria?",
         "ans": "Bacterial skin infections develop when bacteria enter through hair follicles or through small breaks in the skin that result from scrapes, punctures, surgery, burns, sunburn, animal or insect bites, wounds, and preexisting skin disorders."
-        
     },
     {
         "id": "39",
-        "DiseasesCategory":"Skin",
+        "DiseasesCategory": "Skin",
         "qsn": "What is skin allergy??",
         "ans": "A skin allergy is when skin becomes irritated because the immune system reacted to something that is usually harmless. This is called an allergic reaction. An allergic reaction can cause rash, itching, burning, redness, bumps, hives, and swelling. Many different allergens can cause a reaction."
-        
     },
     {
         "id": "40",
-        "DiseasesCategory":"Skin",
+        "DiseasesCategory": "Skin",
         "qsn": "What are the 7 types of eczema?",
         "ans": "Atopic Dermatitis,Contact Dermatitis,Dyshidrotic Eczema, Neurodermatitis, Nummular ,Eczema,Seborrheic Dermatitis,Stasis Dermatitis."
-        
     },
     {
         "id": "41",
-        "DiseasesCategory":"COVID-19",
+        "DiseasesCategory": "COVID-19",
         "qsn": "Are antibiotics effective in treating COVID-19?",
         "ans": "Antibiotics are neither effective against COVID-19 (from the Omicron VOC or another variant) nor influenza. People with mild symptoms of either of these diseases can usually be treated safely at home, and do not require treatment with antibiotics. However, some patients with severe symptoms develop bacterial co-infections, which may require treatment with antibiotics, prescribed by a medical professional."
-        
     },
     {
         "id": "42",
-        "DiseasesCategory":"COVID-19",
+        "DiseasesCategory": "COVID-19",
         "qsn": "Is the length of the isolation period for an infection with the Omicron VOC the same as for the flu?",
         "ans": "WHO recommends that symptomatic COVID-19 cases (from the Omicron VOC or another variant) should remain in isolation for 10 days after the start of symptoms, plus at least three additional days without symptoms (including without fever or respiratory symptoms). For asymptomatic cases, the isolation period should be 10 days from the initial positive test. As for influenza, people are most contagious during the first three days of their illness and should stay away from others at least four to five days from the onset of symptoms to avoid spreading the virus."
-        
     },
     {
         "id": "43",
-        "DiseasesCategory":"COVID-19",
+        "DiseasesCategory": "COVID-19",
         "qsn": "How is an infection from the Omicron VOC different from the flu?",
         "ans": "Although influenza and COVID-19 (from the Omicron VOC or another variant) may have some similar symptoms, losing your sense of taste and/or smell and shortness of breath are more frequently indicative of a COVID-19 infection.Treatments for COVID-19 and the flu are also different. Treatment options for severe forms of COVID-19 include oxygen, corticosteroids, and interleukin-6 receptor blockers. For the flu, antiviral drugs such as oseltamivir may be used to prevent and treat influenza A and B. The use of antiviral drugs can reduce severe complications and death due to influenza and is especially important for high-risk groups.Additionally, vaccines for COVID-19 and the flu are different, but both are important for prevention and protection from these viruses."
-        
     },
     {
         "id": "44",
-        "DiseasesCategory":"COVID-19",
+        "DiseasesCategory": "COVID-19",
         "qsn": "Is co-infection with the flu and the Omicron VOC widespread?",
         "ans": "Although it is possible to catch both diseases at the same time, recent studies indicate that the prevalence of co-infection with the flu and the Omicron VOC are relatively low."
-        
     },
     {
         "id": "45",
-        "DiseasesCategory":"COVID-19",
+        "DiseasesCategory": "COVID-19",
         "qsn": "The media are calling the co-infection of the flu and COVID-19 ‘flurona’. Can WHO confirm that this is not a new disease?",
         "ans": "WHO does not recognize ‘flurona’ as a medical term and confirms that it is not a new disease; instead, it is the co-infection with influenza and COVID-19. People are often infected with multiple diseases that circulate in the community at the same time. As more individuals are getting tested, more than one pathogen may be detected. If influenza and SARS-CoV-2 (the virus responsible for COVID-19) infect a person simultaneously, this does not mean that a new disease has emerged. In fact, cases of co-infection with influenza and COVID-19 have been documented as early as March 2020."
-        
     },
     {
         "id": "46",
-        "DiseasesCategory":"Diabetes",
+        "DiseasesCategory": "Diabetes",
         "qsn": "What is diabetes ?",
         "ans": "Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy."
-        
     },
     {
         "id": "47",
-        "DiseasesCategory":"Diabetes",
+        "DiseasesCategory": "Diabetes",
         "qsn": "How can u prevent diabetes?",
         "ans": "Lose extra weight. Losing weight reduces the risk of diabetes,Be more physically active. There are many benefits to regular physical activity,Eat healthy plant foods. Plants provide vitamins, minerals and carbohydrates in your diet,Eat healthy fats, Skip fad diets and make healthier choices."
-        
     },
     {
-
         "id": "48",
-        "DiseasesCategory":"Diabetes",
+        "DiseasesCategory": "Diabetes",
         "qsn": "What is a normal blood sugar level?",
         "ans": "A fasting blood sugar level of 99 mg/dL or lower is normal, 100 to 125 mg/dL indicates you have prediabetes, and 126 mg/dL or higher indicates you have diabetes."
-        
     },
     {
         "id": "49",
-        "DiseasesCategory":"Diabetes",
+        "DiseasesCategory": "Diabetes",
         "qsn": "How do you test for diabetes?",
         "ans": "A health care professional will take a blood sample to measure your glucose level after fasting. Next, you will drink a liquid that is high in sugar. Another blood sample is taken 2 hours later to check your blood glucose level. If your blood glucose level is high, you may have diabetes."
-        
     },
     {
         "id": "50",
-        "DiseasesCategory":"Diabetes",
+        "DiseasesCategory": "Diabetes",
         "qsn": "What is the first stage of diabetes?",
         "ans": "Three of the earliest signs of diabetes you may notice include frequent urination, increased thirst, and unexplained hunger. As your body tries to deal with increasing blood glucose levels, your kidneys need to work harder to filter out the glucose, meaning you will need to pee more often."
-        
     },
     {
         "id": "51",
-        "DiseasesCategory":"Malaria",
+        "DiseasesCategory": "Malaria",
         "qsn": "What is malaria ? ",
         "ans": "Malaria is a disease presenting with fever caused by blood parasites of the genus Plasmodium, which are transmitted via the bites of infected mosquitoes."
-        
     },
     {
         "id": "52",
-        "DiseasesCategory":"Malaria",
+        "DiseasesCategory": "Malaria",
         "qsn": "Who first discovered malaria?",
         "ans": "Dr. Alphonse Laveran, a military doctor in France's Service de Santé des Armées (Health Service of the Armed Forces). The military hospital in Constantine (Algeria), where Laveran discovered the malaria parasite in 1880."
-        
     },
     {
         "id": "53",
-        "DiseasesCategory":"Malaria",
+        "DiseasesCategory": "Malaria",
         "qsn": "Why is it called malaria? ",
         "ans": "For over 2500 years the idea that malaria fevers were caused by miasmas rising from swamps persisted and it is widely held that the word malaria comes from the Italian mal'aria meaning spoiled air although this has been disputed."
-        
     },
     {
         "id": "54",
-        "DiseasesCategory":"Malaria",
+        "DiseasesCategory": "Malaria",
         "qsn": "Which organ is most affected in malaria?",
         "ans": "Malaria can damage the kidneys or liver or cause the spleen to rupture. Any of these conditions can be life-threatening. Anemia. Malaria may result in not having enough red blood cells for an adequate supply of oxygen to your body's tissues (anemia)."
-        
     },
     {
         "id": "55",
-        "DiseasesCategory":"Malaria",
+        "DiseasesCategory": "Malaria",
         "qsn": "What is the best medicine for malaria?",
         "ans": "Atovaquone-proguanil (Malarone),Quinine sulfate (Qualaquin) with doxycycline (Oracea, Vibramycin, others), Primaquine phosphate."
-        
     },
     {
         "id": "56",
-        "DiseasesCategory":"Malaria",
+        "DiseasesCategory": "Malaria",
         "qsn": "What is World Malaria Day?",
         "ans": "25 April is World Malaria Day.World Malaria Day is an occasion to highlight the need for continued investment and sustained political commitment for malaria prevention and control. It was instituted by WHO Member States during the World Health Assembly of 2007."
-        
     },
     {
         "id": "57",
-        "DiseasesCategory":"Malaria",
+        "DiseasesCategory": "Malaria",
         "qsn": "What is the first stage of malaria?",
         "ans": "The malaria paroxysm comprises three successive stages. The first is a 15-to-60 minute cold stage characterized by shivering and a feeling of cold. Next comes the 2-to-6 hour hot stage, in which there is fever, sometimes reaching 41°C, flushed, dry skin, and often headache, nausea, and vomiting."
-        
     },
     {
         "id": "58",
-        "DiseasesCategory":"Hepatitis ",
+        "DiseasesCategory": "Hepatitis",
         "qsn": "What is hepatitis?",
         "ans": "Hepatitis is an inflammation of the liver. The condition can be self-limiting or can progress to fibrosis (scarring), cirrhosis or liver cancer."
-        
     },
     {
         "id": "59",
-        "DiseasesCategory":"Hepatitis",
+        "DiseasesCategory": "Hepatitis",
         "qsn": "What foods make diarrhea worse?",
         "ans": "Fried, greasy, and fatty foods. Foods that are high in saturated and trans fats can cause diarrhea or make symptoms worse. The extra fat is broken down in the colon (large intestine), which causes the release of extra fluids that cause a bout of diarrhea."
-        
     },
     {
         "id": "60",
-        "DiseasesCategory":"Hepatitis",
+        "DiseasesCategory": "Hepatitis",
         "qsn": "What are the 3 most common types of hepatitis?",
         "ans": "In the United States, the most common types of viral hepatitis are hepatitis A, hepatitis B, and hepatitis C."
-        
     },
     {
         "id": "61",
-        "DiseasesCategory":"Hepatitis",
+        "DiseasesCategory": "Hepatitis",
         "qsn": "What hepatitis has a vaccine?",
         "ans": "There are vaccines to prevent hepatitis A and hepatitis B; however, there is no vaccine for hepatitis C. The page “What is hepatitis?” more information about the differences between hepatitis A, hepatitis B, and hepatitis C."
-        
     },
     {
         "id": "62",
-        "DiseasesCategory":"Hepatitis",
+        "DiseasesCategory": "Hepatitis",
         "qsn": "Which hepatitis is curable?",
         "ans": "Hepatitis A usually resolves itself within a few months; hepatitis B can be suppressed with antiviral drugs until it leaves the body; and hepatitis C can be cured outright with medication."
-        
     },
     {
         "id": "63",
-        "DiseasesCategory":"Hepatitis",
+        "DiseasesCategory": "Hepatitis",
         "qsn": "What are the symptoms of hepatitis?",
         "ans": "Pain or bloating in the belly area,Dark urine and pale or clay-colored stools,Fatigue,Low grade fever,Itching,Jaundice (yellowing of the skin or eyes),Loss of appetite,Nausea and vomiting."
-        
     },
     {
         "id": "64",
-        "DiseasesCategory":"Hepatitis",
+        "DiseasesCategory": "Hepatitis",
         "qsn": "What causes hepatitis in a child?",
         "ans": "Hepatitis is a general term used to describe inflammation of the liver. Liver inflammation can be caused by several viruses (viral hepatitis), chemicals, drugs, alcohol, certain genetic disorders or by an overactive immune system that mistakenly attacks the liver, called autoimmune hepatitis."
-        
     },
     {
         "id": "65",
-        "DiseasesCategory":"HIV/AIDS",
+        "DiseasesCategory": "HIV/AIDS",
         "qsn": "Are HIV and AIDS the Same Thing?",
         "ans": "No. HIV is a virus, while AIDS is a stage of advanced infection. Specifically, HIV, or the human immunodeficiency virus, is an infectious virus that gradually breaks down a person’s immune system, leaving the body less able to defend itself against viruses, bacteria, fungi, and parasites. These infections, which are called “opportunistic,” tend to be mild in the early stages and can become progressively worse as the immune system is depleted.AIDS, or acquired immunodeficiency syndrome, is the stage of the disease when the immune system is weakened by the loss of CD4 cells (also called T-helper or T-4 cells) — white blood cells that help fend off harmful pathogens in the body. Without these defenses, a person will be at high risk for serious illnesses that a healthy person would be able to fight off."
-        
     },
     {
         "id": "66",
-        "DiseasesCategory":"HIV/AIDS",
+        "DiseasesCategory": "HIV/AIDS",
         "qsn": "Can HIV Live Outside the Body?",
         "ans": "Not for very long. Compared with other types of viruses, such as influenza or chicken pox, HIV is relatively fragile: It does not thrive at room temperature (68 degrees F), when exposed to ultraviolet (UV) radiation from the sun, or at pH levels that are dissimilar to that of blood. Even if a small amount of virus does manage to survive for a short period of time, the odds that it will infect you are next to zero."
-        
     },
     {
         "id": "67",
-        "DiseasesCategory":"HIV/AIDS",
+        "DiseasesCategory": "HIV/AIDS",
         "qsn": "Which Activities Are Most Likely to Transmit HIV?",
         "ans": "The three main routes of HIV infection in the United States are anal sex, vaginal sex, and shared needles. Of these, unprotected anal sex poses the highest risk."
-        
     },
     {
         "id": "68",
-        "DiseasesCategory":"HIV/AIDS",
+        "DiseasesCategory": "HIV/AIDS",
         "qsn": " Can You Get HIV From Oral Sex?",
         "ans": "While there is a possible risk of getting HIV from oral sex, the documented risk remains extremely low. The CDC says that the risk is hard to quantify, because a lot of people who have oral sex have anal or vaginal sex, too."
-        
     },
     {
         "id": "69",
-        "DiseasesCategory":"HIV/AIDS",
+        "DiseasesCategory": "HIV/AIDS",
         "qsn": "How often should you get tested for HIV?",
         "ans": "According to the CDCTrusted Source, everyone between the ages of 13 and 64 should get tested at least once for HIV.Some people may need to get tested more frequently. If you have a higher risk of contracting HIV, the CDC recommends getting tested at least once a year. People who have a penis and have sex with other people who have a penis may want to get tested every 3 to 6 months.People who are pregnant should also get tested in the early stages of pregnancy."
-        
     },
     {
         "id": "70",
-        "DiseasesCategory":"Flu",
+        "DiseasesCategory": "Flu",
         "qsn": "What is an influenza pandemic?",
         "ans": "An influenza pandemic is a global outbreak of a new influenza A virus that is very different from current and recently circulating human seasonal influenza A viruses. Pandemics happen when new (novel) influenza A viruses emerge which are able to infect people easily and spread from person to person in an efficient and sustained way."
-        
     },
     {
         "id": "71",
-        "DiseasesCategory":"Flu",
+        "DiseasesCategory": "Flu",
         "qsn": "Where do pandemic influenza viruses come from?",
         "ans": "Different animals—including birds and pigs—are hosts to influenza A viruses that do not normally infect people. Influenza A viruses are constantly changing, making it possible on very rare occasions for non-human influenza viruses to change in such a way that they can infect people easily and spread efficiently from person to person."
-        
     },
     {
         "id": "72",
-        "DiseasesCategory":"Flu",
+        "DiseasesCategory": "Flu",
         "qsn": "Will seasonal flu vaccines protect against pandemic flu?",
         "ans": "It is unlikely that seasonal flu vaccines would protect against a pandemic influenza virus. Seasonal flu vaccines that are used annually protect against currently circulating human influenza A and B viruses. They are not designed to protect against new influenza A viruses. A pandemic influenza virus would be very different from circulating seasonal influenza A viruses and thus seasonal vaccines would not be expected to offer protection."
-        
     },
     {
         "id": "73",
-        "DiseasesCategory":"ANXIETY",
+        "DiseasesCategory": "ANXIETY",
         "qsn": "What are the five most common types of anxiety disorders?",
         "ans": "Generalized Anxiety Disorder,Obsessive-Compulsive Disorder (OCD),Panic Disorder,Post-Traumatic Stress Disorder (PTSD),Social Phobia (or Social Anxiety Disorder)."
-        
     },
     {
         "id": "74",
-        "DiseasesCategory":"ANXIETY",
+        "DiseasesCategory": "ANXIETY",
         "qsn": "How are anxiety disorders diagnosed?",
         "ans": "Primary care physicians and psychiatrists diagnose someone as having an anxiety disorder if symptoms occur for six months on more days than not, and significantly interfere with the person’s ability to function at home, work or school.Doctors perform physical and psychological evaluations to rule out other causes for the symptoms of anxiety. Cardiovascular disease, thyroid problems, menopause, substance abuse and/or drug side effects, such as from steroids, may cause symptoms similar to those of an anxiety disorder."
-        
     },
     {
         "id": "75",
-        "DiseasesCategory":"ANXIETY",
+        "DiseasesCategory": "ANXIETY",
         "qsn": "WHAT IS STRESS?",
         "ans": "Stress is a normal physical response to events that make one feel threatened or that upset one’s balance in some way. When the body senses danger—real or imagined—the body's defenses kick into high gear in a rapid, automatic process known as the ‘fight-or-flight’ reaction, or the stress response. The nervous system responds by releasing a flood of stress hormones, including adrenaline and cortisol, that rouse the body for emergency action."
-        
     },
     {
         "id": "76",
-        "DiseasesCategory":"ANXIETY",
+        "DiseasesCategory": "ANXIETY",
         "qsn": "What is the impact of stress?",
         "ans": "Stress during development has often been regarded as a potentially disruptive force, capable of inducing disease states if overly prolonged or exceedingly intense. It can also, however, favor resiliency and adaptive processing that are crucial to navigating a human life. Countless studies have indicated that severe neglect during infancy, both in humans and in laboratory animals, results in long-term abnormal development of biological systems involved in the regulation of emotions, but the response to stress is also a key driver to individual development. The biological system responsible for physical reactions to a stressor not only coordinates immediate responses to external challenges but also functions as a tool that enables the characterization of an environment as favorable or threatening. Thus the stress response system promotes long-term adaptive processes that prepare the individual to cope with specific external challenges."
-        
     },
     {
         "id": "77",
-        "DiseasesCategory":"ANXIETY",
+        "DiseasesCategory": "ANXIETY",
         "qsn": "What are common anxiety disorder treatments?",
         "ans": "Psychotherapy,Cognitive Behavioral Therapy (CBT),Self-Help or Support Groups,Stress-Management Techniques,Antidepressants,Anti-Anxiety Medications,Beta-Blockers."
-        
     },
     {
         "id": "78",
-        "DiseasesCategory":"Bronchitis",
+        "DiseasesCategory": "Bronchitis",
         "qsn": "What Is Bronchitis?",
         "ans": "Bronchitis is the name for the condition that results when the bronchial tubes (the passageways that carry air to your lungs) become inflamed, according to the National Heart, Lung, and Blood Institute. (1) Those tubes swell, making it more difficult for air to move through them and making it more challenging to breathe, per the American Academy of Family Physicians."
-        
     },
     {
         "id": "79",
-        "DiseasesCategory":"Bronchitis",
+        "DiseasesCategory": "Bronchitis",
         "qsn": "What Are the Different Types of Bronchitis?",
         "ans": "Acute Bronchitis The defining symptom of acute bronchitis is a cough that typically develops after a cold or the flu and lasts for about 10 to 14 days (though it may linger for as long as three or more weeks).Chronic Bronchitis The other type, chronic bronchitis, is a far more serious, incurable lung disease involving periods of persistent coughing and inflammation. The condition causes structural changes to the bronchial tubes; symptoms may flare up and get better and worse over time, but they’ll never completely go away, notes the American Lung Association.(The rest of this article and the related articles focus on acute bronchitis, often just referred to as bronchitis.)"
-        
     },
     {
         "id": "80",
-        "DiseasesCategory":"Bronchitis",
+        "DiseasesCategory": "Bronchitis",
         "qsn": "What is signs and Symptoms of Bronchitis",
         "ans": "Fatigue,Coughing,Runny or stuffy nose,Low-grade fever,Chills,Body aches,Headaches,Production of sputum,Chest tightness or discomfort"
-        
     },
     {
         "id": "81",
-        "DiseasesCategory":"Bronchitis",
+        "DiseasesCategory": "Bronchitis",
         "qsn": "Do I need antibiotics for bronchitis?",
         "ans": "In most cases, no, you do not need antibiotics for bronchitis. If bronchitis is caused by a bacterial infection, antibiotics will help. If bronchitis is caused by a viral infection, antibiotics will not help. Your doctor can determine if bronchitis is bacterial or viral."
-        
     },
     {
         "id": "82",
-        "DiseasesCategory":"Bronchitis",
+        "DiseasesCategory": "Bronchitis",
         "qsn": "How can treat bronchitis at home?",
         "ans": "To manage bronchitis symptoms at home: Stay hydrated. Rest. Avoid caffeine, alcohol, and milk products. Try home remedies like spicy foods, mullein tea, vitamin C, zinc, garlic, and over-the-counter saline nasal spray."
-        
     },
     {
         "id": "83",
-        "DiseasesCategory":"Depression",
+        "DiseasesCategory": "Depression",
         "qsn": "Is depression a mental illness?",
         "ans": "Yes, clinical depression is a serious, but treatable, mental illness. It is a medical condition, not a personal weakness.It is also very common. Major depression is a clinical syndrome that affects about 6.7% of the U.S. population over age 18, according to the National Institute of Mental Health. Some estimate that major depression may be as high as 15%. Everybody at one point or another will feel sadness as a normal reaction to loss, grief, or injured self-esteem, but clinical depression, called 'major depressive disorder' or 'major depression' by doctors, is a serious medical illness that needs professional diagnosis and treatment."
-        
     },
     {
         "id": "84",
-        "DiseasesCategory":"Depression",
+        "DiseasesCategory": "Depression",
         "qsn": "Can a lack of sleep cause depression?",
         "ans": "No. Lack of sleep alone cannot cause depression, but it does play a role. Lack of sleep resulting from another medical illness or the presence of personal problems can intensify depression. Chronic inability to sleep is also an important clue that someone may be depressed."
-        
     },
     {
         "id": "85",
-        "DiseasesCategory":"Depression",
+        "DiseasesCategory": "Depression",
         "qsn": "Can Depression Be Prevented?",
         "ans": "Get enough sleep,Follow a healthy,nutritious diet,Exercise regularly,Avoid alcohol, marijuana and other recreational drugs,Get involved in activities that make you happy, even if you don't feel like it,Spend time with family and friends,Try talking to clergy or spiritual advisors who may help give meaning to painful experiences,Consider prayer, meditation, tai chi or biofeedback as ways to relax or draw on your inner strengths."
-        
     },
     {
         "id": "86",
-        "DiseasesCategory":"Lupus",
+        "DiseasesCategory": "Lupus",
         "qsn": "What Is Lupus?",
         "ans": "Lupus is a disease of the immune system. When people talk about “lupus,” they’re often referring to the most common type, systemic lupus erythematosus (SLE).Your immune system protects your body from infection. But when you have lupus, your immune system attacks your own tissues. This leads to tissue damage and illness. "
-        
     },
     {
         "id": "87",
-        "DiseasesCategory":"Lupus",
+        "DiseasesCategory": "Lupus",
         "qsn": "What are the symptoms of Lupus?",
         "ans": "Achy joints (arthralgia),Fever higher than 100 F,Swollen joints (arthritis),Constant or severe fatigue,Skin rash,Ankle swelling,Pain in your chest when breathing deeply (pleurisy),A butterfly-shaped rash across your cheeks and nose (malar rash),Hair loss,Sensitivity to the sun or other lights,Seizures,Mouth or nose sores,Pale or purple fingers or toes when you’re cold or stressed (Raynaud's phenomenon)"
-        
-    },{
+    },
+    {
         "id": "88",
-        "DiseasesCategory":"Lupus",
+        "DiseasesCategory": "Lupus",
         "qsn": "What is the types of Lupus?",
         "ans": "Systemic lupus erythematosus (SLE),Lupus nephritis,Cutaneous lupus,Drug-induced lupus,Neonatal lupus"
-        
     },
     {
         "id": "89",
-        "DiseasesCategory":"Lupus",
+        "DiseasesCategory": "Lupus",
         "qsn": "Does a positive ANA test mean I have Lupus?",
         "ans": "Not necessarily. The ANA test is positive in most people who have lupus, but it also may be positive in many people who have another autoimmune disease or who don’t have any diseases. A positive ANA test alone isn’t enough for your doctor to diagnose lupus. You would also need at least three of the other criteria."
-        
     },
     {
-      
         "id": "90",
-        "DiseasesCategory":"Diarrhea",
+        "DiseasesCategory": "Diarrhea",
         "qsn": "What is Lupus Treatment",
         "ans": "Lupus treatment is the best way to manage your symptoms, feel better, and keep the disease from getting worse.Treatment for lupus -- also known as systemic lupus erythematosus (SLE) -- depends on your symptoms and how severe they are. Treatment can help you:Ease your symptoms,Bring down inflammation,Prevent and relieve flares,Prevent organ damage and other health problems"
-        
     },
     {
-      
         "id": "91",
-        "DiseasesCategory":"Asthma",
+        "DiseasesCategory": "Asthma",
         "qsn": "What is asthma?",
         "ans": "If you have shortness of breath or tightness in your chest, or you experience wheezing or suffer from prolonged coughing, you might have asthma.With asthma, the airways in your lungs are sensitive, inflamed and become irritated in certain situations. Irritated airways can produce more mucus and become narrow, which makes it difficult to breathe.Asthma symptoms can get worse when something irritates the airways. This is called an asthma attack, and things that make symptoms worse are commonly called ‘asthma triggers’."
-        
     },
     {
         "id": "92",
-        "DiseasesCategory":"Asthma",
+        "DiseasesCategory": "Asthma",
         "qsn": "What are the symptoms of asthma?",
         "ans": "Not everyone with asthma develops the same combination of symptoms, but there are some common ones to watch out for. One common symptom of asthma is wheezing, which means making a whistling sound especially when you breathe out. An asthma patient may also have a dry cough, tightness in the chest, or find it difficult to breathe in certain circumstances, for example, during exercise. People with asthma may exhibit any combination of these symptoms. Some may only be affected occasionally, while others may experience symptoms often. This may be classed as ‘severe asthma’. "
-        
     },
     {
         "id": "93",
-        "DiseasesCategory":"Asthma",
+        "DiseasesCategory": "Asthma",
         "qsn": "What causes asthma?",
         "ans": "There are several risk factors for asthma that increase the chances of developing it. These include allergies, air pollution, and a family history of the condition. People, can, of course, also develop asthma without exposure to any of these risk factors, though that is less likely. If you, or someone close to you, have asthma, it’s very important to become familiar with asthma triggers. This way you can try to manage them. Common asthma triggers include a cold and other respiratory infections, dust mites, pet allergies, cigarette smoke, exercise, stress, excitement or anger, and poor air quality or pollen."
-        
     },
     {
         "id": "94",
-        "DiseasesCategory":"Asthma",
+        "DiseasesCategory": "Asthma",
         "qsn": "What is the treatment for asthma?",
         "ans": "There is currently no cure for asthma, but there are medicines available to help control the disease and its symptoms. When asthma is under control, it doesn’t interfere with normal daily life.Taking asthma medication as advised by the treating doctor is one of the most important components in asthma treatment. Another is to avoid the asthma triggers that make symptoms worse.It’s important to always discuss treatment with a doctor, nurse or pharmacist, and make sure you understand the instructions. If the patient experiences asthma symptoms often, it is important to talk to the doctor or nurse to review the symptoms and adjust the medication as needed. "
-        
     },
     {
         "id": "95",
-        "DiseasesCategory":"Asthma",
+        "DiseasesCategory": "Asthma",
         "qsn": "What should I do if I suspect I am asthmatic?",
         "ans": "As with any suspected medical condition, it’s a good idea to see your doctor as soon as you can. The quicker you can find the cause of your breathing problems, the quicker you and your doctor can find a solution.  Although it is relatively common, and for most people it is very mild, asthma can still be quite serious if not treated properly. If you do have asthma, seeing your doctor as soon as you suspect a problem can help prevent the condition from getting worse. "
-        
     },
     {
         "id": "96",
-        "DiseasesCategory":"Autism",
+        "DiseasesCategory": "Autism",
         "qsn": "What Is Autism Spectrum Disorder?",
         "ans": "Autism Spectrum Disorder (ASD) or autism is a lifelong disability considered the result of a neurological condition affecting normal brain function and development. People with autism often have impaired social interaction and communication skills and challenging behaviors. The common term of “autism” collectively represents a set of five closely related conditions that fall under the umbrella of Pervasive Developmental Disorders. These include autistic disorder, Asperger syndrome, Rett syndrome, Pervasive Developmental Disorder-not otherwise specified (PPD-NOS) and child disintegrative disorder. There is no known cause or cure, nor one known single effective treatment."
-        
     },
     {
         "id": "97",
-        "DiseasesCategory":"Autism",
+        "DiseasesCategory": "Autism",
         "qsn": "Is Autism The Same Thing As Autism Spectrum Disorder Or Asd?",
         "ans": "Yes, autism is an umbrella term for Autism Spectrum Disorders (ASD). The common term of “autism” collectively represents a set of five closely related conditions that fall under the umbrella of Pervasive Developmental Disorders."
-        
     },
     {
         "id": "98",
-        "DiseasesCategory":"Autism",
+        "DiseasesCategory": "Autism",
         "qsn": "Can Children Outgrow Autism?",
         "ans": "No, autism is a life-long developmental disability. Children do not outgrow autism, as they wouldn't outgrow cerebral palsy or mental retardation.However, that doesn't mean a child with autism cannot gain skills and make significant improvements. There are treatments available today to help families and individuals with autism  autism is treatable. We do know that with early diagnosis and a personalized, appropriate treatment plan, children with autism can grow up to lead meaningful, productive lives."
-        
     },
     {
         "id": "99",
-        "DiseasesCategory":"Autism",
+        "DiseasesCategory": "Autism",
         "qsn": " How Is Autism Diagnosed?",
         "ans": " Generally speaking, there is no one medical test for diagnosing autism. A team of professionals with expertise in autism (e.g. a developmental pediatrician, psychologist or psychiatrist, pediatric neurologist, occupational therapist, speech pathologist) will typically give a diagnosis of autism based on observation of an individual’s communication, behavior, and developmental levels. Medical tests may be incorporated to rule out other possible diagnoses. People with autism share many symptoms with individuals who have mental retardation, behavior or emotional disorders, problems with hearing, and even people with eccentric personalities. And some of these disabilities and symptoms can co-occur with an autism spectrum disorder. Nearly 70 percent of individuals with autism also have mental retardation.It’s very important for families to get an accurate diagnosis, as early in life as possible, because it gives the individual the best foundation for implementing a personalized and effective program for treatment. The American Academy of Pediatrics recommends diagnosis as early as eighteen months of age."
-        
     },
     {
         "id": "100",
-        "DiseasesCategory":"Jaundice",
+        "DiseasesCategory": "Jaundice",
         "qsn": "What Is Jaundice?",
         "ans": "Jaundice is a condition that causes the skin and the whites of the eyes to turn yellow, according to the Centers for Disease Control and Prevention (CDC).right up arrow, It occurs when a yellow substance called bilirubin builds up in the blood. Bilirubin forms when hemoglobin (the protein in red blood cells that transports oxygen) is broken down, per the Merck Manual.right up arrow It binds with bile in the liver and moves into the digestive tract, where it is mostly eliminated in stool. (A small amount is eliminated in urine.)"
-        
     },
     {
         "id": "101",
-        "DiseasesCategory":"Jaundice",
+        "DiseasesCategory": "Jaundice",
         "qsn": "Signs and Symptoms of Jaundice",
         "ans": "Typically, the telltale yellow or orange coloring of jaundice first appears on a baby's face, then it migrates down the body to the chest, abdomen, arms, and legs, notes the CDC.right up arrow The whites of the eyes can also take on a yellowish hue. Signs in babies that warrant a same-day visit to the doctor include:Very yellow or orange skin color,Extreme fussiness,Difficulty waking up,Not sleeping,Poor feeding,Limited wet or dirty diapers"
-        
     },
     {
         "id": "102",
-        "DiseasesCategory":"Jaundice",
+        "DiseasesCategory": "Jaundice",
         "qsn": "How Is Jaundice Diagnosed?",
         "ans": "The CDC asserts that newborns should be checked for jaundice at least every 8 to 12 hours in the first 48 hours of life and then again before 5 days old.right up arrow.Testing options include:Light Meter ,Blood Test,Imaging Tests,Liver Biopsy ,Endoscopic Retrograde Cholangiopancreatography (ERCP)ERCP,Laparoscopy (Rarely)."
-        
     },
     {
         "id": "103",
-        "DiseasesCategory":"Migraine",
+        "DiseasesCategory": "Migraine",
         "qsn": "What Is a Migraine?",
         "ans": "Migraines are a moderate to severe throbbing pain in the head (usually on one side, but sometimes both), that often includes nausea, dizziness, facial tingling or numbness, visual disturbances, or sensitivity to light, sound, or smell. They can happen as often as several days per week. Each person may have their own combination of symptoms, and they can change from one migraine to the next. "
-        
     },
     {
         "id": "104",
-        "DiseasesCategory":"Migraine",
+        "DiseasesCategory": "Migraine",
         "qsn": " What Causes Migraines?",
         "ans": "While no one knows for sure why migraines happen, newer treatments target a specific protein that appears to contribute to migraines. Migraines are much more common in women, which suggests that hormones like estrogen may play a role. A genetic link may also increase your risk, as migraines appear to run in families. Researchers continue to search for the root cause of migraines. "
-        
     },
     {
         "id": "105",
-        "DiseasesCategory":"Migraine",
+        "DiseasesCategory": "Migraine",
         "qsn": "What's the Best Treatment for Migraines?",
         "ans": "Fortunately, there are many medications available for headache treatment. But while every medication is right for someone, that someone might not be you. Your doctor may have you try several different medications to find the right one. Although there is no definitive test for migraine, neurologists and headache specialists can help sort through your headache symptoms, severity, frequency, and other characteristics to determine whether migraine is the right diagnosis and to recommend a treatment plan."
-        
     }
-   
 ]

@@ -14,7 +14,10 @@ const MostPopularDoctor = () => {
             <div className="container">
                 <Title titleName="Most Popular Doctors" />
                 <div className="text-end py-1">
-                    <Link className="nav-link d-inline" to="/">
+                    <Link
+                        className="nav-link d-inline"
+                        to="/most-popular-doctors"
+                    >
                         see all
                     </Link>
                     <div className="swiper-slider-part mt-2">

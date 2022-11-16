@@ -40,6 +40,7 @@ const DoctorPageCard = ({ doctor }) => {
                                 allowHover={false}
                                 initialValue={0}
                                 size={16}
+                                readonly={true}
                                 ratingValue={parseFloat(doctor?.rating) * 20}
                             />
                         </span>
@@ -62,7 +63,7 @@ const DoctorPageCard = ({ doctor }) => {
             </div>
             <Link
                 style={{ backgroundColor: '#5921cf' }}
-                to=""
+                to={`/doctorProfile/${doctor?.id}`}
                 className="btn btn-primary w-100 border-0"
             >
                 Book Appointment

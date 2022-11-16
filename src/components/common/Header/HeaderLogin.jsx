@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom';
 
 const HeaderLogin = () => {
     const [user, loading, error] = useAuthState(auth);
+
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('userToken');
     };
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -39,7 +41,7 @@ const HeaderLogin = () => {
     return (
         <>
             {user ? (
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center user-menu-style">
                     <Avatar
                         onClick={handleClick}
                         alt={user.displayName}
@@ -89,6 +91,14 @@ const HeaderLogin = () => {
                             </div>
                             <Divider />
                             <div className="py-2">
+                                <MenuItem onClick={handleClose}>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/dashboard/home"
+                                    >
+                                        Dashboard
+                                    </a>
+                                </MenuItem>
                                 <MenuItem onClick={handleClose}>
                                     <a
                                         className="dropdown-item"
