@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { MdAddCall, MdMessage, MdOutlineVideoCall } from 'react-icons/md';
 import './ProfileDetails.css';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileDetails = ({ doctor }) => {
     const [onlineStatus, setOnlineStatus] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (navigator.onLine) {
@@ -21,6 +23,10 @@ const ProfileDetails = ({ doctor }) => {
             setOnlineStatus(true);
         });
     }, [onlineStatus]);
+
+    const handleBookAppointment = (id) => {
+        navigate(`/doctor-booking/${id}`);
+    };
 
     return (
         <div className="container my-5">
@@ -78,7 +84,11 @@ const ProfileDetails = ({ doctor }) => {
                         {/* <button className="btn mb-3 profile-btn">
                             Book Appointment
                         </button> */}
-                        <Button className="profile-btn" variant="contained">
+                        <Button
+                            onClick={() => handleBookAppointment(doctor?._id)}
+                            className="profile-btn"
+                            variant="contained"
+                        >
                             Book Appointment
                         </Button>
                     </div>

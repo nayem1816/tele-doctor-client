@@ -1,0 +1,167 @@
+import React, { useMemo, useState, useEffect, useContext } from 'react';
+import {
+    useStripe,
+    useElements,
+    CardNumberElement,
+    CardCvcElement,
+    CardExpiryElement,
+} from '@stripe/react-stripe-js';
+import './CardInfo.css';
+import { DoctorBookingContext } from '../../../../pages/DoctorBooking/DoctorBookingContext';
+
+function useResponsiveFontSize() {
+    const getFontSize = () => (window.innerWidth < 450 ? '16px' : '18px');
+    const [fontSize, setFontSize] = useState(getFontSize);
+
+    useEffect(() => {
+        const onResize = () => {
+            setFontSize(getFontSize());
+        };
+
+        window.addEventListener('resize', onResize);
+
+        return () => {
+            window.removeEventListener('resize', onResize);
+        };
+    });
+
+    return fontSize;
+}
+
+const useOptions = () => {
+    const fontSize = useResponsiveFontSize();
+    const options = useMemo(
+        () => ({
+            style: {
+                base: {
+                    fontSize,
+                    color: '#424770',
+                    letterSpacing: '0.025em',
+                    fontFamily: 'Source Code Pro, monospace',
+                    '::placeholder': {
+                        color: '#aab7c4',
+                    },
+                },
+                invalid: {
+                    color: '#9e2146',
+                },
+            },
+        }),
+        [fontSize]
+    );
+
+    return options;
+};
+
+const CardInfo = () => {
+    const stripe = useStripe();
+    const elements = useElements();
+    const options = useOptions();
+    const { bookingInfo, doctor } = useContext(DoctorBookingContext);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if (!stripe || !elements) {
+            console.log('Stripe.js has not loaded yet.');
+            return;
+        }
+
+        const payload = await stripe.createPaymentMethod({
+            type: 'card',
+            card: elements.getElement(CardNumberElement),
+        });
+        if (payload.error) {
+            console.log(payload.error.message);
+        } else {
+            console.log('Payment Successfull');
+        }
+
+        if (payload.paymentMethod.id) {
+            const paymentInfo = {
+                paymentType: `card,${payload.paymentMethod.card.brand}`,
+                doctorId: doctor._id,
+                doctorName: doctor.name,
+                doctorEmail: doctor.email,
+                doctorPhone: doctor.mobile,
+                doctorFee: doctor.fees,
+                doctorProfilePic: doctor.profilePic,
+                appointmentDate: bookingInfo.appointmentDate,
+                patientName: bookingInfo.patientName,
+                patientEmail: bookingInfo.patientEmail,
+                patientPhone: bookingInfo.patientPhone,
+                patientAge: bookingInfo.patientAge,
+                patientGender: bookingInfo.patientGender,
+                patientDateOfBirth: bookingInfo.dateOfBirth,
+            };
+            console.log(paymentInfo);
+        }
+    };
+    return (
+        <form className="payment" onSubmit={handleSubmit}>
+            <div className="m-2">
+                <label>Card number</label>
+                <CardNumberElement
+                    options={options}
+                    onReady={() => {
+                        console.log('CardNumberElement [ready]');
+                    }}
+                    onChange={(event) => {
+                        console.log('CardNumberElement [change]', event);
+                    }}
+                    onBlur={() => {
+                        console.log('CardNumberElement [blur]');
+                    }}
+                    onFocus={() => {
+                        console.log('CardNumberElement [focus]');
+                    }}
+                />
+            </div>
+            <div className="m-2">
+                <label>Expiration date</label>
+                <CardExpiryElement
+                    className="w-25"
+                    options={options}
+                    onReady={() => {
+                        console.log('CardNumberElement [ready]');
+                    }}
+                    onChange={(event) => {
+                        console.log('CardNumberElement [change]', event);
+                    }}
+                    onBlur={() => {
+                        console.log('CardNumberElement [blur]');
+                    }}
+                    onFocus={() => {
+                        console.log('CardNumberElement [focus]');
+                    }}
+                />
+            </div>
+            <div className="m-2">
+                <label>CVC</label>
+                <CardCvcElement
+                    className="w-25"
+                    options={options}
+                    onReady={() => {
+                        console.log('CardNumberElement [ready]');
+                    }}
+                    onChange={(event) => {
+                        console.log('CardNumberElement [change]', event);
+                    }}
+                    onBlur={() => {
+                        console.log('CardNumberElement [blur]');
+                    }}
+                    onFocus={() => {
+                        console.log('CardNumberElement [focus]');
+                    }}
+                />
+            </div>
+            <div className="m-2">
+                <button type="submit" disabled={!stripe}>
+                    Confirm
+                </button>
+            </div>
+        </form>
+    );
+};
+
+export default CardInfo;

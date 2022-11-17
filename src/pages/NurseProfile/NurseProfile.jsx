@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { Rating } from 'react-simple-star-rating';
-import image from '../../../images/icons/user.png';
+import image from '../../images/icons/user.png';
 
-const NurseBooking = () => {
+const NurseProfile = () => {
     const [nurse, setNurse] = useState({});
     const { id } = useParams();
 
@@ -56,9 +56,6 @@ const NurseBooking = () => {
                                     (incl. VAT)
                                 </p>
                             </div>
-                            {/* <button className="btn mb-3 profile-btn">
-                            Book Appointment
-                        </button> */}
                             <Button className="profile-btn" variant="contained">
                                 Book Now
                             </Button>
@@ -68,7 +65,7 @@ const NurseBooking = () => {
                             <div className="p-3 text-center text-lg-start">
                                 <h3 className="mb-3">Total Experience</h3>
                                 <h5 className="mb-3">
-                                    <span>{nurse?.experience}</span> Years
+                                    <span>{nurse?.experience}</span>
                                 </h5>
                             </div>
                             <div className="p-3 text-center text-lg-start">
@@ -161,4 +158,4 @@ const NurseBooking = () => {
     );
 };
 
-export default NurseBooking;
+export default NurseProfile;
