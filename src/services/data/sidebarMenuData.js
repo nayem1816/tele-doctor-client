@@ -85,6 +85,18 @@ const sidebarMenuData = [
         link: '/dashboard/adminPanel',
     },
     {
+        id: 15,
+        name: 'Categories',
+        icon: <RiAdminFill />,
+        link: '/dashboard/categories',
+    },
+    {
+        id: 14,
+        name: 'Blog',
+        icon: <RiAdminFill />,
+        link: '/dashboard/blogs',
+    },
+    {
         id: 13,
         name: 'Latest Disease Page',
         icon: <FaClinicMedical />,

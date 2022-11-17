@@ -4,19 +4,21 @@ import DoctorInfo from '../../components/DoctorProfile/DoctorInfo/DoctorInfo';
 import ProfileDetails from './../../components/DoctorProfile/ProfileDetails/ProfileDetails';
 
 const DoctorProfile = () => {
-    // const [doctor, setDoctor] = React.useState({});
-    // const { id } = useParams();
+    const [doctor, setDoctor] = React.useState({});
+    const { id } = useParams();
 
-    // React.useEffect(() => {
-    //     fetch(`http://localhost:5000/doctors/${id}`)
-    //         .then((res) => res.json())
-    //         .then((data) => setDoctor(data));
-    // }, [id]);
+    React.useEffect(() => {
+        fetch(`http://localhost:5000/api/v1/ReadDoctorById/${id}`)
+            .then((res) => res.json())
+            .then((data) => setDoctor(data.data));
+    }, [id]);
+
+    console.log(doctor);
 
     return (
         <div>
-            <ProfileDetails />
-            <DoctorInfo />
+            <ProfileDetails doctor={doctor} />
+            <DoctorInfo doctor={doctor} />
         </div>
     );
 };

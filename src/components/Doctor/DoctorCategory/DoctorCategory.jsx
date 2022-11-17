@@ -1,7 +1,24 @@
 import React from 'react';
-import categories from '../../../services/data/categories';
 
 const DoctorCategory = () => {
+    const [categoryDataList, setCategoryDataList] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch('http://localhost:5000/api/v1/ReadCategories')
+            .then((res) => res.json())
+            .then((data) => setCategoryDataList(data.data));
+    }, [categoryDataList]);
+
+    const sortData = categoryDataList.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1;
+        }
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    });
+
     return (
         <div>
             <div className="shadow p-4">
@@ -19,8 +36,8 @@ const DoctorCategory = () => {
                                 <p className="m-0">All</p>
                             </a>
                         </li>
-                        {categories.map((category) => (
-                            <li key={category.id} className="my-2">
+                        {sortData.map((category) => (
+                            <li key={category._id} className="my-2">
                                 <a
                                     href={`/doctor/${category.name}`}
                                     className={`text-decoration-none `}

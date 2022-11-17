@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from './pages/Loading/Loading';
@@ -76,10 +75,20 @@ const LatestDiseasePageControl = React.lazy(() =>
 const Nurses = React.lazy(() =>
     import('./components/Dashboard/Nurses/Nurses/Nurses')
 );
+const DashboardBlog = React.lazy(() =>
+    import('./components/Dashboard/DashboardBlogs/DashboardBlog/DashboardBlog')
+);
+const Category = React.lazy(() =>
+    import('./components/Dashboard/Category/Category/Category')
+);
+const NurseBooking = React.lazy(() =>
+    import('./components/RecentDisease/Nurses/NurseBooking')
+);
 
 function App() {
     return (
         <div className="App">
+            <ToastContainer />
             <Suspense fallback={<Loading />}>
                 <Routes>
                     {/* ALL ROUTES */}
@@ -117,6 +126,10 @@ function App() {
                             path="recent-disease"
                             element={<RecentDisease />}
                         />
+                        <Route
+                            path="nurse-booking/:id"
+                            element={<NurseBooking />}
+                        />
                         <Route path="login" element={<Login />} />
                         <Route path="signup" element={<Signup />} />
                         <Route
@@ -126,7 +139,7 @@ function App() {
                         <Route path="*" element={<NotFound />} />
                     </Route>
 
-                    {/* DASHBOARD ROUTES */}
+                    {/* -------------------DASHBOARD ROUTES------------------- */}
                     <Route
                         path="/dashboard"
                         element={
@@ -240,6 +253,22 @@ function App() {
                             }
                         />
                         <Route
+                            path="categories"
+                            element={
+                                <RequireAuth>
+                                    <Category />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="blogs"
+                            element={
+                                <RequireAuth>
+                                    <DashboardBlog />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
                             path="latest-disease-control"
                             element={
                                 <RequireAuth>
@@ -262,7 +291,6 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Suspense>
-            <ToastContainer />
         </div>
     );
 }

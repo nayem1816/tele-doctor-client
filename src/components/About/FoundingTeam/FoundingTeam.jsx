@@ -22,7 +22,7 @@ const FoundingTeam = () => {
                                 <a href="https://www.linkedin.com/in/md-nayem-hossain-nym//">
                                     <AiFillLinkedin />
                                 </a>
-                                <a href="/">
+                                <a href="https://github.com/nayem1816/">
                                     <BsGithub />
                                 </a>
                             </div>
@@ -39,7 +39,7 @@ const FoundingTeam = () => {
                                 <a href="https://www.linkedin.com/in/ayesha-shayma-085275227//">
                                 <AiFillLinkedin />
                                 </a>
-                                <a href="/">
+                                <a href="https://github.com/AyeshaAktar/">
                                     <BsGithub />
                                 </a>
                             </div>
@@ -56,7 +56,7 @@ const FoundingTeam = () => {
                                 <a href="https://www.linkedin.com/in/jeba-tahsin-062275227//">
                                 <AiFillLinkedin />
                                 </a>
-                                <a href="/">
+                                <a href="https://github.com/Jeba-tahsin/">
                                     <BsGithub />
                                 </a>
                             </div>
@@ -87,10 +87,10 @@ const FoundingTeam = () => {
                                 <a href="https://www.facebook.com/md.alamin.rony.898/">
                                     <BsFacebook />
                                 </a>
-                                <a href="/">
+                                <a href="https://www.linkedin.com/in/md-al-amin-rony-394a29136//">
                                 <AiFillLinkedin />
                                 </a>
-                                <a href="/">
+                                <a href="https://github.com/Rony696-dotcom/">
                                     <BsGithub />
                                 </a>
                             </div>
