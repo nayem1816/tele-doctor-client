@@ -1,0 +1,10 @@
+
+img.profile-photo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+img {
+    vertical-align: middle;
+    border: 0; 
+}
