@@ -1,0 +1,15 @@
+
+img.profile-photo-md {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.create-post .form-grp img.profile-photo-md {
+    margin-right: 90px;
+}
+img {
+    vertical-align: middle;
+    border: 0;
+   
+    
+}
