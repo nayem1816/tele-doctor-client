@@ -26,7 +26,7 @@ const SocialPageHeader = () => {
                 >
                     <div className=""></div>
                     <div className="navbar-nav gap-sm-2 gap-md-4 navbar-nav-part">
-                        <Link className="nav-link text-white" to="/yourPost">
+                        <Link className="nav-link text-white" to="/socialMediaYourPost">
                             Your Post
                         </Link>
                         <Link className="nav-link text-white" to="/socialMediaSubPages">
