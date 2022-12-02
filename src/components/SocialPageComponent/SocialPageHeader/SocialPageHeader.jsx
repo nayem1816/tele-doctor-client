@@ -26,15 +26,13 @@ const SocialPageHeader = () => {
                 >
                     <div className=""></div>
                     <div className="navbar-nav gap-sm-2 gap-md-4 navbar-nav-part">
-                        <Link className="nav-link text-white" to="/socialMediaYourPost">
-                            Your Post
+                        <Link className="nav-link text-white" to="/socialMedia/profile">
+                            Your Profile
                         </Link>
                         <Link className="nav-link text-white" to="/socialMediaSubPages">
                             Pages
                         </Link>
-                        <Link className="nav-link text-white" to="/profile">
-                            Profile
-                        </Link>
+                        
                         
                     </div>
                     
