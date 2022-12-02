@@ -1,13 +1,13 @@
 import React from 'react';
 import './SocialMediaSubPagesCard.css';
-import nayem from "../../../../images/img/founding-team/nayem.jpg";
+import pageCardImg from "../../../../images/social-media/social-page-pic.png"
 const SocialMediaSubPagesCard = () => {
     return (
         <div className="">
             <div className="container pb-5 ">
                 <div className="row founding-team ">
                 <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details  p-3">
                             <div className='p-3'>
                             <h4 className='text'>Doctor Academy</h4>
@@ -35,7 +35,7 @@ const SocialMediaSubPagesCard = () => {
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details p-3">
                             <div className='p-3'>
                             <h4 className='text'>Doctor Academy</h4>
@@ -63,7 +63,7 @@ const SocialMediaSubPagesCard = () => {
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details p-3">
                             <div className='p-3'>
                             <h4 className='text '>Doctor Academy</h4>
@@ -91,7 +91,7 @@ const SocialMediaSubPagesCard = () => {
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details p-3">
                             <div className='p-3'>
                             <h4 className='text'>Doctor Academy</h4>
@@ -119,7 +119,7 @@ const SocialMediaSubPagesCard = () => {
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details p-3">
                             <div className='p-3'>
                             <h4 className='text'>Doctor Academy</h4>
@@ -147,7 +147,7 @@ const SocialMediaSubPagesCard = () => {
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details p-3">
                             <div className='p-3'>
                             <h4 className='text'>Doctor Academy</h4>
@@ -175,7 +175,7 @@ const SocialMediaSubPagesCard = () => {
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details p-3">
                             <div className='p-3'>
                             <h4 className='text'>Doctor Academy</h4>
@@ -203,7 +203,7 @@ const SocialMediaSubPagesCard = () => {
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details p-3">
                             <div className='p-3'>
                             <h4 className='text'>Doctor Academy</h4>
@@ -231,7 +231,7 @@ const SocialMediaSubPagesCard = () => {
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 text-center  p-3">
-                        <img src={nayem} alt="" />
+                        <img src={pageCardImg} alt="" />
                         <div className="details p-3">
                             <div className='p-3'>
                             <h4 className='text'>Doctor Academy</h4>

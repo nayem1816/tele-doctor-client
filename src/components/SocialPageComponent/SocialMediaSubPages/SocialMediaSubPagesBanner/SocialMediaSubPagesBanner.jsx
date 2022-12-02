@@ -1,5 +1,5 @@
 import React from 'react';
-import socialSubPageBanner from "../../../../images/logo/social-media-banner.jpg";
+import socialSubPageBanner from "../../../../images/social-media/social-media-banner.jpg";
 const SocialMediaSubPagesBanner = () => {
     return (
         <div className="container mt-4">
