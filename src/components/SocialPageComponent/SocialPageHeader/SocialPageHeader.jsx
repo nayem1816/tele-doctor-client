@@ -1,19 +1,14 @@
 import React from 'react';
-import teleDoctorLogo from '../../../images/logo/teleDoctorLogo.png';
 import { Link } from 'react-router-dom';
+import "./SocialPageHeader.css";
 
 const SocialPageHeader = () => {
     return (
-        <div className="container">
-        <nav className="navbar navbar-expand-lg bg-white">
+        <div className="social-NavBg mt-2">
+            <div className="container  ">
+        <nav className="navbar  navbar-expand-lg ">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">
-                    <img
-                        className="logo-image"
-                        src={teleDoctorLogo}
-                        alt=""
-                    />
-                </Link>
+                
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -26,27 +21,18 @@ const SocialPageHeader = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div
-                    className="collapse navbar-collapse justify-content-between"
+                    className="collapse navbar-collapse "
                     id="navbarNavAltMarkup"
                 >
                     <div className=""></div>
                     <div className="navbar-nav gap-sm-2 gap-md-4 navbar-nav-part">
-                        <Link className="nav-link text-dark" to="/home">
-                            Home
-                        </Link>
-                        <Link className="nav-link text-dark" to="/doctor">
-                            Doctor
-                        </Link>
-                        <Link className="nav-link text-dark" to="/socialMediaPage">
-                            Social Media
-                        </Link>
-                        <Link className="nav-link text-dark" to="/yourPost">
+                        <Link className="nav-link text-white" to="/socialMediaYourPost">
                             Your Post
                         </Link>
-                        <Link className="nav-link text-dark" to="/socialMediaSubPages">
+                        <Link className="nav-link text-white" to="/socialMediaSubPages">
                             Pages
                         </Link>
-                        <Link className="nav-link text-dark" to="/profile">
+                        <Link className="nav-link text-white" to="/profile">
                             Profile
                         </Link>
                         
@@ -56,6 +42,8 @@ const SocialPageHeader = () => {
             </div>
         </nav>
     </div>
+        </div>
+        
     );
 };
 

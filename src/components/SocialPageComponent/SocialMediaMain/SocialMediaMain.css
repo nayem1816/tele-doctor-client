@@ -9,7 +9,9 @@ img.profile-photo-md {
 }
 img {
     vertical-align: middle;
-    border: 0;
-   
-    
+    border: 0; 
+}
+.social-CreateBtn{
+    background-color: #5921cf;
+    color: white;
 }

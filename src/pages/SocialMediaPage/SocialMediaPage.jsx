@@ -1,6 +1,5 @@
 import React from 'react';
-import AllPostMain from '../../components/SocialPageComponent/AllPostMain/AllPostMain';
-import SocialMediaMain from '../../components/SocialPageComponent/SocialMediaMain/SocialMediaMain';
+import SocialMediaMainPage from '../../components/SocialPageComponent/SocialMediaMainPage/SocialMediaMainPage';
 
 import SocialPageHeader from '../../components/SocialPageComponent/SocialPageHeader/SocialPageHeader';
 
@@ -8,8 +7,9 @@ const SocialMediaPage = () => {
     return (
         <div>
             <SocialPageHeader />
-            <SocialMediaMain />
-            <AllPostMain />
+            <SocialMediaMainPage />
+            
+           
         </div>
     );
 };
