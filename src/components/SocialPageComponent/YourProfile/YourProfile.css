@@ -1,0 +1,44 @@
+.timeline-cover {
+    background: url("../../../images/social-media/healthy\ food.jpg") no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-position: center;
+    background-size: cover;
+    min-height: 370px;
+    border-radius: 0 0 4px 4px;
+    position: relative;
+    margin-bottom: 100px;
+  }
+.timeline-nav-bar {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+.profile-info {
+  position: absolute;
+  padding: 0 20px;
+  top: -80px;
+}
+.btn-primary {
+  background: #5921cf;
+  padding: 7px 25px;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  font-weight: 600;
+  border-radius: 30px;
+}
+.cover-photo{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+.profile-photo-md {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
