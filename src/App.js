@@ -87,6 +87,10 @@ const NurseProfile = React.lazy(() =>
 const DoctorBooking = React.lazy(() =>
     import('./pages/DoctorBooking/DoctorBooking')
 );
+const MyProfile = React.lazy(() => import('./pages/MyProfile/MyProfile'));
+const LocationWiseDoctor = React.lazy(() =>
+    import('./pages/LocationWiseDoctor/LocationWiseDoctor')
+);
 
 function App() {
     return (
@@ -134,6 +138,10 @@ function App() {
                             element={<MostPopularDoctors />}
                         />
                         <Route
+                            path="location-wise-doctors/:location"
+                            element={<LocationWiseDoctor />}
+                        />
+                        <Route
                             path="recent-disease"
                             element={<RecentDisease />}
                         />
@@ -148,6 +156,14 @@ function App() {
                             element={
                                 <RequireAuth>
                                     <DoctorRegistration />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="my-profile"
+                            element={
+                                <RequireAuth>
+                                    <MyProfile />
                                 </RequireAuth>
                             }
                         />

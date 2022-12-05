@@ -11,6 +11,7 @@ import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { EditLocationAlt } from '@mui/icons-material';
 import { toast } from 'react-toastify';
+import DoctorDetails from '../DoctorVerification/DoctorDetails';
 
 const columns = [
     { id: 'name', label: 'Name', minWidth: 200 },
@@ -33,12 +34,13 @@ const DoctorsList = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [doctorDataList, setDoctorDataList] = React.useState([]);
+    const [open, setOpen] = React.useState(false);
 
     React.useEffect(() => {
         fetch('http://localhost:5000/api/v1/ReadDoctors')
             .then((res) => res.json())
             .then((data) => setDoctorDataList(data.data));
-    }, [doctorDataList]);
+    }, []);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -73,6 +75,9 @@ const DoctorsList = () => {
                     });
                 }
             });
+    };
+    const handleClickOpen = () => {
+        setOpen(true);
     };
 
     return (
@@ -172,6 +177,9 @@ const DoctorsList = () => {
                                                         <Button
                                                             color="secondary"
                                                             variant="outlined"
+                                                            onClick={
+                                                                handleClickOpen
+                                                            }
                                                             startIcon={
                                                                 <EditLocationAlt />
                                                             }
@@ -179,6 +187,11 @@ const DoctorsList = () => {
                                                             Details
                                                         </Button>
                                                     </TableCell>
+                                                    <DoctorDetails
+                                                        open={open}
+                                                        setOpen={setOpen}
+                                                        doctor={row}
+                                                    />
                                                 </TableRow>
                                             );
                                         })}

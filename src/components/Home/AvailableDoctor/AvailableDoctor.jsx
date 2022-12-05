@@ -14,10 +14,7 @@ const AvailableDoctor = () => {
             <div className="container">
                 <Title titleName="Available Doctors" />
                 <div className="text-end py-1">
-                    <Link
-                        className="nav-link d-inline"
-                        to="/all-available-doctors"
-                    >
+                    <Link className="nav-link d-inline" to="/doctor">
                         see all
                     </Link>
                     <div className="swiper-slider-part mt-2">
