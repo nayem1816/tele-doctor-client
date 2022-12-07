@@ -20,10 +20,7 @@ const MyProfileNavbar = () => {
             </div>
             <hr className="my-4 px-5" />
             <div className="my-profile-navbar-items p-0 m-0">
-                <Link
-                    to="/my-profile/profile"
-                    className="my-profile-navbar-item my-profile-active"
-                >
+                <Link to="/my-profile" className="my-profile-navbar-item ">
                     My Profile
                 </Link>
                 <Link
@@ -31,6 +28,9 @@ const MyProfileNavbar = () => {
                     className="my-profile-navbar-item"
                 >
                     My Appointment
+                </Link>
+                <Link to="/my-profile/chats" className="my-profile-navbar-item">
+                    Chats
                 </Link>
             </div>
         </div>

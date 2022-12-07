@@ -1,32 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import MyProfileNavbar from '../../components/MyProfile/MyProfileNavbar/MyProfileNavbar';
-import MyProfileMain from '../../components/MyProfile/MyProfileMain/MyProfileMain';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const MyProfile = () => {
-    const [appointmentData, setAppointmentData] = useState({});
     const [user] = useAuthState(auth);
 
-    useEffect(() => {
-        fetch(
-            `http://localhost:5000/api/v1/ReadAppointmentByEmail/${user.email}`
-        )
-            .then((res) => res.json())
-            .then((data) => setAppointmentData(data));
-    }, [user.email]);
-
     return (
-        <div className="container">
+        <div>
+            <h3>My Profile</h3>
+            <hr className="me-5 my-3" />
             <div className="row">
-                <div className="col-md-3">
-                    <div className="border p-2 rounded">
-                        <MyProfileNavbar appointmentData={appointmentData} />
+                <div className="col-3">
+                    <div className="image text-center">
+                        <img
+                            style={{ width: '120px', height: '120px' }}
+                            className="rounded-circle my-2"
+                            src={user.photoURL}
+                            alt="user"
+                        />
+                        <br />
+                        <button className="btn btn-danger">Edit Profile</button>
                     </div>
                 </div>
-                <div className="col-md-9">
-                    <div className="border p-2 rounded">
-                        <MyProfileMain />
+                <div className="col-9">
+                    <div className="my-3">
+                        <h6>Name</h6>
+                        <input
+                            className="form-control w-75"
+                            type="text"
+                            defaultValue={user.displayName}
+                            disabled
+                        />
+                    </div>
+                    <div className="my-3">
+                        <h6>Email</h6>
+                        <input
+                            className="form-control w-75"
+                            type="text"
+                            defaultValue={user.email}
+                            disabled
+                        />
                     </div>
                 </div>
             </div>

@@ -88,9 +88,14 @@ const DoctorBooking = React.lazy(() =>
     import('./pages/DoctorBooking/DoctorBooking')
 );
 const MyProfile = React.lazy(() => import('./pages/MyProfile/MyProfile'));
+const Profile = React.lazy(() => import('./pages/MyProfile/Profile'));
+const MyAppointments = React.lazy(() =>
+    import('./pages/MyProfile/MyAppointments')
+);
 const LocationWiseDoctor = React.lazy(() =>
     import('./pages/LocationWiseDoctor/LocationWiseDoctor')
 );
+const Chats = React.lazy(() => import('./pages/MyProfile/Chats'));
 
 function App() {
     return (
@@ -163,10 +168,35 @@ function App() {
                             path="my-profile"
                             element={
                                 <RequireAuth>
-                                    <MyProfile />
+                                    <Profile />
                                 </RequireAuth>
                             }
-                        />
+                        >
+                            <Route
+                                path=""
+                                element={
+                                    <RequireAuth>
+                                        <MyProfile />
+                                    </RequireAuth>
+                                }
+                            />
+                            <Route
+                                path="appointments"
+                                element={
+                                    <RequireAuth>
+                                        <MyAppointments />
+                                    </RequireAuth>
+                                }
+                            />
+                            <Route
+                                path="chats"
+                                element={
+                                    <RequireAuth>
+                                        <Chats />
+                                    </RequireAuth>
+                                }
+                            />
+                        </Route>
                         <Route path="*" element={<NotFound />} />
                     </Route>
 
