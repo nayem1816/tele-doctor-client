@@ -14,9 +14,30 @@ const LocationWiseDoctor = () => {
             .then((data) => setLocationWiseData(data.data));
     }, [location]);
 
+    // get last path
+    const lastPath = location.split('/').pop();
+
     return (
-        <div>
-            <h2>Location wise doctor</h2>
+        <div className="container">
+            <nav aria-label="breadcrumb" className="my-3">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item active">Home</li>
+                    <li className="breadcrumb-item active">Doctor</li>
+                    <li className="breadcrumb-item active">{lastPath}</li>
+                </ol>
+            </nav>
+            <div className="doctors-list">
+                {locationWiseData.length === 0 && (
+                    <div className="d-flex justify-content-center align-items-center my-5">
+                        <div
+                            className="alert alert-danger w-75 text-center"
+                            role="alert"
+                        >
+                            No doctor found in this location
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

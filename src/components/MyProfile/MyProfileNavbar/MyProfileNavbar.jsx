@@ -6,7 +6,6 @@ import './MyProfileNavbar.css';
 
 const MyProfileNavbar = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
     return (
         <div>
             <div className="user mt-5">
