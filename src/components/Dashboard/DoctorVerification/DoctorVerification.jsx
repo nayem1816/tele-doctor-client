@@ -11,7 +11,7 @@ import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { EditLocationAlt } from '@mui/icons-material';
 import { toast } from 'react-toastify';
-import DoctorDetails from './DoctorDetails';
+import { useNavigate } from 'react-router-dom';
 
 const columns = [
     { id: 'name', label: 'Name', minWidth: 200 },
@@ -33,7 +33,8 @@ const DoctorVerification = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [doctorDataList, setDoctorDataList] = React.useState([]);
-    const [open, setOpen] = React.useState(false);
+    const navigate = useNavigate();
+    let count = 1;
 
     React.useEffect(() => {
         fetch('http://localhost:5000/api/v1/NotVerifiedDoctors')
@@ -60,7 +61,7 @@ const DoctorVerification = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data.success) {
+                if (data) {
                     const remainingDoctors = doctorDataList.filter(
                         (doctor) => doctor._id !== id
                     );
@@ -76,8 +77,8 @@ const DoctorVerification = () => {
             });
     };
 
-    const handleClickOpen = () => {
-        setOpen(true);
+    const handleDoctorDetails = (id) => {
+        navigate(`/dashboard/verification/doctor-details/${id}`);
     };
 
     return (
@@ -137,7 +138,7 @@ const DoctorVerification = () => {
                                                     key={row._id}
                                                 >
                                                     <TableCell align={'left'}>
-                                                        1
+                                                        {count++}
                                                     </TableCell>
                                                     {columns.map((column) => {
                                                         const value =
@@ -175,11 +176,13 @@ const DoctorVerification = () => {
                                                             Delete
                                                         </Button>
                                                         <Button
+                                                            onClick={() =>
+                                                                handleDoctorDetails(
+                                                                    row._id
+                                                                )
+                                                            }
                                                             color="secondary"
                                                             variant="outlined"
-                                                            onClick={
-                                                                handleClickOpen
-                                                            }
                                                             startIcon={
                                                                 <EditLocationAlt />
                                                             }
@@ -187,11 +190,6 @@ const DoctorVerification = () => {
                                                             Details
                                                         </Button>
                                                     </TableCell>
-                                                    <DoctorDetails
-                                                        open={open}
-                                                        setOpen={setOpen}
-                                                        doctor={row}
-                                                    />
                                                 </TableRow>
                                             );
                                         })}

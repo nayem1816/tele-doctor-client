@@ -99,6 +99,12 @@ const Chats = React.lazy(() => import('./pages/MyProfile/Chats'));
 const SearchDoctor = React.lazy(() =>
     import('./pages/SearchDoctor/SearchDoctor')
 );
+const DoctorDetails = React.lazy(() =>
+    import('./components/Dashboard/DoctorVerification/DoctorDetails')
+);
+const NurseDetails = React.lazy(() =>
+    import('./components/Dashboard/Nurses/NurseList/NurseDetails')
+);
 
 function App() {
     return (
@@ -241,6 +247,14 @@ function App() {
                             }
                         />
                         <Route
+                            path="verification/doctor-details/:id"
+                            element={
+                                <RequireAuth>
+                                    <DoctorDetails />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
                             path="doctors"
                             element={
                                 <RequireAuth>
@@ -249,10 +263,26 @@ function App() {
                             }
                         />
                         <Route
+                            path="doctor/doctor-details/:id"
+                            element={
+                                <RequireAuth>
+                                    <DoctorDetails />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
                             path="nurses"
                             element={
                                 <RequireAuth>
                                     <Nurses />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="nurse/nurse-details/:id"
+                            element={
+                                <RequireAuth>
+                                    <NurseDetails />
                                 </RequireAuth>
                             }
                         />

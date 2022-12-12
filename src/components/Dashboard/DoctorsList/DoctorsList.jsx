@@ -11,7 +11,7 @@ import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { EditLocationAlt } from '@mui/icons-material';
 import { toast } from 'react-toastify';
-import DoctorDetails from '../DoctorVerification/DoctorDetails';
+import { useNavigate } from 'react-router-dom';
 
 const columns = [
     { id: 'name', label: 'Name', minWidth: 200 },
@@ -34,12 +34,13 @@ const DoctorsList = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [doctorDataList, setDoctorDataList] = React.useState([]);
-    const [open, setOpen] = React.useState(false);
+    const navigate = useNavigate();
+    let count = 1;
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadDoctors')
+        fetch('http://localhost:5000/api/v1/VerifiedDoctors')
             .then((res) => res.json())
-            .then((data) => setDoctorDataList(data.data));
+            .then((data) => setDoctorDataList(data.data.reverse()));
     }, []);
 
     const handleChangePage = (event, newPage) => {
@@ -76,8 +77,8 @@ const DoctorsList = () => {
                 }
             });
     };
-    const handleClickOpen = () => {
-        setOpen(true);
+    const handleDoctorDetails = (id) => {
+        navigate(`/dashboard/doctor/doctor-details/${id}`);
     };
 
     return (
@@ -137,7 +138,7 @@ const DoctorsList = () => {
                                                     key={row._id}
                                                 >
                                                     <TableCell align={'left'}>
-                                                        1
+                                                        {count++}
                                                     </TableCell>
                                                     {columns.map((column) => {
                                                         const value =
@@ -177,8 +178,10 @@ const DoctorsList = () => {
                                                         <Button
                                                             color="secondary"
                                                             variant="outlined"
-                                                            onClick={
-                                                                handleClickOpen
+                                                            onClick={() =>
+                                                                handleDoctorDetails(
+                                                                    row._id
+                                                                )
                                                             }
                                                             startIcon={
                                                                 <EditLocationAlt />
@@ -187,11 +190,6 @@ const DoctorsList = () => {
                                                             Details
                                                         </Button>
                                                     </TableCell>
-                                                    <DoctorDetails
-                                                        open={open}
-                                                        setOpen={setOpen}
-                                                        doctor={row}
-                                                    />
                                                 </TableRow>
                                             );
                                         })}

@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Search from './../../common/Search/Search';
 import Title from './../../common/Title/Title';
 import doctorPageBanner from '../../../images/img/doctorPageBanner.png';
+import { useNavigate } from 'react-router-dom';
 
 const DoctorBanner = () => {
+    const [searchValue, setSearchValue] = React.useState('');
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        if (searchValue) {
+            navigate(`/location-wise-doctors/${searchValue}`);
+        }
+    }, [searchValue, navigate]);
+
     const bannerStyle = {
         backgroundImage: `url(${doctorPageBanner})`,
         backgroundSize: 'cover',
@@ -38,7 +48,10 @@ const DoctorBanner = () => {
                         </div>
                         <div className="col-md-6">
                             <Title titleName="Find doctor by location" />
-                            <Search placeHolder="Search by location" />
+                            <Search
+                                setSearchValue={setSearchValue}
+                                placeHolder="Search by location"
+                            />
                         </div>
                     </div>
                 </div>
