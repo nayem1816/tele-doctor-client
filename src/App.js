@@ -96,6 +96,9 @@ const LocationWiseDoctor = React.lazy(() =>
     import('./pages/LocationWiseDoctor/LocationWiseDoctor')
 );
 const Chats = React.lazy(() => import('./pages/MyProfile/Chats'));
+const SearchDoctor = React.lazy(() =>
+    import('./pages/SearchDoctor/SearchDoctor')
+);
 
 function App() {
     return (
@@ -145,6 +148,10 @@ function App() {
                         <Route
                             path="location-wise-doctors/:location"
                             element={<LocationWiseDoctor />}
+                        />
+                        <Route
+                            path="search-doctors/:value"
+                            element={<SearchDoctor />}
                         />
                         <Route
                             path="recent-disease"

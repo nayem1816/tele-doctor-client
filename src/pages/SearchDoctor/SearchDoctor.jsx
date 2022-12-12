@@ -1,21 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DoctorPageCard from '../../components/Doctor/DoctorPageCard/DoctorPageCard';
 
-const LocationWiseDoctor = () => {
-    const [locationWiseData, setLocationWiseData] = useState([]);
-    const { location } = useParams();
+const SearchDoctor = () => {
+    const { value } = useParams();
+    const [doctors, setDoctor] = React.useState([]);
+    const lastPath = value.split('/').pop();
 
     useEffect(() => {
-        fetch(
-            `http://localhost:5000/api/v1/FindDoctorByLocation/?location=${location.toLowerCase()}`
-        )
+        fetch('http://localhost:5000/api/v1/ReadDoctors')
             .then((res) => res.json())
-            .then((data) => setLocationWiseData(data.data));
-    }, [location]);
+            .then((data) => setDoctor(data.data));
+    }, []);
 
-    // get last path
-    const lastPath = location.split('/').pop();
+    const filteredDoctors = doctors.filter((doctor) => {
+        return (
+            doctor.name.toLowerCase().includes(lastPath.toLowerCase()) ||
+            doctor.specialization.toLowerCase().includes(lastPath.toLowerCase())
+        );
+    });
 
     return (
         <div className="container">
@@ -24,12 +27,12 @@ const LocationWiseDoctor = () => {
                     <li className="breadcrumb-item active">Home</li>
                     <li className="breadcrumb-item active">Doctor</li>
                     <li className="breadcrumb-item active">
-                        Location: {lastPath}
+                        Search value: {lastPath}
                     </li>
                 </ol>
             </nav>
             <div className="doctors-list">
-                {locationWiseData.length === 0 ? (
+                {filteredDoctors.length === 0 ? (
                     <div className="d-flex justify-content-center align-items-center my-5">
                         <div
                             className="alert alert-danger w-75 text-center"
@@ -40,7 +43,7 @@ const LocationWiseDoctor = () => {
                     </div>
                 ) : (
                     <div className="row my-5">
-                        {locationWiseData.map((doctor) => (
+                        {filteredDoctors.map((doctor) => (
                             <div key={doctor._id} className="col-md-4 p-2">
                                 <DoctorPageCard doctor={doctor} />
                             </div>
@@ -52,4 +55,4 @@ const LocationWiseDoctor = () => {
     );
 };
 
-export default LocationWiseDoctor;
+export default SearchDoctor;
