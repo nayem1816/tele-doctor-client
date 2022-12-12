@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './AvailableDoctor.css';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper';
-import doctors from '../../../services/data/doctors.js';
 import Title from '../../common/Title/Title';
 
 const AvailableDoctor = () => {
+    const [doctors, setDoctor] = React.useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/api/v1/AvailableDoctor')
+            .then((res) => res.json())
+            .then((data) => setDoctor(data.data));
+    }, []);
+
     return (
         <div className="available-doctor mt-2 py-5">
             <div className="container">
@@ -40,12 +47,12 @@ const AvailableDoctor = () => {
                             className="mySwiper"
                         >
                             {doctors.map((doctor) => (
-                                <SwiperSlide key={doctor.id}>
+                                <SwiperSlide key={doctor._id}>
                                     <div className="doctor-card bg-white rounded">
                                         <div className="doctor-profile d-flex py-4 px-3 align-items-center">
                                             <div className="doctor-image p-2 rounded-circle position-relative">
                                                 <img
-                                                    src={doctor.image}
+                                                    src={doctor?.profilePic}
                                                     alt="doctor"
                                                 />
                                                 <span className="position-absolute bottom-0 translate-middle p-2 bg-success border border-light rounded-circle">
@@ -56,14 +63,18 @@ const AvailableDoctor = () => {
                                             </div>
                                             <div className="doctor-details ms-3 text-start">
                                                 <h5 className="fw-bold">
-                                                    {doctor.name}
+                                                    {doctor?.name}
                                                 </h5>
-                                                <p>{doctor.category}</p>
+                                                <p>{doctor?.category}</p>
                                             </div>
                                         </div>
-                                        <button className="w-100 appointment-button-color py-2 rounded">
-                                            Book Appointment
-                                        </button>
+                                        <Link
+                                            to={`/doctorProfile/${doctor?._id}`}
+                                        >
+                                            <button className="w-100 appointment-button-color py-2 rounded">
+                                                Book Appointment
+                                            </button>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                             ))}
