@@ -79,9 +79,13 @@ const SpecialistDoctor = ({ diseaseName, specialization }) => {
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <button className="w-100 appointment-button-color py-2 rounded">
-                                                    Book Appointment
-                                                </button>
+                                                <Link
+                                                    to={`/doctorProfile/${doctor?._id}`}
+                                                >
+                                                    <button className="w-100 appointment-button-color py-2 rounded">
+                                                        Book Appointment
+                                                    </button>
+                                                </Link>
                                             </div>
                                         </SwiperSlide>
                                     ))}

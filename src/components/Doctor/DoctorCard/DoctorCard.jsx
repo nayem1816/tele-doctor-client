@@ -12,7 +12,9 @@ const DoctorCard = () => {
     useEffect(() => {
         fetch('http://localhost:5000/api/v1/ReadDoctors')
             .then((res) => res.json())
-            .then((data) => setDcDataJson(data.data))
+            .then((data) => {
+                setDcDataJson(data.data.reverse());
+            })
             .catch((err) => console.log(err));
 
         if (categoryName === 'all') {

@@ -108,10 +108,12 @@ const HeaderLogin = () => {
                                     </a>
                                 </MenuItem>
                                 <MenuItem onClick={handleClose}>
-                                    Profile
-                                </MenuItem>
-                                <MenuItem onClick={handleClose}>
-                                    My account
+                                    <a
+                                        className="dropdown-item"
+                                        href="/my-profile"
+                                    >
+                                        Profile
+                                    </a>
                                 </MenuItem>
                                 <MenuItem onClick={handleClose}>
                                     <Link
