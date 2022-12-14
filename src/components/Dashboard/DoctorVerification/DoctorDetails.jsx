@@ -42,7 +42,7 @@ const DoctorDetails = () => {
 
     return (
         <div className="appointment-details">
-            <h2>Details</h2>
+            <h2>Doctor Details</h2>
             <div className="image text-center my-4">
                 <img
                     className="img-fluid border border-2 border-primary rounded-circle p-1"
@@ -272,7 +272,7 @@ const DoctorDetails = () => {
                     </div>
                     <div className="col-md-12 p-2">
                         <label htmlFor="profileDesc" className="form-label">
-                            Available Days
+                            Description
                         </label>
                         <textarea
                             rows="3"

@@ -11,7 +11,7 @@ import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { EditLocationAlt } from '@mui/icons-material';
 import { toast } from 'react-toastify';
-import AppointmentDetails from './AppointmentDetails';
+import { useNavigate } from 'react-router-dom';
 
 const columns = [
     { id: 'doctorName', label: 'Doctor Name', minWidth: 200 },
@@ -34,7 +34,7 @@ const AppointmentList = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [appointments, setAppointments] = React.useState([]);
-    const [open, setOpen] = React.useState(false);
+    const navigate = useNavigate();
     let count = 1;
 
     React.useEffect(() => {
@@ -62,7 +62,7 @@ const AppointmentList = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data.success) {
+                if (data) {
                     const remainingDoctors = appointments.filter(
                         (appointment) => appointment._id !== id
                     );
@@ -78,8 +78,9 @@ const AppointmentList = () => {
                 }
             });
     };
-    const handleClickOpen = () => {
-        setOpen(true);
+
+    const handleAppointmentDetails = (id) => {
+        navigate(`/dashboard/appointment/appointment-details/${id}`);
     };
 
     return (
@@ -189,21 +190,18 @@ const AppointmentList = () => {
                                                         <Button
                                                             color="secondary"
                                                             variant="outlined"
-                                                            onClick={
-                                                                handleClickOpen
-                                                            }
                                                             startIcon={
                                                                 <EditLocationAlt />
+                                                            }
+                                                            onClick={() =>
+                                                                handleAppointmentDetails(
+                                                                    row._id
+                                                                )
                                                             }
                                                         >
                                                             Details
                                                         </Button>
                                                     </TableCell>
-                                                    <AppointmentDetails
-                                                        open={open}
-                                                        setOpen={setOpen}
-                                                        appointment={row}
-                                                    />
                                                 </TableRow>
                                             );
                                         })}
