@@ -2,9 +2,7 @@ import {
     MdOutlineSpaceDashboard,
     MdDomainVerification,
     MdOutlineFormatListNumbered,
-    MdEarbuds,
 } from 'react-icons/md';
-import { AiOutlineUnorderedList, AiFillSetting } from 'react-icons/ai';
 import { GoChecklist } from 'react-icons/go';
 import { BsListStars, BsPatchQuestionFill } from 'react-icons/bs';
 import { FaClinicMedical } from 'react-icons/fa';
@@ -37,12 +35,6 @@ const sidebarMenuData = [
         link: '/dashboard/nurses',
     },
     {
-        id: 4,
-        name: 'Patients',
-        icon: <AiOutlineUnorderedList />,
-        link: '/dashboard/patients',
-    },
-    {
         id: 5,
         name: 'Appointments',
         icon: <GoChecklist />,
@@ -55,22 +47,10 @@ const sidebarMenuData = [
         link: '/dashboard/prescriptions',
     },
     {
-        id: 7,
-        name: 'Disease',
-        icon: <MdEarbuds />,
-        link: '/dashboard/disease',
-    },
-    {
         id: 8,
         name: 'Medical Q&A',
         icon: <BsPatchQuestionFill />,
         link: '/dashboard/medicalQA',
-    },
-    {
-        id: 9,
-        name: 'Covid19',
-        icon: <FaClinicMedical />,
-        link: '/dashboard/covid19',
     },
     {
         id: 10,
@@ -101,12 +81,6 @@ const sidebarMenuData = [
         name: 'Latest Disease Page',
         icon: <FaClinicMedical />,
         link: '/dashboard/latest-disease-control',
-    },
-    {
-        id: 12,
-        name: 'Settings',
-        icon: <AiFillSetting />,
-        link: '/dashboard/settings',
     },
 ];
 

@@ -105,6 +105,12 @@ const DoctorDetails = React.lazy(() =>
 const NurseDetails = React.lazy(() =>
     import('./components/Dashboard/Nurses/NurseList/NurseDetails')
 );
+const AppointmentDetails = React.lazy(() =>
+    import('./components/Dashboard/AppointmentList/AppointmentDetails')
+);
+const PrescriptionDetails = React.lazy(() =>
+    import('./components/Dashboard/PrescriptionList/PrescriptionDetails')
+);
 
 function App() {
     return (
@@ -303,10 +309,34 @@ function App() {
                             }
                         />
                         <Route
+                            path="appointment/appointment-details/:id"
+                            element={
+                                <RequireAuth>
+                                    <AppointmentDetails />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
                             path="prescriptions"
                             element={
                                 <RequireAuth>
                                     <PrescriptionList />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="prescription/:id"
+                            element={
+                                <RequireAuth>
+                                    <PrescriptionDetails />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="prescription/prescription-details/:id"
+                            element={
+                                <RequireAuth>
+                                    <PrescriptionDetails />
                                 </RequireAuth>
                             }
                         />
