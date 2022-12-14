@@ -8,6 +8,8 @@ import {
 } from '@stripe/react-stripe-js';
 import './CardInfo.css';
 import { DoctorBookingContext } from '../../../../pages/DoctorBooking/DoctorBookingContext';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
 
 function useResponsiveFontSize() {
     const getFontSize = () => (window.innerWidth < 450 ? '16px' : '18px');
@@ -58,6 +60,7 @@ const CardInfo = () => {
     const elements = useElements();
     const options = useOptions();
     const { bookingInfo, doctor } = useContext(DoctorBookingContext);
+    const [user] = useAuthState(auth);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -78,8 +81,14 @@ const CardInfo = () => {
         }
 
         if (payload.paymentMethod.id) {
-            const paymentInfo = {
-                paymentType: `card,${payload.paymentMethod.card.brand}`,
+            const bookingInformation = {
+                paymentInfo: {
+                    paymentType: 'Card',
+                    paymentBrand: payload.paymentMethod.card.brand,
+                    cardNumber: payload.paymentMethod.card.last4,
+                },
+                userName: user.displayName,
+                userEmail: user.email,
                 doctorId: doctor._id,
                 doctorName: doctor.name,
                 doctorEmail: doctor.email,
@@ -94,7 +103,19 @@ const CardInfo = () => {
                 patientGender: bookingInfo.patientGender,
                 patientDateOfBirth: bookingInfo.dateOfBirth,
             };
-            console.log(paymentInfo);
+            // console.log(bookingInformation);
+
+            fetch('http://localhost:5000/api/v1/CreateAppointment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(bookingInformation),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log('Appointment Created Successfully');
+                });
         }
     };
     return (

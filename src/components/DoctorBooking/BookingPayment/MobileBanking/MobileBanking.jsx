@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import CustomInput from '../../../common/InputField/CustomInput/CustomInput';
 import CustomButton from '../../../common/InputField/CustomButton/CustomButton';
 import { DoctorBookingContext } from '../../../../pages/DoctorBooking/DoctorBookingContext';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
 
 const MobileBanking = () => {
     const { register, handleSubmit } = useForm();
@@ -12,6 +14,7 @@ const MobileBanking = () => {
     const [rocketActive, setRocketActive] = React.useState(false);
     const [nogadActive, setNogadActive] = React.useState(false);
     const { bookingInfo, doctor } = useContext(DoctorBookingContext);
+    const [user] = useAuthState(auth);
 
     const handleBKashActive = () => {
         setBKashActive(true);
@@ -30,13 +33,19 @@ const MobileBanking = () => {
     };
 
     const onSubmit = (data) => {
-        console.log(data);
-        const paymentInfo = {
-            paymentType: `Mobile Banking,${
-                bKashActive ? 'bkash' : rocketActive ? 'Rocket' : 'Nogad'
-            }`,
-            paymentPhone: data.paymentPhone,
-            trxId: data.trxId,
+        const bookingInformation = {
+            paymentInfo: {
+                paymentType: 'Mobile Banking',
+                paymentBrand: bKashActive
+                    ? 'bkash'
+                    : rocketActive
+                    ? 'Rocket'
+                    : 'Nogad',
+                paymentPhone: data.paymentPhone,
+                trxId: data.trxID,
+            },
+            userName: user.displayName,
+            userEmail: user.email,
             doctorId: doctor._id,
             doctorName: doctor.name,
             doctorEmail: doctor.email,
@@ -51,7 +60,17 @@ const MobileBanking = () => {
             patientGender: bookingInfo.patientGender,
             patientDateOfBirth: bookingInfo.dateOfBirth,
         };
-        console.log(paymentInfo);
+        fetch('http://localhost:5000/api/v1/CreateAppointment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(bookingInformation),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('Appointment Created Successfully');
+            });
     };
 
     return (

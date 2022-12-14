@@ -14,8 +14,6 @@ const NurseProfile = () => {
             .then((data) => setNurse(data.data));
     }, [id]);
 
-    console.log(nurse);
-
     return (
         <div className="my-5">
             <div className="container">
@@ -50,15 +48,20 @@ const NurseProfile = () => {
                             </h5>
                             <div className="d-flex mb-3 justify-content-center justify-content-lg-start">
                                 <h2 className="text-center base-color">
-                                    ৳ <span>157.50</span>
+                                    ৳ <span>2000</span>
                                 </h2>
                                 <p className="mt-2 mx-1 text-muted">
                                     (incl. VAT)
                                 </p>
                             </div>
-                            <Button className="profile-btn" variant="contained">
-                                Book Now
-                            </Button>
+                            <a href={`tel:${nurse?.phone}`}>
+                                <Button
+                                    className="profile-btn"
+                                    variant="contained"
+                                >
+                                    Book Now
+                                </Button>
+                            </a>
                         </div>
                         <hr style={{ borderTop: '2px dashed gray' }} />
                         <div className="d-block d-lg-flex gap-5 doctor-profile-bottom">

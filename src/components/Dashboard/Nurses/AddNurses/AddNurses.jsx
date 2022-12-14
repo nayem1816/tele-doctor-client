@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import CustomInput from './../../../common/InputField/CustomInput/CustomInput';
 import UploadField from './../../../common/InputField/UploadField/UploadField';
 import CustomButton from './../../../common/InputField/CustomButton/CustomButton';
+import { toast } from 'react-toastify';
 
 const AddNurses = () => {
     const [nurseImage, setNurseImage] = React.useState(null);
@@ -26,7 +27,16 @@ const AddNurses = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                if (data) {
+                    toast.success('Nurse Added Successfully', {
+                        position: 'top-right',
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                    });
+                    window.location.reload();
+                }
             })
             .catch((err) => {
                 console.log(err);

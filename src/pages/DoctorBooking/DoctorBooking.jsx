@@ -26,7 +26,7 @@ const DoctorBooking = () => {
             }}
         >
             <BookingHeader />
-            {bookingInfo.length === 1 ? <PatientInfo /> : <BookingPayment />}
+            {bookingInfo.length === 0 ? <PatientInfo /> : <BookingPayment />}
         </DoctorBookingContext.Provider>
     );
 };

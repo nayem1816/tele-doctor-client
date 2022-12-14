@@ -11,6 +11,7 @@ import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { EditLocationAlt } from '@mui/icons-material';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const columns = [
     { id: 'name', label: 'Name', minWidth: 200 },
@@ -27,12 +28,16 @@ const NurseList = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [nurseDataList, setNurseDataList] = React.useState([]);
+    const navigate = useNavigate();
+    let count = 1;
 
     React.useEffect(() => {
         fetch('http://localhost:5000/api/v1/ReadNurses')
             .then((res) => res.json())
-            .then((data) => setNurseDataList(data.data));
-    }, [nurseDataList]);
+            .then((data) => {
+                setNurseDataList(data.data);
+            });
+    }, []);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -53,7 +58,7 @@ const NurseList = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data.success) {
+                if (data) {
                     const remainingNurses = nurseDataList.filter(
                         (nurse) => nurse._id !== id
                     );
@@ -67,6 +72,10 @@ const NurseList = () => {
                     });
                 }
             });
+    };
+
+    const handleNurseDetails = (id) => {
+        navigate(`/dashboard/nurse/nurse-details/${id}`);
     };
 
     return (
@@ -126,7 +135,7 @@ const NurseList = () => {
                                                     key={row._id}
                                                 >
                                                     <TableCell align={'left'}>
-                                                        1
+                                                        {count++}
                                                     </TableCell>
                                                     {columns.map((column) => {
                                                         const value =
@@ -164,6 +173,11 @@ const NurseList = () => {
                                                             Delete
                                                         </Button>
                                                         <Button
+                                                            onClick={() =>
+                                                                handleNurseDetails(
+                                                                    row._id
+                                                                )
+                                                            }
                                                             color="secondary"
                                                             variant="outlined"
                                                             startIcon={

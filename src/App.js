@@ -94,6 +94,24 @@ const NurseProfile = React.lazy(() =>
 const DoctorBooking = React.lazy(() =>
     import('./pages/DoctorBooking/DoctorBooking')
 );
+const MyProfile = React.lazy(() => import('./pages/MyProfile/MyProfile'));
+const Profile = React.lazy(() => import('./pages/MyProfile/Profile'));
+const MyAppointments = React.lazy(() =>
+    import('./pages/MyProfile/MyAppointments')
+);
+const LocationWiseDoctor = React.lazy(() =>
+    import('./pages/LocationWiseDoctor/LocationWiseDoctor')
+);
+const Chats = React.lazy(() => import('./pages/MyProfile/Chats'));
+const SearchDoctor = React.lazy(() =>
+    import('./pages/SearchDoctor/SearchDoctor')
+);
+const DoctorDetails = React.lazy(() =>
+    import('./components/Dashboard/DoctorVerification/DoctorDetails')
+);
+const NurseDetails = React.lazy(() =>
+    import('./components/Dashboard/Nurses/NurseList/NurseDetails')
+);
 
 function App() {
     return (
@@ -149,6 +167,14 @@ function App() {
                             element={<MostPopularDoctors />}
                         />
                         <Route
+                            path="location-wise-doctors/:location"
+                            element={<LocationWiseDoctor />}
+                        />
+                        <Route
+                            path="search-doctors/:value"
+                            element={<SearchDoctor />}
+                        />
+                        <Route
                             path="recent-disease"
                             element={<RecentDisease />}
                         />
@@ -166,6 +192,39 @@ function App() {
                                 </RequireAuth>
                             }
                         />
+                        <Route
+                            path="my-profile"
+                            element={
+                                <RequireAuth>
+                                    <Profile />
+                                </RequireAuth>
+                            }
+                        >
+                            <Route
+                                path=""
+                                element={
+                                    <RequireAuth>
+                                        <MyProfile />
+                                    </RequireAuth>
+                                }
+                            />
+                            <Route
+                                path="appointments"
+                                element={
+                                    <RequireAuth>
+                                        <MyAppointments />
+                                    </RequireAuth>
+                                }
+                            />
+                            <Route
+                                path="chats"
+                                element={
+                                    <RequireAuth>
+                                        <Chats />
+                                    </RequireAuth>
+                                }
+                            />
+                        </Route>
                         <Route path="*" element={<NotFound />} />
                     </Route>
 
@@ -203,6 +262,14 @@ function App() {
                             }
                         />
                         <Route
+                            path="verification/doctor-details/:id"
+                            element={
+                                <RequireAuth>
+                                    <DoctorDetails />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
                             path="doctors"
                             element={
                                 <RequireAuth>
@@ -211,10 +278,26 @@ function App() {
                             }
                         />
                         <Route
+                            path="doctor/doctor-details/:id"
+                            element={
+                                <RequireAuth>
+                                    <DoctorDetails />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
                             path="nurses"
                             element={
                                 <RequireAuth>
                                     <Nurses />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="nurse/nurse-details/:id"
+                            element={
+                                <RequireAuth>
+                                    <NurseDetails />
                                 </RequireAuth>
                             }
                         />
