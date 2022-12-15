@@ -206,7 +206,7 @@ const NurseList = () => {
                 ) : (
                     <div className="my-5">
                         <h5 className="text-center">
-                            No Doctors Found. Please Add Doctors to see the list
+                            No Nurse Found. Please Add Nurse to see the list
                         </h5>
                     </div>
                 )}

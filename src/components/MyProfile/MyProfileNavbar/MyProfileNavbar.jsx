@@ -28,9 +28,15 @@ const MyProfileNavbar = () => {
                 >
                     My Appointment
                 </Link>
-                <Link to="/my-profile/chats" className="my-profile-navbar-item">
-                    Chats
+                <Link
+                    to="/my-profile/prescriptions"
+                    className="my-profile-navbar-item"
+                >
+                    My Prescription
                 </Link>
+                {/* <Link to="/my-profile/chats" className="my-profile-navbar-item">
+                    Chats
+                </Link> */}
             </div>
         </div>
     );

@@ -64,6 +64,7 @@ const PrescriptionDetails = () => {
                 }
             });
     };
+
     return (
         <div className="d-flex justify-content-center mb-4">
             <div className="prescription">

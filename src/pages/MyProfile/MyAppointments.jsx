@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-
 import MyAppointmentMsg from '../../components/MyProfile/MyProfileMain/MyAppointmentMsg';
 
 const MyAppointments = () => {
@@ -15,8 +14,6 @@ const MyAppointments = () => {
             .then((res) => res.json())
             .then((data) => setAppointmentData(data.data));
     }, [user?.email, appointmentData]);
-
-    console.log(appointmentData);
 
     return (
         <div>

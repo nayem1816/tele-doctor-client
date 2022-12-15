@@ -1,9 +1,13 @@
 import React from 'react';
+import AddQA from './AddQA';
+import ReadQA from './ReadQA';
 
 const MedicalQA = () => {
     return (
         <div>
-            <h1>MedicalQA</h1>
+            <h2>MedicalQA</h2>
+            <AddQA />
+            <ReadQA />
         </div>
     );
 };

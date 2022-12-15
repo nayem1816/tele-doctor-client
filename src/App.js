@@ -6,6 +6,7 @@ import Loading from './pages/Loading/Loading';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 import HandleOtherPage from './MainRoute/HandleOtherPage';
 import HandleDashboard from './MainRoute/HandleDashboard';
+
 const Home = React.lazy(() => import('./pages/Home/Home'));
 const About = React.lazy(() => import('./pages/About/About'));
 const NotFound = React.lazy(() => import('./pages/NotFound/NotFound'));
@@ -111,6 +112,18 @@ const AppointmentDetails = React.lazy(() =>
 const PrescriptionDetails = React.lazy(() =>
     import('./components/Dashboard/PrescriptionList/PrescriptionDetails')
 );
+const MedicalQADB = React.lazy(() =>
+    import('./components/Dashboard/MedicalQA/MedicalQA')
+);
+const MyPrescriptionDetails = React.lazy(() =>
+    import('./pages/MyProfile/MyPrescriptionDetails')
+);
+const MyPrescription = React.lazy(() =>
+    import('./pages/MyProfile/MyPrescription')
+);
+const QADetails = React.lazy(() =>
+    import('./components/Dashboard/MedicalQA/QADetails')
+);
 
 function App() {
     return (
@@ -204,6 +217,22 @@ function App() {
                                 element={
                                     <RequireAuth>
                                         <MyAppointments />
+                                    </RequireAuth>
+                                }
+                            />
+                            <Route
+                                path="prescriptions"
+                                element={
+                                    <RequireAuth>
+                                        <MyPrescription />
+                                    </RequireAuth>
+                                }
+                            />
+                            <Route
+                                path="prescription/:id"
+                                element={
+                                    <RequireAuth>
+                                        <MyPrescriptionDetails />
                                     </RequireAuth>
                                 }
                             />
@@ -352,7 +381,15 @@ function App() {
                             path="medicalQA"
                             element={
                                 <RequireAuth>
-                                    <MedicalQA />
+                                    <MedicalQADB />
+                                </RequireAuth>
+                            }
+                        />
+                        <Route
+                            path="question-answer/:id"
+                            element={
+                                <RequireAuth>
+                                    <QADetails />
                                 </RequireAuth>
                             }
                         />
