@@ -18,11 +18,11 @@ const QADetails = () => {
             <h4>Question and Answer</h4>
             <div className="form my-5">
                 <div className="my-3">
+                    <strong>Question</strong>
                     <TextField
                         className="w-100 mt-1 text-dark"
                         id="filled-multiline-static"
                         multiline
-                        label="Question"
                         rows={2}
                         variant="filled"
                         disabled={true}
@@ -35,12 +35,12 @@ const QADetails = () => {
                     />
                 </div>
                 <div className="my-4">
+                    <strong>Answer</strong>
                     <TextField
                         className="w-100 mt-1 text-dark"
                         id="filled-multiline-static"
                         multiline
                         rows={4}
-                        label="Answer"
                         variant="filled"
                         disabled={true}
                         defaultValue={qa?.answer}

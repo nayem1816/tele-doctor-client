@@ -72,7 +72,7 @@ const PatientInfo = () => {
                             })}
                         />
                     </div>
-                    <div className="col-md-12 p-3 button d-flex justify-content-end">
+                    <div className="col-md-12 p-3 d-flex justify-content-end">
                         <CustomButton btnType={'submit'} btnTxt={'Next'} />
                     </div>
                 </div>

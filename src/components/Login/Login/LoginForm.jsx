@@ -11,11 +11,7 @@ import auth from './../../../firebase.init';
 import { useEffect } from 'react';
 
 const LoginForm = () => {
-    const {
-        register,
-        handleSubmit,
-        // formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || '/';

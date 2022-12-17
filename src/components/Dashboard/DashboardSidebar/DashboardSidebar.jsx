@@ -77,8 +77,8 @@ const DashboardSidebar = ({ openSidebar, setOpenSidebar }) => {
                         </span>
                         <span className="ms-2 w-100">Page Control</span>
                     </a>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
+                    <div className="collapse" id="collapseExample">
+                        <div className="card card-body">
                             Some placeholder content for the collapse component.
                             This panel is hidden by default but revealed when
                             the user activates the relevant trigger.

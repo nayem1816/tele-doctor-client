@@ -1,0 +1,29 @@
+.postImage{
+    height: 500px;
+}
+img.profile-photo-md {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.create-post .form-grp img.profile-photo-md {
+    margin-right: 90px;
+}
+img {
+    vertical-align: middle;
+    border: 0; 
+}
+img.profile-photo-md {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+img {
+    vertical-align: middle;
+    border: 0;
+   
+}
+.send-btn{
+    font-size: 32px;
+}

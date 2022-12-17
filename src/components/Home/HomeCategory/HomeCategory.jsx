@@ -14,7 +14,7 @@ const HomeCategory = () => {
     return (
         <div className="home-category">
             <div className="container d-flex justify-content-between scroll-category">
-                {categoryDataList.slice(0, 8).map((category) => (
+                {categoryDataList?.slice(0, 8).map((category) => (
                     <Link
                         key={category._id}
                         className="text-white d-none d-sm-none d-md-none d-lg-block d-xl-block py-3"
@@ -23,7 +23,7 @@ const HomeCategory = () => {
                         {category.name}
                     </Link>
                 ))}
-                {categoryDataList.slice(0, 6).map((category) => (
+                {categoryDataList?.slice(0, 6).map((category) => (
                     <Link
                         key={category._id}
                         className="text-white d-none d-sm-none d-md-block d-lg-none d-xl-none p-3"
@@ -32,7 +32,7 @@ const HomeCategory = () => {
                         {category.name}
                     </Link>
                 ))}
-                {categoryDataList.slice(0, 10).map((category) => (
+                {categoryDataList?.slice(0, 10).map((category) => (
                     <Link
                         key={category._id}
                         className="text-white d-sm-block d-md-none d-lg-none d-xl-none me-5 py-3"

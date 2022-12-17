@@ -6,12 +6,19 @@ import Loading from './pages/Loading/Loading';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 import HandleOtherPage from './MainRoute/HandleOtherPage';
 import HandleDashboard from './MainRoute/HandleDashboard';
+import SocialMediaSubPages from './pages/SocialMediaSubPages/SocialMediaSubPages';
+import SocialMediaYourPost from './pages/SocialMediaYourPost/SocialMediaYourPost';
+import SocialMediaYourProfile from './pages/SocialMediaYourProfile/SocialMediaYourProfile';
 
 const Home = React.lazy(() => import('./pages/Home/Home'));
 const About = React.lazy(() => import('./pages/About/About'));
 const NotFound = React.lazy(() => import('./pages/NotFound/NotFound'));
 const Doctor = React.lazy(() => import('./pages/Doctor/Doctor'));
 const MedicalQA = React.lazy(() => import('./pages/MedicalQA/MedicalQA'));
+const SocialMediaPage = React.lazy(() =>
+    import('./pages/SocialMediaPage/SocialMediaPage')
+);
+
 const RecentDisease = React.lazy(() =>
     import('./pages/RecentDisease/RecentDisease')
 );
@@ -136,6 +143,23 @@ function App() {
                         <Route path="" element={<Home />} />
                         <Route path="home" element={<Home />} />
                         <Route path="about" element={<About />} />
+                        <Route
+                            path="socialMediaPage"
+                            element={<SocialMediaPage />}
+                        />
+
+                        <Route
+                            path="socialMediaSubPages"
+                            element={<SocialMediaSubPages />}
+                        />
+                        <Route
+                            path="socialMedia/profile"
+                            element={<SocialMediaYourProfile />}
+                        />
+                        <Route
+                            path="userProfile/:id"
+                            element={<SocialMediaYourPost />}
+                        />
                         <Route path="doctor" element={<Doctor />}>
                             <Route path="" element={<DoctorCard />} />
                             <Route

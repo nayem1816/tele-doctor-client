@@ -55,13 +55,12 @@ const AddQA = () => {
                         <div className="col-12 p-3">
                             <CustomTextArea
                                 placeHolder={'Write the answer'}
-                                inputType={'text'}
                                 refs={register('answer', {
                                     required: true,
                                 })}
                             />
                         </div>
-                        <div className="col-md-12 p-3 button">
+                        <div className="col-md-12 p-3">
                             <CustomButton
                                 btnType={'submit'}
                                 btnTxt={'Submit'}

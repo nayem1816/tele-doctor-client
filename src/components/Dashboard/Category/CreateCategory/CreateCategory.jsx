@@ -31,7 +31,7 @@ const CreateCategory = () => {
                             })}
                         />
                     </div>
-                    <div className="col-md-12 p-3 button">
+                    <div className="col-md-12 p-3">
                         <CustomButton btnType={'submit'} btnTxt={'Submit'} />
                     </div>
                 </div>

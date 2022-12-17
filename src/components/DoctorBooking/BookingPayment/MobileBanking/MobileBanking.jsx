@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './MobileBanking.css';
 import { useForm } from 'react-hook-form';
 import CustomInput from '../../../common/InputField/CustomInput/CustomInput';
@@ -7,6 +7,7 @@ import CustomButton from '../../../common/InputField/CustomButton/CustomButton';
 import { DoctorBookingContext } from '../../../../pages/DoctorBooking/DoctorBookingContext';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
+import { toast } from 'react-toastify';
 
 const MobileBanking = () => {
     const { register, handleSubmit } = useForm();
@@ -15,6 +16,7 @@ const MobileBanking = () => {
     const [nogadActive, setNogadActive] = React.useState(false);
     const { bookingInfo, doctor } = useContext(DoctorBookingContext);
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     const handleBKashActive = () => {
         setBKashActive(true);
@@ -69,7 +71,15 @@ const MobileBanking = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log('Appointment Created Successfully');
+                if (data) {
+                    toast.success('Appointment Created Successfully', {
+                        position: 'top-right',
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                    });
+                    navigate('/my-profile/appointments');
+                }
             });
     };
 
@@ -132,7 +142,7 @@ const MobileBanking = () => {
                         refs={register('trxID', { required: true })}
                     />
                 </div>
-                <div className="p-3 button">
+                <div className="p-3">
                     <CustomButton btnType={'submit'} btnTxt={'Confirm'} />
                 </div>
             </form>

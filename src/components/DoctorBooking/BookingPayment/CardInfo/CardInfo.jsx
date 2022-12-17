@@ -77,7 +77,7 @@ const CardInfo = () => {
         if (payload.error) {
             console.log(payload.error.message);
         } else {
-            console.log('Payment Successfull');
+            console.log('Payment Successfully');
         }
 
         if (payload.paymentMethod.id) {
@@ -103,7 +103,6 @@ const CardInfo = () => {
                 patientGender: bookingInfo.patientGender,
                 patientDateOfBirth: bookingInfo.dateOfBirth,
             };
-            // console.log(bookingInformation);
 
             fetch('http://localhost:5000/api/v1/CreateAppointment', {
                 method: 'POST',
