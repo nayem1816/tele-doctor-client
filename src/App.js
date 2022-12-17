@@ -6,9 +6,6 @@ import Loading from './pages/Loading/Loading';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 import HandleOtherPage from './MainRoute/HandleOtherPage';
 import HandleDashboard from './MainRoute/HandleDashboard';
-import SocialMediaSubPages from './pages/SocialMediaSubPages/SocialMediaSubPages';
-import SocialMediaYourPost from './pages/SocialMediaYourPost/SocialMediaYourPost';
-import SocialMediaYourProfile from './pages/SocialMediaYourProfile/SocialMediaYourProfile';
 
 const Home = React.lazy(() => import('./pages/Home/Home'));
 const About = React.lazy(() => import('./pages/About/About'));
@@ -130,6 +127,15 @@ const MyPrescription = React.lazy(() =>
 );
 const QADetails = React.lazy(() =>
     import('./components/Dashboard/MedicalQA/QADetails')
+);
+const SocialMediaSubPages = React.lazy(() =>
+    import('./pages/SocialMediaSubPages/SocialMediaSubPages')
+);
+const SocialMediaYourPost = React.lazy(() =>
+    import('./pages/SocialMediaYourPost/SocialMediaYourPost')
+);
+const SocialMediaYourProfile = React.lazy(() =>
+    import('./pages/SocialMediaYourProfile/SocialMediaYourProfile')
 );
 
 function App() {

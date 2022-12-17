@@ -52,7 +52,7 @@ const MostPopularDoctor = () => {
                         >
                             {mostPopularDoctor.map((doctor) => (
                                 <SwiperSlide key={doctor?._id}>
-                                    <div className="doctor-card bg-white rounded shadow border">
+                                    <div className="doctor-card bg-white rounded border">
                                         <div
                                             style={{ height: '170px' }}
                                             className="doctor-profile d-flex py-4 px-3 align-items-center"
