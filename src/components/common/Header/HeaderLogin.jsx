@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
@@ -7,10 +7,13 @@ import { Link } from 'react-router-dom';
 
 const HeaderLogin = () => {
     const [user, loading, error] = useAuthState(auth);
+    const [isDoctor, setIsDoctor] = React.useState(false);
+    const [isAdmin, setIsAdmin] = React.useState(false);
 
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('userToken');
+        // window.location.reload();
     };
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -21,6 +24,19 @@ const HeaderLogin = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/api/v1/ReadProfileByEmail/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data?.data[0]?.role === 'doctor') {
+                    setIsDoctor(true);
+                }
+                if (data?.data[0]?.admin === 'admin') {
+                    setIsAdmin(true);
+                }
+            });
+    }, [user?.email]);
 
     if (loading) {
         return (
@@ -91,14 +107,16 @@ const HeaderLogin = () => {
                             </div>
                             <Divider />
                             <div className="py-2">
-                                <MenuItem onClick={handleClose}>
-                                    <a
-                                        className="dropdown-item"
-                                        href="/dashboard/home"
-                                    >
-                                        Dashboard
-                                    </a>
-                                </MenuItem>
+                                {isDoctor | isAdmin ? (
+                                    <MenuItem onClick={handleClose}>
+                                        <a
+                                            className="dropdown-item"
+                                            href="/dashboard/home"
+                                        >
+                                            Dashboard
+                                        </a>
+                                    </MenuItem>
+                                ) : null}
                                 <MenuItem onClick={handleClose}>
                                     <a
                                         className="dropdown-item"

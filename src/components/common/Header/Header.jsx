@@ -4,9 +4,12 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 import HeaderLogin from './HeaderLogin';
 import { useEffect } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Header = () => {
     const [recentDisease, setRecentDisease] = React.useState(null);
+    const [user] = useAuthState(auth);
 
     useEffect(() => {
         fetch('http://localhost:5000/api/v1/ReadRecentDiseases')
@@ -53,16 +56,21 @@ const Header = () => {
                             <Link className="nav-link text-dark" to="/about">
                                 About Us
                             </Link>
-                            
+
                             <Link
                                 className="nav-link text-dark"
                                 to="/medicalQa"
                             >
                                 Medical Q&#38;Link
                             </Link>
-                            <Link className="nav-link text-dark" to="/socialMediaPage">
-                                Social Media
-                            </Link>
+                            {user?.email && (
+                                <Link
+                                    className="nav-link text-dark"
+                                    to="/socialMediaPage"
+                                >
+                                    Social Media
+                                </Link>
+                            )}
                             {recentDisease === null ? (
                                 ''
                             ) : (

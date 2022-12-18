@@ -50,7 +50,7 @@ const MobileBanking = () => {
             userEmail: user.email,
             doctorId: doctor._id,
             doctorName: doctor.name,
-            doctorEmail: doctor.email,
+            doctorEmail: doctor.userInfo.email,
             doctorPhone: doctor.mobile,
             doctorFee: doctor.fees,
             doctorProfilePic: doctor.profilePic,

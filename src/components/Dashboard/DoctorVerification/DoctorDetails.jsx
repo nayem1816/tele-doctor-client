@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 const DoctorDetails = () => {
     const [selectDoctor, setSelectDoctor] = React.useState([]);
+    const [doctorRole, setDoctorRole] = React.useState('');
     const { register, handleSubmit } = useForm();
     const { id } = useParams();
     const navigate = useNavigate();
@@ -30,21 +31,42 @@ const DoctorDetails = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data) {
+                    setDoctorRole('success');
                     toast('Doctor Verified Successfully', {
                         type: 'success',
                         position: 'top-right',
                         autoClose: 1000,
                     });
-                    navigate('/dashboard/verification');
                 }
             });
     };
+
+    if (doctorRole === 'success') {
+        const doctorData = {
+            email: selectDoctor?.userInfo?.email,
+            role: 'doctor',
+        };
+        fetch(`http://localhost:5000/api/v1/UpdateRoleUsingEmail`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(doctorData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data) {
+                    navigate('/dashboard/verification');
+                }
+            });
+    }
 
     return (
         <div className="appointment-details">
             <h2>Doctor Details</h2>
             <div className="image text-center my-4">
                 <img
+                    style={{ width: '200px', height: '200px' }}
                     className="img-fluid border border-2 border-primary rounded-circle p-1"
                     src={selectDoctor?.profilePic}
                     alt="doctorImg"

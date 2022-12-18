@@ -10,6 +10,8 @@ import './CardInfo.css';
 import { DoctorBookingContext } from '../../../../pages/DoctorBooking/DoctorBookingContext';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 function useResponsiveFontSize() {
     const getFontSize = () => (window.innerWidth < 450 ? '16px' : '18px');
@@ -61,6 +63,7 @@ const CardInfo = () => {
     const options = useOptions();
     const { bookingInfo, doctor } = useContext(DoctorBookingContext);
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -113,7 +116,15 @@ const CardInfo = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log('Appointment Created Successfully');
+                    if (data) {
+                        toast.success('Appointment Created Successfully', {
+                            position: 'top-right',
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                        });
+                        navigate('/my-profile/appointments');
+                    }
                 });
         }
     };

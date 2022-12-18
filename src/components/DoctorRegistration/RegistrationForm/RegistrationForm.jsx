@@ -21,6 +21,9 @@ import {
 import Select from '@mui/material/Select';
 import CustomTextArea from './../../common/InputField/CustomTextArea/CustomTextArea';
 import CustomDateAndTime from './../../common/CustomDateAndTime/CustomDateAndTime';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -48,6 +51,8 @@ const RegistrationForm = () => {
     const { register, handleSubmit } = useForm();
     const [doctorImage, setDoctorImage] = useState(null);
     const dateAndTime = CustomDateAndTime();
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     const [personName, setPersonName] = React.useState([]);
 
@@ -82,6 +87,10 @@ const RegistrationForm = () => {
             consultationTime: data.consultationTime,
             communication: [data.audio, data.video, data.message],
             createdAt: dateAndTime,
+            userInfo: {
+                name: user.displayName,
+                email: user.email,
+            },
         };
 
         var myHeaders = new Headers();
@@ -95,10 +104,9 @@ const RegistrationForm = () => {
         };
 
         fetch('http://localhost:5000/api/v1/CreateDoctor', requestOptions)
-            .then((response) => response.text())
+            .then((response) => response.json())
             .then((result) => {
-                const resultData = JSON.parse(result);
-                if (resultData.status === 'success') {
+                if (result) {
                     toast.success('Doctor Registration Successful', {
                         position: 'top-right',
                         autoClose: 1000,
@@ -106,6 +114,7 @@ const RegistrationForm = () => {
                         closeOnClick: true,
                         pauseOnHover: true,
                     });
+                    navigate('/');
                 } else {
                     toast.error('Doctor Registration Failed', {
                         position: 'top-right',

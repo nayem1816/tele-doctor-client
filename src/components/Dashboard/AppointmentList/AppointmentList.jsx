@@ -12,6 +12,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { EditLocationAlt } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const columns = [
     { id: 'doctorName', label: 'Doctor Name', minWidth: 200 },
@@ -34,14 +36,17 @@ const AppointmentList = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [appointments, setAppointments] = React.useState([]);
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
     let count = 1;
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadAppointments')
+        fetch(
+            `http://localhost:5000/api/v1/ReadAppointmentDoctorByEmail/${user?.email}`
+        )
             .then((res) => res.json())
             .then((data) => setAppointments(data.data));
-    }, []);
+    }, [user?.email]);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -221,7 +226,7 @@ const AppointmentList = () => {
                 ) : (
                     <div className="my-5">
                         <h5 className="text-center">
-                            No Doctors Found. Please Add Doctors to see the list
+                            No Appointment Found....
                         </h5>
                     </div>
                 )}

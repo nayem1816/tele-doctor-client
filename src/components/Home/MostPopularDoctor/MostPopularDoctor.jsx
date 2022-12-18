@@ -43,6 +43,10 @@ const MostPopularDoctor = () => {
                                     spaceBetween: 40,
                                 },
                                 1024: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 40,
+                                },
+                                1440: {
                                     slidesPerView: 4,
                                     spaceBetween: 50,
                                 },

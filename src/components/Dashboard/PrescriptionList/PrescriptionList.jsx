@@ -13,6 +13,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { EditLocationAlt } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const columns = [
     {
@@ -27,14 +29,17 @@ const PrescriptionList = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const [prescriptions, setPrescriptions] = useState([]);
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
     let count = 1;
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadPrescriptions')
+        fetch(
+            `http://localhost:5000/api/v1/ReadPrescriptionDoctorByEmail/${user?.email}`
+        )
             .then((res) => res.json())
             .then((data) => setPrescriptions(data.data));
-    }, []);
+    }, [user?.email]);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -56,7 +61,7 @@ const PrescriptionList = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data) {
-                    const remainingPrescription = prescriptions.filter(
+                    const remainingPrescription = prescriptions?.filter(
                         (appointment) => appointment._id !== id
                     );
                     setPrescriptions(remainingPrescription);
@@ -79,7 +84,7 @@ const PrescriptionList = () => {
         <div>
             <h4>Prescriptions</h4>
             <div className="p-2">
-                {prescriptions.length > 0 ? (
+                {prescriptions?.length > 0 ? (
                     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                         <TableContainer sx={{ maxHeight: 700 }}>
                             <Table stickyHeader aria-label="sticky table">
@@ -119,7 +124,7 @@ const PrescriptionList = () => {
                                 </TableHead>
                                 <TableBody>
                                     {prescriptions
-                                        .slice(
+                                        ?.slice(
                                             page * rowsPerPage,
                                             page * rowsPerPage + rowsPerPage
                                         )
@@ -203,7 +208,7 @@ const PrescriptionList = () => {
                         <TablePagination
                             rowsPerPageOptions={[10, 25, 100]}
                             component="div"
-                            count={prescriptions.length}
+                            count={prescriptions?.length}
                             rowsPerPage={rowsPerPage}
                             page={page}
                             onPageChange={handleChangePage}
