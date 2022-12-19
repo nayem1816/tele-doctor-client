@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '../../../images/icons/user.png';
 import { Rating } from 'react-simple-star-rating';
 import './DoctorInfo.css';
 
@@ -49,62 +48,66 @@ const DoctorInfo = ({ doctor }) => {
                     </div>
                 </div>
             </div>
-            <div className="my-5">
-                <h2>Reviews</h2>
-                <div className="reviews-part my-4">
-                    <div className="row">
-                        {[1, 2, 3, 4, 5].map((review, index) => (
-                            <div key={index} className="col-md-6">
-                                <div className="shadow p-4 rounded m-2">
-                                    <div className="top d-flex justify-content-between">
-                                        <div className="d-flex gap-3">
-                                            <img
-                                                className="rounded-circle"
-                                                style={{
-                                                    width: '80px',
-                                                    height: '80px',
-                                                }}
-                                                src={image}
-                                                alt=""
-                                            />
-                                            <div className="mt-2">
-                                                <h6 className="fw-bold">
-                                                    Raisul Islam Rasal
-                                                </h6>
-                                                <p className="">01.04.2022</p>
+            {doctor?.reviews?.length > 0 && (
+                <div className="my-5">
+                    <h2>Reviews</h2>
+                    <div className="reviews-part my-4">
+                        <div className="row">
+                            {doctor?.reviews?.map((review) => (
+                                <div key={review._id} className="col-md-6">
+                                    <div className="shadow p-4 rounded m-2">
+                                        <div className="top d-flex justify-content-between">
+                                            <div className="d-flex gap-3">
+                                                <img
+                                                    className="rounded-circle"
+                                                    style={{
+                                                        width: '80px',
+                                                        height: '80px',
+                                                    }}
+                                                    src={review?.userImg}
+                                                    alt=""
+                                                />
+                                                <div className="mt-2">
+                                                    <h6 className="fw-bold">
+                                                        {review?.name}
+                                                    </h6>
+                                                    <p className="">
+                                                        {review?.createAt}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="">
+                                                <h3 className="text-end fw-bold">
+                                                    {review?.rating}
+                                                </h3>
+                                                <Rating
+                                                    allowHover={false}
+                                                    initialValue={0}
+                                                    size={20}
+                                                    ratingValue={
+                                                        review?.rating * 20
+                                                    }
+                                                    readonly={true}
+                                                />
                                             </div>
                                         </div>
-                                        <div className="">
-                                            <h3 className="text-end fw-bold">
-                                                5
-                                            </h3>
-                                            <Rating
-                                                allowHover={false}
-                                                initialValue={0}
-                                                size={20}
-                                                ratingValue={100}
-                                                readonly={true}
-                                            />
+                                        <hr
+                                            style={{
+                                                borderTop: '2px dashed gray',
+                                            }}
+                                        />
+                                        <div className="review-text">
+                                            <p className="text-muted">
+                                                {review?.review}
+                                            </p>
                                         </div>
                                     </div>
-                                    <hr
-                                        style={{ borderTop: '2px dashed gray' }}
-                                    />
-                                    <div className="review-text">
-                                        <p className="text-muted">
-                                            Lorem, ipsum dolor sit amet
-                                            consectetur adipisicing elit.
-                                            Doloremque porro, fuga molestiae
-                                            dignissimos odio maxime non
-                                            provident beatae enim fugit?
-                                        </p>
-                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };

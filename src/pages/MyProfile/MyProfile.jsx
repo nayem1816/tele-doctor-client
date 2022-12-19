@@ -59,7 +59,7 @@ const MyProfile = () => {
                             <img
                                 style={{ width: '120px', height: '120px' }}
                                 className="rounded-circle my-2"
-                                src={user.photoURL}
+                                src={user?.photoURL}
                                 alt="user"
                             />
                             <br />

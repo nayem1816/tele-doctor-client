@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import MyAppointmentMsg from '../../components/MyProfile/MyProfileMain/MyAppointmentMsg';
+import { Link } from 'react-router-dom';
 
 const MyAppointments = () => {
     const [appointmentData, setAppointmentData] = useState([]);
@@ -116,6 +117,19 @@ const MyAppointments = () => {
                                         {appointment.doctorFee} Tk.
                                     </span>
                                 </h6>
+                                <div className="mt-2 mt-md-5">
+                                    <p className="fw-bold mt-2 mt-md-5">
+                                        Go to review this doctor{' '}
+                                        <strong>
+                                            <Link
+                                                className="text-danger"
+                                                to={`/review/doctor/${appointment.doctorEmail}`}
+                                            >
+                                                here
+                                            </Link>
+                                        </strong>
+                                    </p>
+                                </div>
                             </div>
                             <div className="col-md-6 mt-5 mt-md-0">
                                 <h4 className="fw-bold">Messages</h4>

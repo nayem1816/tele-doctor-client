@@ -49,6 +49,17 @@ const HeaderLogin = () => {
                     cursor: 'pointer',
                 }}
             />
+            // <img
+            //     style={{
+            //         width: '44px',
+            //         height: '44px',
+            //         cursor: 'pointer',
+            //     }}
+            //     className="img-fluid rounded-circle"
+            //     onClick={handleClick}
+            //     src="https://i.ibb.co/25kDrnr/user-1.png"
+            //     alt=""
+            // />
         );
     }
     if (error) {
@@ -60,9 +71,9 @@ const HeaderLogin = () => {
                 <div className="d-flex justify-content-center user-menu-style">
                     <Avatar
                         onClick={handleClick}
-                        alt={user.displayName}
+                        alt={user?.displayName}
                         src={
-                            user.photoURL ||
+                            user?.photoURL ||
                             'https://i.ibb.co/25kDrnr/user-1.png'
                         }
                         sx={{
@@ -71,6 +82,17 @@ const HeaderLogin = () => {
                             cursor: 'pointer',
                         }}
                     />
+                    {/* <img
+                        style={{
+                            width: '44px',
+                            height: '44px',
+                            cursor: 'pointer',
+                        }}
+                        className="img-fluid rounded-circle"
+                        onClick={handleClick}
+                        src={user?.photoURL}
+                        alt=""
+                    /> */}
                     <Menu
                         id="fade-menu"
                         MenuListProps={{
@@ -85,9 +107,9 @@ const HeaderLogin = () => {
                             <div className="profile-header d-flex justify-content-center px-5 py-3 flex-column text-center">
                                 <div className="user-image d-flex justify-content-center py-2">
                                     <Avatar
-                                        alt={user.displayName}
+                                        alt={user?.displayName}
                                         src={
-                                            user.photoURL ||
+                                            user?.photoURL ||
                                             'https://i.ibb.co/25kDrnr/user-1.png'
                                         }
                                         sx={{
@@ -95,6 +117,15 @@ const HeaderLogin = () => {
                                             height: 80,
                                         }}
                                     />
+                                    {/* <img
+                                        style={{
+                                            width: '80px',
+                                            height: '80px',
+                                        }}
+                                        className="img-fluid rounded-circle"
+                                        src={user?.photoURL}
+                                        alt=""
+                                    /> */}
                                 </div>
                                 <div className="user-name">
                                     <h5 className="text-center">

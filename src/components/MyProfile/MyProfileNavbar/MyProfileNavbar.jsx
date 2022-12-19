@@ -6,13 +6,25 @@ import './MyProfileNavbar.css';
 
 const MyProfileNavbar = () => {
     const [user] = useAuthState(auth);
+    const [doctor, setDoctor] = React.useState(false);
+
+    React.useEffect(() => {
+        fetch(`http://localhost:5000/api/v1/ReadDoctorByEmail/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.data.length > 0) {
+                    setDoctor(true);
+                }
+            });
+    }, [user?.email]);
+
     return (
         <div>
             <div className="user mt-5">
                 <div className="user-img d-flex justify-content-center">
                     <img
                         className="rounded-circle"
-                        src={user.photoURL}
+                        src={user?.photoURL}
                         alt="user"
                     />
                 </div>
@@ -34,9 +46,14 @@ const MyProfileNavbar = () => {
                 >
                     My Prescription
                 </Link>
-                {/* <Link to="/my-profile/chats" className="my-profile-navbar-item">
-                    Chats
-                </Link> */}
+                {doctor && (
+                    <Link
+                        to="/my-profile/reg-form"
+                        className="my-profile-navbar-item"
+                    >
+                        My Registration Form
+                    </Link>
+                )}
             </div>
         </div>
     );

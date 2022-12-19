@@ -100,7 +100,6 @@ const MyAppointments = React.lazy(() =>
 const LocationWiseDoctor = React.lazy(() =>
     import('./pages/LocationWiseDoctor/LocationWiseDoctor')
 );
-const Chats = React.lazy(() => import('./pages/MyProfile/Chats'));
 const SearchDoctor = React.lazy(() =>
     import('./pages/SearchDoctor/SearchDoctor')
 );
@@ -136,6 +135,14 @@ const SocialMediaYourPost = React.lazy(() =>
 );
 const SocialMediaYourProfile = React.lazy(() =>
     import('./pages/SocialMediaYourProfile/SocialMediaYourProfile')
+);
+const RegistrationFormShow = React.lazy(() =>
+    import('./pages/MyProfile/RegistrationFormShow')
+);
+const DoctorReview = React.lazy(() => import('./pages/Review/DoctorReview'));
+const WebsiteReview = React.lazy(() => import('./pages/Review/WebsiteReview'));
+const AllApplicationReview = React.lazy(() =>
+    import('./pages/Review/AllApplicationReview')
 );
 
 function App() {
@@ -216,6 +223,18 @@ function App() {
                             path="nurse-profile/:id"
                             element={<NurseProfile />}
                         />
+                        <Route
+                            path="review/doctor/:email"
+                            element={<DoctorReview />}
+                        />
+                        <Route
+                            path="review/website-review"
+                            element={<WebsiteReview />}
+                        />
+                        <Route
+                            path="reviews"
+                            element={<AllApplicationReview />}
+                        />
                         <Route path="login" element={<Login />} />
                         <Route path="signup" element={<Signup />} />
                         <Route
@@ -267,10 +286,10 @@ function App() {
                                 }
                             />
                             <Route
-                                path="chats"
+                                path="reg-form"
                                 element={
                                     <RequireAuth>
-                                        <Chats />
+                                        <RegistrationFormShow />
                                     </RequireAuth>
                                 }
                             />
