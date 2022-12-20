@@ -7,17 +7,20 @@ import { BiCaretLeft, BiCaretRight } from 'react-icons/bi';
 const MyAppointmentMsg = ({ appointment }) => {
     const { register, handleSubmit, reset, formState } = useForm();
     const onSubmit = (data) => {
-        fetch('http://localhost:5000/api/v1/SentAppointmentMessage', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                appointmentId: appointment._id,
-                message: data.message,
-                sender: 'patient',
-            }),
-        })
+        fetch(
+            'https://tele-doctor-server.vercel.app/api/v1/SentAppointmentMessage',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    appointmentId: appointment._id,
+                    message: data.message,
+                    sender: 'patient',
+                }),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

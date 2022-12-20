@@ -34,7 +34,7 @@ const LoginForm = () => {
     }
 
     const onSubmit = (data) => {
-        fetch('http://localhost:5000/api/v1/UserLogin', {
+        fetch('https://tele-doctor-server.vercel.app/api/v1/UserLogin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

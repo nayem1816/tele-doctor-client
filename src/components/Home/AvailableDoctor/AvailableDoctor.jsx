@@ -11,7 +11,7 @@ const AvailableDoctor = () => {
     const [doctors, setDoctor] = React.useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/AvailableDoctor')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/AvailableDoctor')
             .then((res) => res.json())
             .then((data) => setDoctor(data.data));
     }, []);

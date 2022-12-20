@@ -8,7 +8,7 @@ const LocationWiseDoctor = () => {
 
     useEffect(() => {
         fetch(
-            `http://localhost:5000/api/v1/FindDoctorByLocation/?location=${location.toLowerCase()}`
+            `https://tele-doctor-server.vercel.app/api/v1/FindDoctorByLocation/?location=${location.toLowerCase()}`
         )
             .then((res) => res.json())
             .then((data) => setLocationWiseData(data.data));

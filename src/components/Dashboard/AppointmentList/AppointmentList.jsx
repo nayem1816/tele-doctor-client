@@ -42,7 +42,7 @@ const AppointmentList = () => {
 
     React.useEffect(() => {
         fetch(
-            `http://localhost:5000/api/v1/ReadAppointmentDoctorByEmail/${user?.email}`
+            `https://tele-doctor-server.vercel.app/api/v1/ReadAppointmentDoctorByEmail/${user?.email}`
         )
             .then((res) => res.json())
             .then((data) => setAppointments(data.data));
@@ -58,13 +58,16 @@ const AppointmentList = () => {
     };
 
     const handleAppointmentDelete = (id) => {
-        fetch(`http://localhost:5000/api/v1/DeleteAppointment/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ id }),
-        })
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/DeleteAppointment/`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id }),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data) {

@@ -6,7 +6,7 @@ const Blog = ({ title }) => {
     const [blogDataList, setBlogDataList] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadBlogs')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadBlogs')
             .then((res) => res.json())
             .then((data) => setBlogDataList(data.data));
     }, [blogDataList]);

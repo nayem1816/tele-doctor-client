@@ -11,7 +11,9 @@ const DoctorDetails = () => {
     const navigate = useNavigate();
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/api/v1/ReadDoctorById/${id}`)
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/ReadDoctorById/${id}`
+        )
             .then((res) => res.json())
             .then((data) => setSelectDoctor(data.data));
     }, [id]);
@@ -21,13 +23,16 @@ const DoctorDetails = () => {
             id: selectDoctor._id,
             verifiedStatus: data.verifiedStatus,
         };
-        fetch(`http://localhost:5000/api/v1/updateVerifiedStatus`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(verifyData),
-        })
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/updateVerifiedStatus`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(verifyData),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data) {
@@ -46,13 +51,16 @@ const DoctorDetails = () => {
             email: selectDoctor?.userInfo?.email,
             role: 'doctor',
         };
-        fetch(`http://localhost:5000/api/v1/UpdateRoleUsingEmail`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(doctorData),
-        })
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/UpdateRoleUsingEmail`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(doctorData),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data) {

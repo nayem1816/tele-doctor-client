@@ -14,7 +14,7 @@ const SpecialistDoctor = ({ diseaseName, specialization }) => {
 
     useEffect(() => {
         fetch(
-            `http://localhost:5000/api/v1/FindRecentDoctor/?specialist=${specialization}`
+            `https://tele-doctor-server.vercel.app/api/v1/FindRecentDoctor/?specialist=${specialization}`
         )
             .then((res) => res.json())
             .then((data) => setSpecialistDoctor(data.data));

@@ -45,20 +45,22 @@ const Dashboard = () => {
             setGreeting('Good Night');
         }
 
-        fetch(`http://localhost:5000/api/v1/ReadProfileByEmail/${user?.email}`)
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/ReadProfileByEmail/${user?.email}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setRoleBaseUser(data.data[0]);
             });
 
         // Admin
-        fetch('http://localhost:5000/api/v1/ReadDoctors')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadDoctors')
             .then((res) => res.json())
             .then((data) => {
                 setTotalDoctor(data.data.length);
             });
 
-        fetch(`http://localhost:5000/api/v1/ReadAppointments`)
+        fetch(`https://tele-doctor-server.vercel.app/api/v1/ReadAppointments`)
             .then((res) => res.json())
             .then((data) => {
                 setTotalPatients(data.data.length);
@@ -72,7 +74,7 @@ const Dashboard = () => {
 
         // Doctor
         fetch(
-            `http://localhost:5000/api/v1/ReadAppointmentDoctorByEmail/${user?.email}`
+            `https://tele-doctor-server.vercel.app/api/v1/ReadAppointmentDoctorByEmail/${user?.email}`
         )
             .then((res) => res.json())
             .then((data) => {
@@ -85,7 +87,7 @@ const Dashboard = () => {
                 setDoctorAppointments(data.data.reverse().slice(0, 5));
             });
         fetch(
-            `http://localhost:5000/api/v1/ReadPrescriptionDoctorByEmail/${user?.email}`
+            `https://tele-doctor-server.vercel.app/api/v1/ReadPrescriptionDoctorByEmail/${user?.email}`
         )
             .then((res) => res.json())
             .then((data) => {

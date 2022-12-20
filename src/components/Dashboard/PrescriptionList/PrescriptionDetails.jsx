@@ -21,11 +21,15 @@ const PrescriptionDetails = () => {
 
     useEffect(() => {
         if (path === newPrescription) {
-            fetch(`http://localhost:5000/api/v1/ReadAppointmentById/${id}`)
+            fetch(
+                `https://tele-doctor-server.vercel.app/api/v1/ReadAppointmentById/${id}`
+            )
                 .then((res) => res.json())
                 .then((data) => setAppointment(data.data));
         } else {
-            fetch(`http://localhost:5000/api/v1/ReadPrescriptionById/${id}`)
+            fetch(
+                `https://tele-doctor-server.vercel.app/api/v1/ReadPrescriptionById/${id}`
+            )
                 .then((res) => res.json())
                 .then((data) => {
                     setSelectPrescription(data.data);
@@ -44,13 +48,16 @@ const PrescriptionDetails = () => {
             createdAt: dateAndTime,
             appointment: appointment,
         };
-        fetch('http://localhost:5000/api/v1/CreatePrescription', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(prescription),
-        })
+        fetch(
+            'https://tele-doctor-server.vercel.app/api/v1/CreatePrescription',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(prescription),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data) {

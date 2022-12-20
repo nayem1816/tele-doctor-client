@@ -10,13 +10,16 @@ const AddAdmin = () => {
         const adminData = {
             email: data.email,
         };
-        fetch('http://localhost:5000/api/v1/CreateAdminUsingEmail', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(adminData),
-        })
+        fetch(
+            'https://tele-doctor-server.vercel.app/api/v1/CreateAdminUsingEmail',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(adminData),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data) {

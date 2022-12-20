@@ -54,7 +54,7 @@ const MyPrescription = () => {
 
     useEffect(() => {
         fetch(
-            `http://localhost:5000/api/v1/ReadPrescriptionByEmail/${user?.email}`
+            `https://tele-doctor-server.vercel.app/api/v1/ReadPrescriptionByEmail/${user?.email}`
         )
             .then((res) => res.json())
             .then((data) => setPrescriptions(data.data));

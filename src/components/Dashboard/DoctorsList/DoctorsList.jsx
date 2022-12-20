@@ -38,7 +38,7 @@ const DoctorsList = () => {
     let count = 1;
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/api/v1/VerifiedDoctors')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/VerifiedDoctors')
             .then((res) => res.json())
             .then((data) => setDoctorDataList(data.data.reverse()));
     }, []);
@@ -53,7 +53,7 @@ const DoctorsList = () => {
     };
 
     const handleDoctorDelete = (id) => {
-        fetch(`http://localhost:5000/api/v1/DeleteDoctor/`, {
+        fetch(`https://tele-doctor-server.vercel.app/api/v1/DeleteDoctor/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

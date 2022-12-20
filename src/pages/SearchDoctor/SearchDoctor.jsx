@@ -8,7 +8,7 @@ const SearchDoctor = () => {
     const lastPath = value.split('/').pop();
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadDoctors')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadDoctors')
             .then((res) => res.json())
             .then((data) => setDoctor(data.data));
     }, []);

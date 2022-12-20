@@ -11,7 +11,9 @@ const MyProfile = () => {
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/v1/ReadProfileByEmail/${user?.email}`)
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/ReadProfileByEmail/${user?.email}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setLoginUser(data.data[0]);
@@ -29,7 +31,7 @@ const MyProfile = () => {
             address: data.address,
         };
 
-        fetch(`http://localhost:5000/api/v1/UpdateProfile`, {
+        fetch(`https://tele-doctor-server.vercel.app/api/v1/UpdateProfile`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateData),

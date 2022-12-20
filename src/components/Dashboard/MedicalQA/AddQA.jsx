@@ -13,7 +13,7 @@ const AddQA = () => {
             answer: data.answer,
         };
 
-        fetch('http://localhost:5000/api/v1/CreateQuesAndAns', {
+        fetch('https://tele-doctor-server.vercel.app/api/v1/CreateQuesAndAns', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

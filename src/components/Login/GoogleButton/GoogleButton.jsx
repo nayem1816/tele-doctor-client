@@ -15,17 +15,20 @@ const GoogleButton = () => {
     useEffect(() => {
         if (user) {
             console.log(user.user.email);
-            fetch('http://localhost:5000/api/v1/CreateProfile', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    Name: user.user.displayName,
-                    EmailAddress: user.user.email,
-                    ProfilePic: user.user.photoURL,
-                }),
-            })
+            fetch(
+                'https://tele-doctor-server.vercel.app/api/v1/CreateProfile',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        Name: user.user.displayName,
+                        EmailAddress: user.user.email,
+                        ProfilePic: user.user.photoURL,
+                    }),
+                }
+            )
                 .then((res) => res.json())
                 .then((data) => {
                     console.log('User Created Successfully');
@@ -34,7 +37,7 @@ const GoogleButton = () => {
                     console.log(err);
                 });
 
-            fetch('http://localhost:5000/api/v1/UserLogin', {
+            fetch('https://tele-doctor-server.vercel.app/api/v1/UserLogin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

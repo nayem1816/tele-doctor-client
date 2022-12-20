@@ -13,7 +13,9 @@ const MyPrescriptionDetails = () => {
     const ref = React.createRef();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/v1/ReadPrescriptionById/${id}`)
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/ReadPrescriptionById/${id}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setSelectPrescription(data.data);

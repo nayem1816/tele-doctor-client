@@ -6,7 +6,7 @@ import CustomButton from '../../../common/InputField/CustomButton/CustomButton';
 const CreateCategory = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        fetch('http://localhost:5000/api/v1/CreateCategory', {
+        fetch('https://tele-doctor-server.vercel.app/api/v1/CreateCategory', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

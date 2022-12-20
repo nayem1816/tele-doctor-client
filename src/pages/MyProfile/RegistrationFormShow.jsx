@@ -7,7 +7,9 @@ const RegistrationFormShow = () => {
     const [doctor, setDoctor] = React.useState({});
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/api/v1/ReadDoctorByEmail/${user?.email}`)
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/ReadDoctorByEmail/${user?.email}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data.data.length > 0) {

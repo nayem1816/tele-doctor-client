@@ -5,7 +5,7 @@ const ReadAdmins = () => {
     let count = 1;
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadAdmin')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadAdmin')
             .then((res) => res.json())
             .then((data) => {
                 setAdmins(data.data);

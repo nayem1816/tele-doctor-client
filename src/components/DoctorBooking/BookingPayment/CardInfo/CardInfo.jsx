@@ -107,13 +107,16 @@ const CardInfo = () => {
                 patientDateOfBirth: bookingInfo.dateOfBirth,
             };
 
-            fetch('http://localhost:5000/api/v1/CreateAppointment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(bookingInformation),
-            })
+            fetch(
+                'https://tele-doctor-server.vercel.app/api/v1/CreateAppointment',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(bookingInformation),
+                }
+            )
                 .then((res) => res.json())
                 .then((data) => {
                     if (data) {

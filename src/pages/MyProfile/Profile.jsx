@@ -10,7 +10,7 @@ const Profile = () => {
 
     useEffect(() => {
         fetch(
-            `http://localhost:5000/api/v1/ReadAppointmentByEmail/${user.email}`
+            `https://tele-doctor-server.vercel.app/api/v1/ReadAppointmentByEmail/${user.email}`
         )
             .then((res) => res.json())
             .then((data) => setAppointmentData(data));

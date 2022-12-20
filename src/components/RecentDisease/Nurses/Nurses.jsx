@@ -15,7 +15,7 @@ const Nurses = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadNurses')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadNurses')
             .then((res) => res.json())
             .then((data) => setNurses(data.data));
     }, []);

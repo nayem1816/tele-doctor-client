@@ -6,7 +6,7 @@ const Show = () => {
     const [latestDisease, setLatestDisease] = React.useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadRecentDiseases')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadRecentDiseases')
             .then((res) => res.json())
             .then((data) => {
                 setLatestDisease(data);
@@ -14,11 +14,14 @@ const Show = () => {
     }, [latestDisease]);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/api/v1/DeleteRecentDisease`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id }),
-        })
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/DeleteRecentDisease`,
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id }),
+            }
+        )
             .then((res) => res.json())
             .then((result) => {
                 console.log('deleted successfully');

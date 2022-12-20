@@ -18,7 +18,7 @@ const AddNurses = () => {
             experience: data.experience,
         };
 
-        fetch('http://localhost:5000/api/v1/CreateNurse', {
+        fetch('https://tele-doctor-server.vercel.app/api/v1/CreateNurse', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -15,7 +15,9 @@ const DashboardSidebar = ({ openSidebar, setOpenSidebar }) => {
     const [isAdmin, setIsAdmin] = React.useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/v1/ReadProfileByEmail/${user?.email}`)
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/ReadProfileByEmail/${user?.email}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data?.data[0]?.role === 'doctor') {

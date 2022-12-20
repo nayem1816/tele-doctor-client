@@ -18,14 +18,16 @@ const DoctorReview = () => {
     );
     const { email } = useParams();
     const date = CustomDateAndTime();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleRating = (rate) => {
         setRating(rate);
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/v1/ReadDoctorByEmail/${email}`)
+        fetch(
+            `https://tele-doctor-server.vercel.app/api/v1/ReadDoctorByEmail/${email}`
+        )
             .then((res) => res.json())
             .then((data) => setDoctor(data.data[0]));
     }, [email]);
@@ -41,11 +43,14 @@ const DoctorReview = () => {
             createAt: date.split(' ')[0],
         };
 
-        fetch('http://localhost:5000/api/v1/AddReviewUsingEmail', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(reviewData),
-        })
+        fetch(
+            'https://tele-doctor-server.vercel.app/api/v1/AddReviewUsingEmail',
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(reviewData),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 if (data) {
@@ -56,7 +61,7 @@ const DoctorReview = () => {
                         closeOnClick: true,
                     });
                 }
-                navigate(`/`)
+                navigate(`/`);
             });
     };
 

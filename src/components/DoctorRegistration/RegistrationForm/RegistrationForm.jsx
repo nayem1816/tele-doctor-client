@@ -103,7 +103,10 @@ const RegistrationForm = () => {
             redirect: 'follow',
         };
 
-        fetch('http://localhost:5000/api/v1/CreateDoctor', requestOptions)
+        fetch(
+            'https://tele-doctor-server.vercel.app/api/v1/CreateDoctor',
+            requestOptions
+        )
             .then((response) => response.json())
             .then((result) => {
                 if (result) {
@@ -138,7 +141,7 @@ const RegistrationForm = () => {
     };
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadCategories')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadCategories')
             .then((res) => res.json())
             .then((data) => setCategoryDataList(data.data));
     }, [categoryDataList]);

@@ -25,16 +25,19 @@ const SignupForm = () => {
     const onSubmit = (submitData) => {
         if (submitData.password === submitData.confirmPassword) {
             // create user
-            fetch('http://localhost:5000/api/v1/CreateProfile', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    Name: submitData.name,
-                    EmailAddress: submitData.email,
-                }),
-            })
+            fetch(
+                'https://tele-doctor-server.vercel.app/api/v1/CreateProfile',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        Name: submitData.name,
+                        EmailAddress: submitData.email,
+                    }),
+                }
+            )
                 .then((res) => res.json())
                 .then(async (data) => {
                     if (data.data.EmailAddress === submitData.email) {
@@ -50,7 +53,7 @@ const SignupForm = () => {
                 });
 
             // login user
-            fetch('http://localhost:5000/api/v1/UserLogin', {
+            fetch('https://tele-doctor-server.vercel.app/api/v1/UserLogin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

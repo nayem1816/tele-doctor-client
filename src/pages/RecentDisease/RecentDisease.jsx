@@ -10,7 +10,7 @@ const RecentDisease = () => {
     const [recentDisease, setRecentDisease] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadRecentDiseases')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadRecentDiseases')
             .then((res) => res.json())
             .then((data) => setRecentDisease(data.data[0]));
     }, []);
