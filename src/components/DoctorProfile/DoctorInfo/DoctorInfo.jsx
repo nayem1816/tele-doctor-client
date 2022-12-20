@@ -54,7 +54,7 @@ const DoctorInfo = ({ doctor }) => {
                     <div className="reviews-part my-4">
                         <div className="row">
                             {doctor?.reviews?.map((review) => (
-                                <div key={review._id} className="col-md-6">
+                                <div key={review?.email} className="col-md-6">
                                     <div className="shadow p-4 rounded m-2">
                                         <div className="top d-flex justify-content-between">
                                             <div className="d-flex gap-3">
