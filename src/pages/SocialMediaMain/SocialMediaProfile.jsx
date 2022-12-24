@@ -18,21 +18,21 @@ const SocialMediaProfile = () => {
 
     return (
         <div>
-            <div className="profile d-flex align-items-center border rounded shadow p-4">
+            <div className="profile d-md-flex align-items-md-center border rounded shadow p-4 text-center text-md-start">
                 <img
                     style={{ width: '150px', height: '150px' }}
-                    className="rounded-circle border img-fluid"
+                    className="rounded-circle border img-fluid "
                     src={user?.photoURL}
                     alt=""
                 />
-                <div className="">
+                <div className="text-center text-md-start">
                     <h2 className="ms-4">{user?.displayName}</h2>
-                    <div className="button ms-4">
+                    <div className="button ms-4 text-center text-md-start">
                         <Button className="" variant="contained">
                             Add Post
                         </Button>
                         <Button
-                            className="ms-2"
+                            className="ms-md-2 ms-0 mt-2 mt-md-0"
                             variant="contained"
                             color="error"
                         >

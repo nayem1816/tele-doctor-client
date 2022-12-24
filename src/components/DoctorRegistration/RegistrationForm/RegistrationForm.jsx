@@ -24,6 +24,7 @@ import CustomDateAndTime from './../../common/CustomDateAndTime/CustomDateAndTim
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import districtData from '../../../services/data/districtData';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -48,7 +49,11 @@ const names = [
 
 const RegistrationForm = () => {
     const [categoryDataList, setCategoryDataList] = React.useState([]);
-    const { register, handleSubmit } = useForm();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
     const [doctorImage, setDoctorImage] = useState(null);
     const dateAndTime = CustomDateAndTime();
     const [user] = useAuthState(auth);
@@ -166,23 +171,33 @@ const RegistrationForm = () => {
                     <div className="row">
                         <div className="col-md-6 p-3">
                             <CustomInput
-                                placeHolder={'Enter your name'}
+                                error={errors.name && 'true'}
+                                placeHolder={'Enter your name *'}
                                 inputType={'text'}
                                 refs={register('name', { required: true })}
                             />
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomInput
-                                placeHolder={'Enter your email'}
+                                error={errors.email && 'true'}
+                                placeHolder={'Enter your email *'}
                                 inputType={'email'}
                                 refs={register('email', {
                                     required: true,
                                 })}
                             />
+                            {errors.email ? (
+                                <span className="text-danger">
+                                    Please enter valid email address
+                                </span>
+                            ) : (
+                                ''
+                            )}
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomInput
-                                placeHolder={'Enter your mobile'}
+                                error={errors.mobile && 'true'}
+                                placeHolder={'Enter your mobile *'}
                                 inputType={'text'}
                                 refs={register('mobile', {
                                     required: true,
@@ -190,6 +205,13 @@ const RegistrationForm = () => {
                                     maxLength: 11,
                                 })}
                             />
+                            {errors.mobile ? (
+                                <span className="text-danger">
+                                    Please enter valid Phone number(11 digits)
+                                </span>
+                            ) : (
+                                ''
+                            )}
                         </div>
                         <div className="col-md-6 p-3">
                             <UploadField
@@ -199,13 +221,13 @@ const RegistrationForm = () => {
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomDatePicker
-                                placeHolder={'Date Of birth'}
+                                placeHolder={'Date Of birth *'}
                                 refs={register('DOB', { required: true })}
                             />
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomRadioBtn
-                                titleName={'Gender'}
+                                titleName={'Gender *'}
                                 regName={'gender'}
                                 defaultValue={false}
                                 selectOptions={['Male', 'Female', 'Other']}
@@ -214,22 +236,26 @@ const RegistrationForm = () => {
                             />
                         </div>
                         <div className="col-md-6 p-3">
-                            <CustomInput
-                                placeHolder={'Enter district name'}
-                                inputType={'text'}
-                                refs={register('district', { required: true })}
+                            <CustomSelect
+                                placeHolder="Enter district name *"
+                                regName={'district'}
+                                selectOptions={districtData.map(
+                                    (district) => district.name
+                                )}
+                                register={register}
                             />
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomInput
-                                placeHolder={'Enter your address'}
+                                error={errors.address && 'true'}
+                                placeHolder={'Enter your address *'}
                                 inputType={'text'}
                                 refs={register('address', { required: true })}
                             />
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomSelect
-                                placeHolder="Department"
+                                placeHolder="Department *"
                                 regName={'specialization'}
                                 selectOptions={sortData.map(
                                     (category) => category.name
@@ -239,24 +265,34 @@ const RegistrationForm = () => {
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomInput
-                                placeHolder={'Enter your degree'}
+                                error={errors.education && 'true'}
+                                placeHolder={'Enter your degree *'}
                                 inputType={'text'}
                                 refs={register('education', { required: true })}
                             />
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomInput
-                                placeHolder={'Enter your registration number'}
+                                error={errors.registrationNumber && 'true'}
+                                placeHolder={'Enter your registration number *'}
                                 inputType={'text'}
                                 refs={register('registrationNumber', {
                                     required: true,
                                 })}
                             />
+                            {errors.registrationNumber ? (
+                                <span className="text-danger">
+                                    Please enter DOCTOR REGISTRATION ID
+                                </span>
+                            ) : (
+                                ''
+                            )}
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomInput
+                                error={errors.experience && 'true'}
                                 placeHolder={
-                                    'Enter your experience (in years or months)'
+                                    'Enter your experience (1 Years) *'
                                 }
                                 inputType={'text'}
                                 refs={register('experience', {
@@ -266,8 +302,9 @@ const RegistrationForm = () => {
                         </div>
                         <div className="col-md-6 p-3">
                             <CustomInput
+                                error={errors.fees && 'true'}
                                 placeHolder={
-                                    'Enter your visiting fee (in taka)'
+                                    'Enter your visiting fee in taka(1000) *'
                                 }
                                 inputType={'number'}
                                 refs={register('fees', {
@@ -313,7 +350,14 @@ const RegistrationForm = () => {
                             />
                         </div>
                         <div className="col-md-12 p-3">
-                            <FormControl className="w-100" variant="filled">
+                            <FormControl
+                                style={{
+                                    backgroundColor: '#E8E8E8',
+                                    border: '0px',
+                                }}
+                                className="w-100"
+                                variant="filled"
+                            >
                                 <InputLabel id="demo-multiple-checkbox-label">
                                     Availability Day
                                 </InputLabel>

@@ -11,7 +11,7 @@ const LikeButton = () => {
 
     return (
         <div className="row footer d-flex justify-content-between like-comment-share">
-            <div className="col-4">
+            <div className="col-6 col-md-4">
                 <button
                     onClick={handleLikeBtn}
                     className="btn w-100 text-muted fw-bold d-flex align-items-center justify-content-center"
@@ -34,13 +34,13 @@ const LikeButton = () => {
                     )}
                 </button>
             </div>
-            <div className="col-4">
+            <div className="col-6 col-md-4">
                 <button className="btn w-100 text-muted fw-bold">
                     <FaRegCommentAlt className="fs-6" />
                     <span className="ms-1">Comment</span>
                 </button>
             </div>
-            <div className="col-4">
+            <div className="col-6 col-md-4 d-none d-md-block">
                 <button className="btn w-100 text-muted fw-bold">
                     <FaShareAlt className="fs-6" />
                     <span className="ms-1">Share</span>

@@ -156,7 +156,7 @@ const HomePagesList = ({ pages }) => {
                                     </div>
                                 )}
 
-                                <div className="image mt-3 d-flex justify-content-between">
+                                <div className="image mt-3 d-md-flex justify-content-md-between text-center text-md-start">
                                     <button
                                         type="button"
                                         // onClick={handleImageUpload}
@@ -178,7 +178,7 @@ const HomePagesList = ({ pages }) => {
                                         />
                                     </button>
                                     <input
-                                        className="btn btn-danger border px-5 rounded-pill fw-bold end-0"
+                                        className="btn btn-danger border px-5 rounded-pill fw-bold end-md-0 mt-3 mt-md-0"
                                         type="submit"
                                         value="Create"
                                     />
