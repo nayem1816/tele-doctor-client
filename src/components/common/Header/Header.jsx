@@ -66,7 +66,7 @@ const Header = () => {
                             {user?.email && (
                                 <Link
                                     className="nav-link text-dark"
-                                    to="/socialMediaPage"
+                                    to="/social-media"
                                 >
                                     Social Media
                                 </Link>

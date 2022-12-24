@@ -1,0 +1,40 @@
+.page-style a {
+    margin: 7px 0;
+    padding: 13px 5px;
+}
+.page-style a:hover {
+    background-color: #f5f5f5;
+    padding: 13px 5px;
+    border-radius: 5px;
+}
+
+.social-upload-btn {
+    position: relative;
+    overflow: hidden;
+}
+.social-upload-btn input[type='file'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    cursor: inherit;
+    display: block;
+}
+
+.like-comment-share button {
+    background-color: #fff;
+    border: none;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}

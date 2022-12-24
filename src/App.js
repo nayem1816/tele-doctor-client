@@ -12,9 +12,6 @@ const About = React.lazy(() => import('./pages/About/About'));
 const NotFound = React.lazy(() => import('./pages/NotFound/NotFound'));
 const Doctor = React.lazy(() => import('./pages/Doctor/Doctor'));
 const MedicalQA = React.lazy(() => import('./pages/MedicalQA/MedicalQA'));
-const SocialMediaPage = React.lazy(() =>
-    import('./pages/SocialMediaPage/SocialMediaPage')
-);
 
 const RecentDisease = React.lazy(() =>
     import('./pages/RecentDisease/RecentDisease')
@@ -127,15 +124,6 @@ const MyPrescription = React.lazy(() =>
 const QADetails = React.lazy(() =>
     import('./components/Dashboard/MedicalQA/QADetails')
 );
-const SocialMediaSubPages = React.lazy(() =>
-    import('./pages/SocialMediaSubPages/SocialMediaSubPages')
-);
-const SocialMediaYourPost = React.lazy(() =>
-    import('./pages/SocialMediaYourPost/SocialMediaYourPost')
-);
-const SocialMediaYourProfile = React.lazy(() =>
-    import('./pages/SocialMediaYourProfile/SocialMediaYourProfile')
-);
 const RegistrationFormShow = React.lazy(() =>
     import('./pages/MyProfile/RegistrationFormShow')
 );
@@ -143,6 +131,21 @@ const DoctorReview = React.lazy(() => import('./pages/Review/DoctorReview'));
 const WebsiteReview = React.lazy(() => import('./pages/Review/WebsiteReview'));
 const AllApplicationReview = React.lazy(() =>
     import('./pages/Review/AllApplicationReview')
+);
+const SocialMediaMain = React.lazy(() =>
+    import('./pages/SocialMediaMain/SocialMediaMain')
+);
+const SocialMediaHome = React.lazy(() =>
+    import('./pages/SocialMediaMain/SocialMediaHome')
+);
+const SocialMediaPages = React.lazy(() =>
+    import('./pages/SocialMediaMain/SocialMediaPages')
+);
+const SocialMediaProfile = React.lazy(() =>
+    import('./pages/SocialMediaMain/SocialMediaProfile')
+);
+const SocialMediaSingleUser = React.lazy(() =>
+    import('./pages/SocialMediaMain/SocialMediaSingleUser')
 );
 
 function App() {
@@ -157,22 +160,23 @@ function App() {
                         <Route path="home" element={<Home />} />
                         <Route path="about" element={<About />} />
                         <Route
-                            path="socialMediaPage"
-                            element={<SocialMediaPage />}
-                        />
-
-                        <Route
-                            path="socialMediaSubPages"
-                            element={<SocialMediaSubPages />}
-                        />
-                        <Route
-                            path="socialMedia/profile"
-                            element={<SocialMediaYourProfile />}
-                        />
-                        <Route
-                            path="userProfile/:id"
-                            element={<SocialMediaYourPost />}
-                        />
+                            path="social-media"
+                            element={<SocialMediaMain />}
+                        >
+                            <Route path="" element={<SocialMediaHome />} />
+                            <Route
+                                path="pages"
+                                element={<SocialMediaPages />}
+                            />
+                            <Route
+                                path="profile"
+                                element={<SocialMediaProfile />}
+                            />
+                            <Route
+                                path="profile/:email"
+                                element={<SocialMediaSingleUser />}
+                            />
+                        </Route>
                         <Route path="doctor" element={<Doctor />}>
                             <Route path="" element={<DoctorCard />} />
                             <Route

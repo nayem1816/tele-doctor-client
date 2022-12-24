@@ -195,7 +195,12 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className="col-md-4">
-                    <NewPatients patients={newAdminAppointments} />
+                    {roleBaseUser?.admin === 'admin' && (
+                        <NewPatients patients={newAdminAppointments} />
+                    )}
+                    {roleBaseUser?.role === 'doctor' && (
+                        <NewPatients patients={newDoctorAppointments} />
+                    )}
                 </div>
             </div>
             {roleBaseUser?.admin === 'admin' && (

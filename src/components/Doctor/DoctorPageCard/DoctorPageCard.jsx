@@ -13,9 +13,10 @@ const DoctorPageCard = ({ doctor }) => {
                         className="img rounded-circle bg-light d-flex align-items-center justify-content-center"
                     >
                         <img
+                            style={{ width: '70px', height: '70px' }}
                             src={doctor?.profilePic}
                             alt=""
-                            className="img-fluid p-2"
+                            className="img-fluid rounded-circle shadow p-1"
                         />
                     </div>
                     <div className="ms-2 icon d-flex mt-2">
