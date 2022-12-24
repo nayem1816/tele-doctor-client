@@ -22,7 +22,7 @@ const ReadPost = ({ post, type }) => {
     };
 
     const handleDeletePost = () => {
-        fetch(`http://localhost:5000/api/v1/DeletePost`, {
+        fetch(`https://tele-doctor-server.vercel.app/api/v1/DeletePost`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: post._id }),

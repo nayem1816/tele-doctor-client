@@ -8,11 +8,11 @@ const SocialMediaHome = () => {
     const [pages, setPages] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadPosts')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadPosts')
             .then((res) => res.json())
             .then((data) => setPosts(data.data.reverse()));
 
-        fetch('http://localhost:5000/api/v1/ReadPages')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadPages')
             .then((res) => {
                 return res.json();
             })

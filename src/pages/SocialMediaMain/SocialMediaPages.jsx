@@ -6,7 +6,7 @@ const SocialMediaPages = () => {
     const [pages, setPages] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/ReadPages')
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadPages')
             .then((res) => {
                 return res.json();
             })

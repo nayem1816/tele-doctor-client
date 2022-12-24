@@ -20,7 +20,7 @@ const Comments = ({ postId, comments }) => {
             commentUserImage: user?.photoURL,
         };
 
-        fetch('http://localhost:5000/api/v1/AddComment', {
+        fetch('https://tele-doctor-server.vercel.app/api/v1/AddComment', {
             method: 'POST',
             body: JSON.stringify(commentData),
             headers: {

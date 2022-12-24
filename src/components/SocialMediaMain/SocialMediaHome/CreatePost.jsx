@@ -55,7 +55,7 @@ const CreatePost = () => {
             postTime: new Date().toLocaleTimeString(),
         };
 
-        fetch('http://localhost:5000/api/v1/CreatePost', {
+        fetch('https://tele-doctor-server.vercel.app/api/v1/CreatePost', {
             method: 'POST',
             body: JSON.stringify(postData),
             headers: {
