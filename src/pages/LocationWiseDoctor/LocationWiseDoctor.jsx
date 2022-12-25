@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DoctorPageCard from '../../components/Doctor/DoctorPageCard/DoctorPageCard';
 
 const LocationWiseDoctor = () => {
-    const [locationWiseData, setLocationWiseData] = useState([]);
     const { location } = useParams();
+    const [doctors, setDoctor] = React.useState([]);
+    const lastPath = location.split('/').pop();
 
     useEffect(() => {
-        fetch(
-            `https://tele-doctor-server.vercel.app/api/v1/FindDoctorByLocation/?location=${location.toLowerCase()}`
-        )
+        fetch('https://tele-doctor-server.vercel.app/api/v1/ReadDoctors')
             .then((res) => res.json())
-            .then((data) => setLocationWiseData(data.data));
-    }, [location]);
+            .then((data) => setDoctor(data.data));
+    }, []);
 
-    // get last path
-    const lastPath = location.split('/').pop();
+    const filteredDoctors = doctors.filter((doctor) => {
+        return doctor.address.toLowerCase().includes(lastPath.toLowerCase());
+    });
 
     return (
         <div className="container">
@@ -29,7 +29,7 @@ const LocationWiseDoctor = () => {
                 </ol>
             </nav>
             <div className="doctors-list">
-                {locationWiseData.length === 0 ? (
+                {filteredDoctors.length === 0 ? (
                     <div className="d-flex justify-content-center align-items-center my-5">
                         <div
                             className="alert alert-danger w-75 text-center"
@@ -40,7 +40,7 @@ const LocationWiseDoctor = () => {
                     </div>
                 ) : (
                     <div className="row my-5">
-                        {locationWiseData.map((doctor) => (
+                        {filteredDoctors.map((doctor) => (
                             <div key={doctor._id} className="col-md-4 p-2">
                                 <DoctorPageCard doctor={doctor} />
                             </div>

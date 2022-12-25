@@ -62,7 +62,7 @@ const DoctorsList = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data.success) {
+                if (data) {
                     const remainingDoctors = doctorDataList.filter(
                         (doctor) => doctor._id !== id
                     );
