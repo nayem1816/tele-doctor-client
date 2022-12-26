@@ -31,6 +31,7 @@ const Comments = ({ postId, comments }) => {
             .then((data) => {
                 if (data) {
                     reset();
+                    window.location.reload();
                 }
             });
     };

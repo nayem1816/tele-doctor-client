@@ -19,7 +19,7 @@ const SocialMediaHome = () => {
             .then((data) => {
                 setPages(data.data);
             });
-    }, [posts, setPosts, pages, setPages]);
+    }, []);
 
     return (
         <div className="row">

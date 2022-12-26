@@ -18,6 +18,8 @@ const SocialMediaSingleUser = () => {
             .then((res) => res.json())
             .then((data) => setPosts(data.data.reverse()));
     }, [posts, email]);
+
+    // console.log(posts);
     return (
         <div>
             <div className="profile d-flex align-items-center border rounded shadow p-4">
@@ -28,7 +30,7 @@ const SocialMediaSingleUser = () => {
                     alt=""
                 />
                 <div className="">
-                    <h2 className="ms-4">{user?.displayName}</h2>
+                    <h2 className="ms-4">{posts?.[0]?.userName}</h2>
                     {posts?.[0]?.userEmail === user.email && (
                         <div className="button ms-4">
                             <Button className="" variant="contained">

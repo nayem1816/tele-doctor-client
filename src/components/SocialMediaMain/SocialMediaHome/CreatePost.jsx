@@ -74,6 +74,7 @@ const CreatePost = () => {
                     });
                     reset();
                     handleClose();
+                    window.location.reload();
                 }
             });
     };
